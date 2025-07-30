@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: platemail1
+  m_Controller: {fileID: 9100000, guid: caacdc2096b98674891a7533a7290d02, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b38719755922e3f45b487483386f06bf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5378fe2b66bc06448a25bbfe59c1d17a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 50d42a09e231e5742b58287e8b59ee87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 97d616609c18abd4fa817b04aa0b84bb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b448ace8c99c7842871b53c6d984e25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 739b8ff78095f834e98378cb4c24a1c7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ffe92c9f88be76d44b65814a0998238e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9bec4f20e483c144bb939684fe51a085, type: 2}

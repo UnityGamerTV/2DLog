@@ -6,25 +6,33 @@ using Newtonsoft.Json;
 
 public class CSVToJsonEditor : EditorWindow
 {
-    private string csvPath = "C:/Users/±è¿ëÇö/OneDrive/¹ÙÅÁ È­¸é/À¯´ÏÆ¼/2D Log 2021/CSV/character_data.csv";
-    private string jsonPath = "C:/Users/±è¿ëÇö/OneDrive/¹ÙÅÁ È­¸é/À¯´ÏÆ¼/2D Log 2021/Assets/Resources/Data/Character/character_data.json";
+    // ë…¸íŠ¸ë¶ ê²½ë¡œ
+
+    // ë¹Œë“œ ì‹œ ì‚­ì œ
+    string csvPath = $"C:/Users/ê¹€ìš©í˜„/OneDrive/ë°”íƒ• í™”ë©´/ìœ ë‹ˆí‹°/2D Log 2021/Assets/CSV/AmuletData.csv";
+    string jsonPath = $"C:/Users/ê¹€ìš©í˜„/OneDrive/ë°”íƒ• í™”ë©´/ìœ ë‹ˆí‹°/2D Log 2021/Assets/Resources/Data/Amulet/AmuletData.json";
 
     [MenuItem("Tools/CSV TO JSON")]
     public static void ShowWindow()
     {
-        GetWindow<CSVToJsonEditor>("CSV to JSON Converter");
+        Debug.Log("ìœˆë„ìš° í˜¸ì¶œë¨");
+        var window = CreateInstance<CSVToJsonEditor>();
+        window.titleContent = new GUIContent("CSV to JSON Converter");
+        window.position = new Rect(300, 300, 1000, 600);
+        window.ShowUtility();  // ğŸ’¥ Show() ëŒ€ì‹  ShowUtility()
     }
 
     void OnGUI()
     {
-        GUILayout.Label("CSV ¡æ JSON º¯È¯±â", EditorStyles.boldLabel);
+        GUILayout.Label("CSV TO JSON", EditorStyles.boldLabel);
 
         GUILayout.Space(10);
-        csvPath = EditorGUILayout.TextField("CSV ÆÄÀÏ °æ·Î", csvPath);
-        jsonPath = EditorGUILayout.TextField("JSON ÀúÀå °æ·Î", jsonPath);
+
+        csvPath = EditorGUILayout.TextField("CSV ê²½ë¡œ : ", csvPath);
+        jsonPath = EditorGUILayout.TextField("JSON ê²½ë¡œ : ", jsonPath);
 
         GUILayout.Space(10);
-        if (GUILayout.Button("º¯È¯ ½ÇÇà"))
+        if (GUILayout.Button("ConvertCSVToJson"))
         {
             ConvertCSVToJson(csvPath, jsonPath);
         }
@@ -34,14 +42,14 @@ public class CSVToJsonEditor : EditorWindow
     {
         if (!File.Exists(csvFilePath))
         {
-            Debug.LogError("CSV ÆÄÀÏÀÌ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù: " + csvFilePath);
+            Debug.LogError("CSV ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.: " + csvFilePath);
             return;
         }
 
         var lines = File.ReadAllLines(csvFilePath);
         if (lines.Length < 2)
         {
-            Debug.LogWarning("CSV¿¡ µ¥ÀÌÅÍ°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+            Debug.LogWarning("CSV ë°ì´í„°ê°€ ì—†ìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -66,7 +74,7 @@ public class CSVToJsonEditor : EditorWindow
         string json = JsonConvert.SerializeObject(dataList, Formatting.Indented);
         File.WriteAllText(jsonFilePath, json, System.Text.Encoding.UTF8);
 
-        Debug.Log($"CSV ¡æ JSON º¯È¯ ¿Ï·á!\nJSON ÀúÀå À§Ä¡: {jsonFilePath}");
+        Debug.Log($"CSV JSON ë³€í™˜ ì„±ê³µ: {jsonFilePath}");
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
     }

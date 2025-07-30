@@ -15,11 +15,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "life_amulet"
   },
   {
     "_no": "2",
@@ -37,11 +37,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "mana_amulet"
   },
   {
     "_no": "3",
@@ -59,11 +59,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "attack_amulet"
   },
   {
     "_no": "4",
@@ -81,11 +81,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "defence_amulet"
   },
   {
     "_no": "5",
@@ -103,11 +103,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "magic_attack_amulet"
   },
   {
     "_no": "6",
@@ -125,11 +125,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "fire_amulet"
   },
   {
     "_no": "7",
@@ -147,11 +147,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "cold_amulet"
   },
   {
     "_no": "8",
@@ -169,11 +169,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "earth_amulet"
   },
   {
     "_no": "9",
@@ -191,11 +191,11 @@
     "_dark_res": "10",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "dark_amulet"
   },
   {
     "_no": "10",
@@ -213,11 +213,11 @@
     "_dark_res": "",
     "_poison_res": "10",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "poison_amulet"
   },
   {
     "_no": "11",
@@ -235,11 +235,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "10",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": ""
+    "_nickName": "avoid_amulet"
   },
   {
     "_no": "12",
@@ -257,11 +257,11 @@
     "_dark_res": "2",
     "_poison_res": "1",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet10"
+    "_nickName": "amulet10"
   },
   {
     "_no": "13",
@@ -279,11 +279,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "10",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet11"
+    "_nickName": "amulet11"
   },
   {
     "_no": "14",
@@ -301,11 +301,11 @@
     "_dark_res": "1",
     "_poison_res": "1",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet12"
+    "_nickName": "amulet12"
   },
   {
     "_no": "15",
@@ -323,11 +323,11 @@
     "_dark_res": "1",
     "_poison_res": "1",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet13"
+    "_nickName": "amulet13"
   },
   {
     "_no": "16",
@@ -345,11 +345,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet14"
+    "_nickName": "amulet14"
   },
   {
     "_no": "17",
@@ -367,11 +367,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet15"
+    "_nickName": "amulet15"
   },
   {
     "_no": "18",
@@ -389,11 +389,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet16"
+    "_nickName": "amulet16"
   },
   {
     "_no": "19",
@@ -411,11 +411,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet7"
+    "_nickName": "amulet7"
   },
   {
     "_no": "20",
@@ -433,11 +433,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet8"
+    "_nickName": "amulet8"
   },
   {
     "_no": "21",
@@ -455,11 +455,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet9"
+    "_nickName": "amulet9"
   },
   {
     "_no": "22",
@@ -477,11 +477,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet1"
+    "_nickName": "amulet1"
   },
   {
     "_no": "23",
@@ -499,11 +499,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet2"
+    "_nickName": "amulet2"
   },
   {
     "_no": "24",
@@ -521,11 +521,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet3"
+    "_nickName": "amulet3"
   },
   {
     "_no": "25",
@@ -543,11 +543,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet4"
+    "_nickName": "amulet4"
   },
   {
     "_no": "26",
@@ -565,11 +565,11 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet5"
+    "_nickName": "amulet5"
   },
   {
     "_no": "27",
@@ -587,10 +587,10 @@
     "_dark_res": "",
     "_poison_res": "",
     "_avoid": "",
-    "_type": "",
+    "_item_property_type": "",
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_NickName": "amulet6"
+    "_nickName": "amulet6"
   }
 ]

@@ -1380,7 +1380,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 801
+        y: 800
         width: 80
         height: 80
       alignment: 0
@@ -1775,7 +1775,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Elf DeathMage
+      name: Elf Death Mage
       rect:
         serializedVersion: 2
         x: 320
@@ -1901,27 +1901,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bat
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 480
-        width: 80
-        height: 80
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 383e0f70e4227af49b981d0c3064d531
-      internalID: -746684289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Little Devi Dark
       rect:
         serializedVersion: 2
@@ -2031,9 +2010,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 402
         width: 80
-        height: 80
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2052,9 +2031,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 400
+        y: 402
         width: 80
-        height: 80
+        height: 78
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2178,7 +2157,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 327
+        y: 322
         width: 80
         height: 80
       alignment: 0
@@ -2220,7 +2199,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 320
+        y: 322
         width: 80
         height: 80
       alignment: 0
@@ -2262,7 +2241,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 321
+        y: 320
         width: 80
         height: 80
       alignment: 0
@@ -2304,7 +2283,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 240
+        y: 242
         width: 80
         height: 80
       alignment: 0
@@ -2325,11 +2304,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 240
+        y: 242
         width: 80
         height: 80
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5123466, y: 0.5790184}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2384,11 +2363,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf
+      name: Wolf
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 162
         width: 80
         height: 80
       alignment: 0
@@ -2405,7 +2384,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wolf Ware
+      name: Wolf Ware
       rect:
         serializedVersion: 2
         x: 80
@@ -2429,8 +2408,8 @@ TextureImporter:
       name: Dog
       rect:
         serializedVersion: 2
-        x: 159
-        y: 157
+        x: 160
+        y: 162
         width: 80
         height: 80
       alignment: 0
@@ -2451,7 +2430,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 81
         width: 80
         height: 80
       alignment: 0
@@ -2468,11 +2447,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ba
+      name: Bat
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 1
         width: 80
         height: 80
       alignment: 0
@@ -2687,9 +2666,7 @@ TextureImporter:
       Naga Azura: 849292459
       Ettin: -1138736318
       Korea Bridal Mask: -2093550604
-      Elf DeathMage: -350813019
       Troll Deep Assasin: 965768799
-      wolf Ware: -1421101409
       Dwarf Gimli: 1895497812
       Mummy Pharaoh: -2128606590
       Ork Rider: -58706455
@@ -2719,6 +2696,7 @@ TextureImporter:
       Naga Warrier: -270704912
       Sprite Light: 1890410096
       Iron Fiend: -688347216
+      Elf Death Mage: -350813019
       Zombie Magi: 1708145900
       Elf Blade Master: -1898046202
       Imp Ice: 281240283
@@ -2736,7 +2714,6 @@ TextureImporter:
       Mummy Warrier: -122956353
       Ork King: 1709658170
       Ogre: 340421171
-      wolf: 596921761
       Green Fiend: 1369485053
       Ancient Rich: -837965080
       Koblod Crown: -2092143412
@@ -2766,7 +2743,6 @@ TextureImporter:
       Monster_72: 1009900713
       Cyclops Named: -1675691944
       Merfork Baker: -583457213
-      Ba: -748905662
       Cyclops: 809391113
       Balrug: -1731429860
       Monster_54: 1549857142
@@ -2779,6 +2755,7 @@ TextureImporter:
       Rat: 2144605349
       Dwarf Carpenter: 2070219547
       Korea Man Ghost: 1513850625
+      Wolf Ware: -1421101409
       Imp Iron: -1480929876
       Eye Of Gold: -850826692
       Skeleton: -136350890
@@ -2787,12 +2764,13 @@ TextureImporter:
       Zombie Miner: 450365891
       Naga Magi: 840412999
       Zombie1: 1940243255
-      Bat: -746684289
+      Bat: -748905662
       Ork Knight: 77399940
       Elephant Hell: -623984165
       Slug: -110297397
       Plant: -1780714280
       Elf Bow Master: -1965845878
+      Wolf: 596921761
       Troll: -466645487
       Elf Demonologist: 1377355429
       Little Devi Green: -1771499395

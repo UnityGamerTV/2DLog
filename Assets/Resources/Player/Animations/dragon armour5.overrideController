@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: dragon armour5
+  m_Controller: {fileID: 9100000, guid: caacdc2096b98674891a7533a7290d02, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b38719755922e3f45b487483386f06bf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6120afc68cf6b9144a20737db469e4e7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 50d42a09e231e5742b58287e8b59ee87, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 10cc226908f1e414faf020bfd15d24be, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0b448ace8c99c7842871b53c6d984e25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a0d14c9acde4972408ffc91b057956ba, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ffe92c9f88be76d44b65814a0998238e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ae1ca4a67f66c794ebb5a4ff4e7d36bc, type: 2}

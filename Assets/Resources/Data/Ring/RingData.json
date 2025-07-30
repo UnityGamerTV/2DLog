@@ -19,7 +19,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "life_ring"
   },
   {
     "_no": "2",
@@ -41,7 +41,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "mana_ring"
   },
   {
     "_no": "3",
@@ -63,7 +63,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "attack_ring"
   },
   {
     "_no": "4",
@@ -85,7 +85,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "defence_ring"
   },
   {
     "_no": "5",
@@ -107,7 +107,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "magic_attack_ring"
   },
   {
     "_no": "6",
@@ -129,7 +129,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "fire_ring"
   },
   {
     "_no": "7",
@@ -151,7 +151,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "cold_ring"
   },
   {
     "_no": "8",
@@ -173,7 +173,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "earth_ring"
   },
   {
     "_no": "9",
@@ -195,7 +195,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "dark_ring"
   },
   {
     "_no": "10",
@@ -217,7 +217,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "poison_ring"
   },
   {
     "_no": "11",
@@ -239,7 +239,7 @@
     "_hand": "",
     "_enhance_limit": "",
     "_skill_limit": "",
-    "_nickName": ""
+    "_nickName": "avoid_ring"
   },
   {
     "_no": "12",
