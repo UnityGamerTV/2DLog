@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class ItemData
+public class ItemData : INickname
 {
     public int _no { get; set; }
     public string _name { get; set; }

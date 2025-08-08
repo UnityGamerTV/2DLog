@@ -39,7 +39,7 @@ public class MapEditor
             Tilemap trapMap = Util.FindChild<Tilemap>(go, "Trap", true);
             Tilemap itemMap = Util.FindChild<Tilemap>(go, "Item", true);
             Tilemap monsterMap = Util.FindChild<Tilemap>(go, "Monster", true);
-
+            
             var data = new MapData
             {
                 name = go.name,

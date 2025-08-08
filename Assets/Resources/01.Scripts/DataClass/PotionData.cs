@@ -1,7 +1,6 @@
 using System;
-
 [Serializable]
-public class PotionData
+public class PotionData : INickname
 {
     public int _no { get; set; }
     public string _name { get; set; }

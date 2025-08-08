@@ -11,7 +11,7 @@ public class Test
 
 }
 
-public class DataManager
+public class DataManagerEX
 {
     //아이템 데이터
     public Dictionary<int, PlayerStat> PlayerStatDict { get; private set; } = new Dictionary<int, PlayerStat>();

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helmet7
+  m_Controller: {fileID: 9100000, guid: 05863bf4077f12243aa2f52ffa93df84, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 212438cf21fa18446ad6797edcd6268c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 903f943274e2fd149933f8d0773a04b7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5919d75b3ac893b49af66c955a60bfe5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e1441fe8dc11be947afbb958ab1f10f5, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68eb2cc27a6100e4cabdcef22dd9184e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4fc0bdcffc6fca240b7a6592acb844bd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e66fdd2d0c6e8934d8610ddbda2fb0d9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e8230956ae42d534d9842c94db0a7021, type: 2}

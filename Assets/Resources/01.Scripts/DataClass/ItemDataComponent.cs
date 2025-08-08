@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class ItemDataComponent : MonoBehaviour
+public class BaseDataComponent : MonoBehaviour { }
+
+public class ItemDataComponent : BaseDataComponent
 {
     public int _no { get { return no; } set { no = value; } }
     [SerializeField] private int no;

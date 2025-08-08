@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MagicDataComponent : MonoBehaviour
+public class MagicDataComponent : BaseDataComponent
 {
     public int _no { get { return no; } set { no = value; } }
     [SerializeField] private int no;

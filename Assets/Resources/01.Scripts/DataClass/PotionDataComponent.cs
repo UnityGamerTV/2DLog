@@ -1,5 +1,5 @@
 using UnityEngine;
-public class PotionDataComponent : MonoBehaviour
+public class PotionDataComponent : BaseDataComponent
 {
     public int _no { get { return no; } set { no = value; } }
     [SerializeField] private int no;

@@ -151,7 +151,7 @@ public class MonsterController : CreatureController
 
         _target = GameManager.Obj.Find((go) =>
         {
-            PlayerController pc = go.GetComponent<PlayerController>();
+            PlayerController2 pc = go.GetComponent<PlayerController2>();
             if (pc == null)
                 return false;
 
@@ -331,7 +331,7 @@ public class MonsterController : CreatureController
         // 피격판정
         ms = GetComponent<monsterStat>();
         int damage = UnityEngine.Random.Range(ms.MinAttack, ms.MaxAttack + 1);
-        PlayerController pc = _target.GetComponent<PlayerController>();
+        PlayerController2 pc = _target.GetComponent<PlayerController2>();
         pc.OnDamaged(damage);
 
 

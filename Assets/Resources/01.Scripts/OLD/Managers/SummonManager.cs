@@ -29,7 +29,7 @@ public class SummonManager
 
     public void MonsterCreat()
     {
-        MapManager.SumPos sumPos = new MapManager.SumPos();
+        MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
 
         for (int i = 0; i < 5; i++)
         {
@@ -56,7 +56,7 @@ public class SummonManager
 
     public void PlayerCreat()
     {
-        MapManager.SumPos sumPos = new MapManager.SumPos();
+        MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
 
         GameObject player = GameManager.Resouce.Instantiate("Creature/Player");
         player.name = "Player";
@@ -71,7 +71,7 @@ public class SummonManager
             x = sumPos.x,
             y = sumPos.y
         };
-        PlayerController pc = player.GetComponent<PlayerController>();
+        PlayerController2 pc = player.GetComponent<PlayerController2>();
         pc.CellPos = playerPos;
     }
 
@@ -479,7 +479,7 @@ public class SummonManager
             item.name = (nickName);
             GameManager.Obj.ItemAdd(item);
             GameManager.Map._mapControll = MapControll.SumItem;
-            MapManager.SumPos sumPos = new MapManager.SumPos();
+            MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
             sumPos = GameManager.Map.CanSum();
 
             Vector3Int itemPos = new Vector3Int()
@@ -488,7 +488,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            ItemController ic = item.GetOrAddComponent<ItemController>();
+            ItemControllerEX ic = item.GetOrAddComponent<ItemControllerEX>();
             itemStat = item.GetOrAddComponent<iStat>();
             //////////////////////////////////////////////////////////////
             ///아이템 스텟 넣는 코드
@@ -607,7 +607,7 @@ public class SummonManager
             item.name = (nickName);
             GameManager.Obj.ItemAdd(item);
             GameManager.Map._mapControll = MapControll.SumItem;
-            MapManager.SumPos sumPos = new MapManager.SumPos();
+            MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
             sumPos = GameManager.Map.CanSum();
 
             Vector3Int itemPos = new Vector3Int()
@@ -616,7 +616,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            ItemController ic = item.GetOrAddComponent<ItemController>();
+            ItemControllerEX ic = item.GetOrAddComponent<ItemControllerEX>();
             potionStat = item.GetOrAddComponent<pStat>();
             ic.CellPos = itemPos;
 
@@ -690,7 +690,7 @@ public class SummonManager
             item.name = (nickName);
             GameManager.Obj.ItemAdd(item);
             GameManager.Map._mapControll = MapControll.SumItem;
-            MapManager.SumPos sumPos = new MapManager.SumPos();
+            MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
             sumPos = GameManager.Map.CanSum();
 
             Vector3Int itemPos = new Vector3Int()
@@ -699,7 +699,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            ItemController ic = item.GetOrAddComponent<ItemController>();
+            ItemControllerEX ic = item.GetOrAddComponent<ItemControllerEX>();
             scrollStat = item.GetOrAddComponent<sStat>();
             ic.CellPos = itemPos;
 
@@ -761,7 +761,7 @@ public class SummonManager
             item.name = (nickName);
             GameManager.Obj.ItemAdd(item);
             GameManager.Map._mapControll = MapControll.SumItem;
-            MapManager.SumPos sumPos = new MapManager.SumPos();
+            MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
             sumPos = GameManager.Map.CanSum();
 
             Vector3Int itemPos = new Vector3Int()
@@ -770,7 +770,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            ItemController ic = item.GetOrAddComponent<ItemController>();
+            ItemControllerEX ic = item.GetOrAddComponent<ItemControllerEX>();
             magicStat = item.GetOrAddComponent<mStat>();
             ic.CellPos = itemPos;
             //////////////////////////////////////////////////////////////
@@ -844,7 +844,7 @@ public class SummonManager
             item.name = (nickName);
             GameManager.Obj.ItemAdd(item);
             GameManager.Map._mapControll = MapControll.SumItem;
-            MapManager.SumPos sumPos = new MapManager.SumPos();
+            MapManagerEX.SumPos sumPos = new MapManagerEX.SumPos();
             sumPos = GameManager.Map.CanSum();
 
             Vector3Int itemPos = new Vector3Int()
@@ -853,7 +853,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            ItemController ic = item.GetOrAddComponent<ItemController>();
+            ItemControllerEX ic = item.GetOrAddComponent<ItemControllerEX>();
             etcStat = item.GetOrAddComponent<eStat>();
             ic.CellPos = itemPos;
             //////////////////////////////////////////////////////////////

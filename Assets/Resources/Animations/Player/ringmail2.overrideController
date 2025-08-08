@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ringmail2
+  m_Controller: {fileID: 9100000, guid: 05863bf4077f12243aa2f52ffa93df84, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 212438cf21fa18446ad6797edcd6268c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 189bd8e2c03beda488135317fcdc1c3a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5919d75b3ac893b49af66c955a60bfe5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bdc6ccf394a7d4946a3dd6d0e0e30af8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 68eb2cc27a6100e4cabdcef22dd9184e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 32714dd94c667514282a2ba9a3d9dbb6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e66fdd2d0c6e8934d8610ddbda2fb0d9, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 77d7c7bbf1ad10747abbe134ffb5bd96, type: 2}

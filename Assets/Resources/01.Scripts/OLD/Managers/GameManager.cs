@@ -6,24 +6,24 @@ public class GameManager : MonoBehaviour
 
 
     #region Contents
-    MapManager _map = new MapManager();
+    MapManagerEX _map = new MapManagerEX();
     ObjectManager _obj = new ObjectManager();
     UIManager _ui = new UIManager();
     SummonManager _summon = new SummonManager();
-    DataManager _data = new DataManager();
+    DataManagerEX _data = new DataManagerEX();
     InvenManager _inven = new InvenManager();
 
-    public static MapManager Map { get { return Instance._map; } }
+    public static MapManagerEX Map { get { return Instance._map; } }
     public static ObjectManager Obj { get { return Instance._obj; } }
     public static UIManager Ui { get { return Instance._ui; } }
     public static SummonManager Summon { get { return Instance._summon; } }
-    public static DataManager Data { get { return Instance._data; } }
+    public static DataManagerEX Data { get { return Instance._data; } }
     public static InvenManager Inven { get { return Instance._inven; } }
 
     #endregion
     #region Core
     SceneManagerEx _scene = new SceneManagerEx();
-    ResourceManager _resouce = new ResourceManager();
+    ResourceManagerEX _resouce = new ResourceManagerEX();
     TurnManager _Turn = new TurnManager();
     EventManager _evt = new EventManager();
     YieldReturnManager _Yield = new YieldReturnManager();
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     public static SceneManagerEx Scene { get { return Instance._scene; } }
     public static TurnManager TurnM { get { return Instance._Turn; } }
-    public static ResourceManager Resouce { get { return Instance._resouce; } }
+    public static ResourceManagerEX Resouce { get { return Instance._resouce; } }
     public static EventManager evt { get { return Instance._evt; } }
     public static YieldReturnManager Yield { get { return Instance._Yield; } }
     #endregion

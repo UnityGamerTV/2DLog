@@ -1,5 +1,5 @@
 using UnityEngine;
-public class ScrollDataComponent : MonoBehaviour
+public class ScrollDataComponent : BaseDataComponent
 {
     public int _no { get { return no; } set { no = value; } }
     [SerializeField] private int no;
