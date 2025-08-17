@@ -17,30 +17,68 @@ public class FieldManager : Singleton<FieldManager>, IManager
 
     public PlayerController _playerController { get { return playerController; } set { playerController = value; } }
     [SerializeField] private PlayerController playerController;
-
     public List<MonsterController> _monsterControllerList { get { return monsterControllerList; } set { monsterControllerList = value; } }
     [SerializeField] private List<MonsterController> monsterControllerList;
-
     public List<ItemController> _ItemControllerList { get { return itemControllerList; } set { itemControllerList = value; } }
     [SerializeField] private List<ItemController> itemControllerList;
 
+    // String 사용을 줄이기 위한 캐싱용
+    private Dictionary<string, string> itemPathDic;
+    private Dictionary<string, string> monsterPathDic;
+
     private Sprite[] itemSprites;
     private Sprite[] monsterSprites;
+
+    private readonly string ITEM_SPRITE_PATH = "Sprite/Item/Item";
+    private readonly string MONSTER_SPRITE_PATH = "Sprite/Monster/Monster";
+    private readonly string PLAYER_PATH = "Prefabs/Player/Player";
+    private readonly string ITEM_PATH = "Prefabs/Item/item";
+    private readonly string MONSTER_PATH = "Prefabs/Monster/monster";
 
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
 
-        monsterControllerList = new List<MonsterController>();
-        itemControllerList = new List<ItemController>();
+        monsterControllerList = new();
+        itemControllerList = new();
+        itemPathDic = new();
+        monsterPathDic = new();
 
-        itemSprites = resourceManager.LoadAll<Sprite>("Sprite/Item/Item");
-        monsterSprites = resourceManager.LoadAll<Sprite>("Sprite/Monster/Monster");
+        itemSprites = resourceManager.LoadAll<Sprite>(ITEM_SPRITE_PATH);
+        monsterSprites = resourceManager.LoadAll<Sprite>(MONSTER_SPRITE_PATH);
+        SetItemPathDic();
+        SetMonsterPathDic();
     }
+
+    private void SetItemPathDic()
+    {
+        string CONTROLLER_PATH = "Animations/Item/Controller";
+        var controllers = resourceManager.LoadAll<RuntimeAnimatorController>(CONTROLLER_PATH);
+
+        foreach (var item in controllers)
+        {
+            itemPathDic.Add(item.name, $"{CONTROLLER_PATH}/{item.name}");
+        }
+    }
+    private string GetItemPathDic(string spriteName) => itemPathDic[spriteName];
+
+    private void SetMonsterPathDic()
+    {
+        string CONTROLLER_PATH = "Animations/Monster/Controller";
+        var controllers = resourceManager.LoadAll<RuntimeAnimatorController>(CONTROLLER_PATH);
+
+        foreach (var monster in controllers)
+        {
+            monsterPathDic.Add(monster.name, $"{CONTROLLER_PATH}/{monster.name}");
+        }
+    }
+
+    private string GetMonsterPathDic(string spriteName) => monsterPathDic[spriteName];
+
 
     public void CreatePlayer(Vector3 worldPos, GameObject map)
     {
-        var player = resourceManager.Instantiate("Player/Player");
+        var player = resourceManager.Instantiate(PLAYER_PATH);
         var controller = player.GetComponent<PlayerController>();
         controller.Init();
         player.transform.position = worldPos;
@@ -50,16 +88,15 @@ public class FieldManager : Singleton<FieldManager>, IManager
 #if UNITY_EDITOR
         testManager._playerController = playerController;
 #endif
-
     }
 
     public void CreateItem(Vector3 worldPos, GameObject map, MapData mapData, int itemIndex)
     {
-        var item = resourceManager.Instantiate("Item/item");
+        var item = resourceManager.Instantiate(ITEM_PATH);
         SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Array.Find(itemSprites, sprite => sprite.name.Equals(mapData.itemList[itemIndex]));
         Animator animator = item.GetComponent<Animator>();
-        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"Animations/Item/{mapData.itemList[itemIndex]}");
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetItemPathDic(mapData.itemList[itemIndex]));
         var itemController = item.GetComponent<ItemController>();
         itemControllerList.Add(itemController);
 
@@ -105,13 +142,12 @@ public class FieldManager : Singleton<FieldManager>, IManager
     public void CreateMonster(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
     {
         // 생성
-        var monster = resourceManager.Instantiate("Monster/monster");
+        var monster = resourceManager.Instantiate(MONSTER_PATH);
         SpriteRenderer spriteRenderer = monster.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Array.Find(monsterSprites, sprite => sprite.name.Equals(mapData.monsterList[monsterIndex]));
         Animator animator = monster.GetComponent<Animator>();
         string spriteName = spriteRenderer.sprite.name;
-        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>($"Animations/Monster/{mapData.monsterList[monsterIndex]}");
-
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetMonsterPathDic(mapData.monsterList[monsterIndex]));
 #if UNITY_EDITOR
         testManager._animators.Add(animator);
 #endif

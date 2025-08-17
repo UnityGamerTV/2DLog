@@ -16,17 +16,14 @@ public class Manager : MonoBehaviour
 
     public void Init()
     {
-        //DataManager.SetupInstance();
-        //ResourceManager.SetupInstance();
-        //FieldManager.SetupInstance();
-        //MapManager.SetupInstance();
-
         DataManager.Instance.Init();
+        ObjectPoolManager.Instance.Init();
         ResourceManager.Instance.Init();
         TestManager.Instance.Init();
         FieldManager.Instance.Init();
         MapManager.Instance.Init();
         CameraManager.Instance.Init();
+        UIManager.Instance.Init();
     }
 
     public static void Release()

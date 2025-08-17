@@ -13,10 +13,17 @@ public class CameraManager : Singleton<CameraManager>, IManager
     [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
     [Singleton(typeof(ResourceManager))] private ResourceManager resourceManager;
 
+    public Camera _mainCamera { get { return mainCamera; } }
+    [SerializeField] private Camera mainCamera;
+
     [SerializeField] private CinemachineBrain cinemachineBrain;
     [SerializeField] private CinemachineVirtualCamera v1;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CancellationTokenSource cts;
+
+    private readonly string MAIN_CAMERA_PATH = "Prefabs/Camera/Main Camera";
+    private readonly string VCAM1_PATH = "Prefabs/Camera/CM vcam1";
+
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
@@ -31,12 +38,13 @@ public class CameraManager : Singleton<CameraManager>, IManager
         // 메인카메라 가상카메라 로드
         if (cinemachineBrain == null)
         {
-            GameObject mainCam = resourceManager.Instantiate("Camera/Main Camera");
+            GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
             cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+            mainCamera = mainCam.GetComponent<Camera>();
         }
         if (v1 == null)
         {
-            GameObject vcam1 = resourceManager.Instantiate("Camera/CM vcam1");
+            GameObject vcam1 = resourceManager.Instantiate(VCAM1_PATH);
             v1 = vcam1.GetComponent<CinemachineVirtualCamera>();
         }
 

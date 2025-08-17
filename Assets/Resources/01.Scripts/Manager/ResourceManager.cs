@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ResourceManager : Singleton<ResourceManager>, IManager
 {
+    [Singleton(typeof(ObjectPoolManager))] private ObjectPoolManager objectPoolManager;
+
     public void Init()
     {
-        
+        InjectUtil.InjectSingleton(this);
     }
 
     public T Load<T>(string path) where T : Object
@@ -21,7 +23,27 @@ public class ResourceManager : Singleton<ResourceManager>, IManager
 
     public GameObject Instantiate(string path, Transform parent = null)
     {
-        GameObject prefab = Load<GameObject>($"Prefabs/{path}");
+        var prefab = Load<GameObject>(path);
+        if (prefab == null)
+        {
+            LogUtil.Log($"Failed to load prefab : {path}");
+            return null;
+        }
+
+        var poolObj = objectPoolManager.GetObjPool(prefab.name);
+        if (poolObj && !poolObj.activeSelf)
+            return poolObj;
+        else
+        {
+            GameObject go = Object.Instantiate(prefab, parent);
+            go.name = prefab.name;
+            return go;
+        }
+    }
+
+    public GameObject InstantiateChashingPath(string path, Transform parent = null)
+    {
+        GameObject prefab = Load<GameObject>(path);
         if (prefab == null)
         {
             LogUtil.Log($"Failed to load prefab : {path}");
@@ -29,12 +51,9 @@ public class ResourceManager : Singleton<ResourceManager>, IManager
         }
 
         GameObject go = Object.Instantiate(prefab, parent);
-        int index = go.name.IndexOf("(Clone)");
-        if (index > 0)
-            go.name = go.name.Substring(0, index);
+        go.name = prefab.name;
 
         return go;
-
     }
 
     public void Destroy(GameObject go)

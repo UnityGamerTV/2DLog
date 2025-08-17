@@ -23,17 +23,18 @@ public partial class MapManager : Singleton<MapManager>, IManager
     [Singleton(typeof(CameraManager))] private CameraManager cameraManager;
 
     public Grid currentGrid { get; private set; }
-    private GameObject map;
-    private Tilemap baseTilemap;
-    private MapData mapData;
+    public GameObject _map { get { return map; } set { map = value; } }
+    [SerializeField] private GameObject map;
+
+    [SerializeField] private Tilemap baseTilemap;
+    [SerializeField] private MapData mapData;
 
     // 
-    private bool[,] isCollision;
-    private PLAYER_POS playerPos;
-
+    [SerializeField] private bool[,] isCollision;
+    [SerializeField] private PLAYER_POS playerPos;
     // 아이템
-    bool[,] isItem;
-    bool[,] isMonster;
+    [SerializeField] bool[,] isItem;
+    [SerializeField] bool[,] isMonster;
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
@@ -52,7 +53,7 @@ public partial class MapManager : Singleton<MapManager>, IManager
     {
         //    //string userInput = "Map/Base2/Map_001";
         // 프리팹 이하 경로
-        string path = $"Map/{mapName}/{mapNum}";
+        string path = $"Prefabs/Map/{mapName}/{mapNum}";
         return resourceManager.Instantiate(path);
     }
 

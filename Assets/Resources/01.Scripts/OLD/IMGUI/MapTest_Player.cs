@@ -6,18 +6,25 @@ using UnityEditor;
 
 public class MapTest_Player : MonoBehaviour
 {
-    bool showTextField = false;
-    string userInput1 = "helmet1";
-    string userInput2 = "leader armour1";
-    string userInput3 = "shield1";
+    private bool showTextField = false;
+    private bool offGUI = false;
+    private string userInput1 = "helmet1";
+    private string userInput2 = "leader armour1";
+    private string userInput3 = "shield1";
     public GameObject map;
+
+    [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
+
     private void OnGUI()
     {
+        if (offGUI)
+            return;
+
         // Make a background box
         GUIStyle boxStyle = new GUIStyle(GUI.skin.box);
         boxStyle.fontSize = 30;
 
-        GUI.Box(new Rect(870, 10, 200, 200), "Player Test", boxStyle);
+        GUI.Box(new Rect(870, 10, 200, 450), "Player Test", boxStyle);
 
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
         buttonStyle.fontSize = 30;
@@ -25,6 +32,11 @@ public class MapTest_Player : MonoBehaviour
         if (GUI.Button(new Rect(880, 80, 180, 100), "ChangeItem", buttonStyle))
         {
             showTextField = true;
+        }
+
+        if (GUI.Button(new Rect(880, 80, 300, 100), "Off GUI", buttonStyle))
+        {
+            offGUI = true;
         }
 
         GUIStyle textFieldStyle = new GUIStyle(GUI.skin.textField);
@@ -51,16 +63,11 @@ public class MapTest_Player : MonoBehaviour
 
     private void ChangeEquipmentItem(string userInput1,  string userInput2, string userInput3)
     {
-        var player = GameObject.Find("Player(Clone)");
-        var playerController = player.GetComponent<PlayerController>();
+        InjectUtil.InjectSingleton(this);
 
-        playerController.EquipHelmet(userInput1);
-        playerController.EquipArmour(userInput2);
-        playerController.EquipShield(userInput3);
-
-        // 만약 씽크가 맞지 않더라도 큰 문제는 없음
-        // 테스트 코드이고, 인게임에서는 각각 아이템을 한개씩 순차적으로 착용하기 때문
-        //playerController.SetAnimation(userInput1, userInput2, userInput3);
+        fieldManager._playerController.EquipHelmet(userInput1);
+        fieldManager._playerController.EquipArmour(userInput2);
+        fieldManager._playerController.EquipShield(userInput3);
     }
 
 }

@@ -7,19 +7,25 @@ using UnityEngine;
 public class MapTest : MonoBehaviour
 {
     bool showTextField = false;
+    bool offGUI = false;
     //string userInput = "Map/Base2/Map_001";
     string userInput = "Base2";
     string userInput2 = "Map_001";
 
     [Singleton(typeof(TestManager))] private TestManager testManager;
+    [Singleton(typeof(MapManager))] private MapManager mapManager;
+    [Singleton(typeof(UIManager))] private UIManager uiManager;
 
     private void OnGUI()
     {
+        if (offGUI)
+            return;
+
         // Make a background box
         GUIStyle boxStyle = new GUIStyle(GUI.skin.box);
         boxStyle.fontSize = 30;
 
-        GUI.Box(new Rect(10, 10, 200, 580), "Map Test", boxStyle);
+        GUI.Box(new Rect(10, 10, 200, 780), "Map Test", boxStyle);
 
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
         buttonStyle.fontSize = 30;
@@ -42,6 +48,11 @@ public class MapTest : MonoBehaviour
         if (GUI.Button(new Rect(20, 440, 180, 100), "NextAnim", buttonStyle))
         {
             NextMobAnim();
+        }
+
+        if (GUI.Button(new Rect(20, 560, 180, 100), "OFF GUI", buttonStyle))
+        {
+            offGUI = true;
         }
 
         GUIStyle textFieldStyle = new GUIStyle(GUI.skin.textField);
@@ -142,24 +153,21 @@ public class MapTest : MonoBehaviour
         }
     }
 
-    [Singleton(typeof(MapManager))] private MapManager mapManager;
-
-    GameObject map;
-
     public void LoadMap(string mapName, string mapNum)
     {
         InjectUtil.InjectSingleton(this);
 
         mapManager.GenerateMap(mapName, mapNum);
+
+        uiManager.ShowSceneUI<UI_Bottom_BaseController>(UI_SCENE_ENUM.UI_Bottom_Base);
+        uiManager.ShowSceneUI<UI_Bottom_DirController>(UI_SCENE_ENUM.UI_Bottom_Dir);
     }
 
     public void DestroyMap()
     {
-        GameObject findMap = GameObject.Find(map.name);
-        if (findMap != null)
-        {
-            GameObject.Destroy(findMap);
-        }
+        GameObject.Destroy(mapManager._map);
+
+        testManager.ResetAnim();
     }
 
     public void NextMobAnim()

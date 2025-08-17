@@ -114,7 +114,7 @@ public class DataManager : Singleton<DataManager>, IManager
             targetDic.Add(data._nickName, data);
         }
 
-        LogUtil.Log($"✅ {typeof(T).Name} {dataList.Count}개 로드됨");
+        LogUtil.Log($" {typeof(T).Name} {dataList.Count}개 로드됨");
     }
 
     private void LoadMonsterData()

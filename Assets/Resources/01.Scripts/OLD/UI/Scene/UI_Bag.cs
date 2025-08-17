@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Bag : UI_Scene
+public class UI_Bag : UI_SceneEX
 {
     //인벤토리좌표관련
     List<int> rPosX = new List<int>();

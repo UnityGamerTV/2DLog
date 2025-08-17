@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Inven_Empty : UI_Base
+public class UI_Inven_Empty : UI_BaseEX
 {
     enum GameObjects
     {

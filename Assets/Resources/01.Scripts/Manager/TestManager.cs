@@ -35,6 +35,12 @@ public class TestManager : Singleton<TestManager>, IManager
             StateNum = 0;
         }
     }
+
+    public void ResetAnim()
+    {
+        animators.Clear();
+    }
+
     public void Release()
     {
         

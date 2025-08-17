@@ -341,6 +341,7 @@ MonoBehaviour:
   helmetType: 0
   armourType: 0
   shieldType: 0
+  playerState: 0
 --- !u!1 &4820278775661630303
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +389,7 @@ MonoBehaviour:
   helmetType: 0
   armourType: 0
   shieldType: 0
+  playerState: 0
 --- !u!1 &4975650674974696276
 GameObject:
   m_ObjectHideFlags: 0

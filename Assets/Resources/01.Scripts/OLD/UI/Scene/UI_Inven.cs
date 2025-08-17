@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_Inven : UI_Scene
+public class UI_Inven : UI_SceneEX
 {
     //인벤토리좌표관련
     List<int> rPosX = new List<int>();

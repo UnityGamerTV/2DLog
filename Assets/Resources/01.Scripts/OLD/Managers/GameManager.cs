@@ -8,14 +8,14 @@ public class GameManager : MonoBehaviour
     #region Contents
     MapManagerEX _map = new MapManagerEX();
     ObjectManager _obj = new ObjectManager();
-    UIManager _ui = new UIManager();
+    UIManagerEX _ui = new UIManagerEX();
     SummonManager _summon = new SummonManager();
     DataManagerEX _data = new DataManagerEX();
     InvenManager _inven = new InvenManager();
 
     public static MapManagerEX Map { get { return Instance._map; } }
     public static ObjectManager Obj { get { return Instance._obj; } }
-    public static UIManager Ui { get { return Instance._ui; } }
+    public static UIManagerEX Ui { get { return Instance._ui; } }
     public static SummonManager Summon { get { return Instance._summon; } }
     public static DataManagerEX Data { get { return Instance._data; } }
     public static InvenManager Inven { get { return Instance._inven; } }

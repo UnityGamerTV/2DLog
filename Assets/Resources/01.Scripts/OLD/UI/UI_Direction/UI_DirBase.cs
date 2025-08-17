@@ -1,6 +1,6 @@
 ﻿using static Define;
 
-public class UI_DirBase : UI_Scene
+public class UI_DirBase : UI_SceneEX
 {
     protected MoveDir _dir = MoveDir.None;
     protected MoveDir Dir
