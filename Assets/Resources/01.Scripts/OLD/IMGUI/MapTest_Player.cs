@@ -24,7 +24,7 @@ public class MapTest_Player : MonoBehaviour
         GUIStyle boxStyle = new GUIStyle(GUI.skin.box);
         boxStyle.fontSize = 30;
 
-        GUI.Box(new Rect(870, 10, 200, 450), "Player Test", boxStyle);
+        GUI.Box(new Rect(870, 10, 200, 400), "Player Test", boxStyle);
 
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
         buttonStyle.fontSize = 30;
@@ -34,7 +34,7 @@ public class MapTest_Player : MonoBehaviour
             showTextField = true;
         }
 
-        if (GUI.Button(new Rect(880, 80, 300, 100), "Off GUI", buttonStyle))
+        if (GUI.Button(new Rect(880, 200, 180, 100), "Off GUI", buttonStyle))
         {
             offGUI = true;
         }

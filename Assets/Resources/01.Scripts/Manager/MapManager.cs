@@ -88,9 +88,9 @@ public partial class MapManager : Singleton<MapManager>, IManager
         MapData mapData = JsonConvert.DeserializeObject<MapData>(jsonContent);
 
         // 로그
-        Debug.Log($"Map Name: {mapData.name}");
-        Debug.Log($"Bounds: xMin={mapData.bounds.xMin}, xMax={mapData.bounds.xMax}, yMin={mapData.bounds.yMin}, yMax={mapData.bounds.yMax}");
-        Debug.Log("Monster List:");
+        LogUtil.Log($"Map Name: {mapData.name}");
+        LogUtil.Log($"Bounds: xMin={mapData.bounds.xMin}, xMax={mapData.bounds.xMax}, yMin={mapData.bounds.yMin}, yMax={mapData.bounds.yMax}");
+        LogUtil.Log("Monster List:");
         foreach (var monster in mapData.monsterList)
         {
             LogUtil.Log(monster);
@@ -142,8 +142,8 @@ public partial class MapManager : Singleton<MapManager>, IManager
         }
 
         // 
-        Debug.Log($"Bounds: xMin={xMin}, xMax={xMax}, yMin={yMin}, yMax={yMax}");
-        Debug.Log("Collision Tiles:");
+        LogUtil.Log($"Bounds: xMin={xMin}, xMax={xMax}, yMin={yMin}, yMax={yMax}");
+        LogUtil.Log("Collision Tiles:");
 
         // 보정
         int xCount = xMax - xMin + 1;

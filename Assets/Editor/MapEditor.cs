@@ -65,7 +65,7 @@ public class MapEditor
             // 에셋 데이터베이스 새로고침
             AssetDatabase.Refresh();
 
-            Debug.Log($"Map JSON 저장됨: {path}");
+            LogUtil.Log($"Map JSON 저장됨: {path}");
         }
     }
 

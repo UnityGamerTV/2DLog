@@ -161,6 +161,9 @@ public class MapTest : MonoBehaviour
 
         uiManager.ShowSceneUI<UI_Bottom_BaseController>(UI_SCENE_ENUM.UI_Bottom_Base);
         uiManager.ShowSceneUI<UI_Bottom_DirController>(UI_SCENE_ENUM.UI_Bottom_Dir);
+        uiManager.ShowSceneUI<UI_Bottom_HotkeyController>(UI_SCENE_ENUM.UI_Bottom_Hotkey);
+        uiManager.ShowSceneUI<UI_Top_VitalContoller>(UI_SCENE_ENUM.UI_Top_Vital);
+        uiManager.ShowSceneUI<UI_Top_CurrencyController>(UI_SCENE_ENUM.UI_Top_Currency);
     }
 
     public void DestroyMap()

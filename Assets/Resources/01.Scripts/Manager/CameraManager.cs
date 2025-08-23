@@ -38,9 +38,25 @@ public class CameraManager : Singleton<CameraManager>, IManager
         // 메인카메라 가상카메라 로드
         if (cinemachineBrain == null)
         {
-            GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
-            cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
-            mainCamera = mainCam.GetComponent<Camera>();
+            // TODO 테스트용 임시 코드
+            var tempCam = GameObject.Find("Main Camera");
+            if (tempCam == null)
+            {
+                GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
+                cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+                mainCamera = mainCam.GetComponent<Camera>();
+            }
+            else
+            {
+                cinemachineBrain = tempCam.GetComponent<CinemachineBrain>();
+                mainCamera = tempCam.GetComponent<Camera>();
+            }
+            // 테스트용 임시 코드 끝
+
+            // 원본코드
+            //GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
+            //cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+            //mainCamera = mainCam.GetComponent<Camera>();
         }
         if (v1 == null)
         {
