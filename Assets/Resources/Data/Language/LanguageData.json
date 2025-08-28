@@ -610,72 +610,72 @@
     "_en": "Shield Engraved with the Royal Emblem"
   },
   {
-    "_key": "Robe1",
+    "_key": "robe1",
     "_ko": "로브",
     "_en": "Robe"
   },
   {
-    "_key": "Robe2",
+    "_key": "robe2",
     "_ko": "로브",
     "_en": "Robe"
   },
   {
-    "_key": "Robe4",
+    "_key": "robe4",
     "_ko": "마법사 로브",
     "_en": "Wizard's Robe"
   },
   {
-    "_key": "Robe5",
+    "_key": "robe5",
     "_ko": "도사의 의복",
     "_en": "Sage's Garment"
   },
   {
-    "_key": "Robe6",
+    "_key": "robe6",
     "_ko": "빛의 로브",
     "_en": "Robe of Light"
   },
   {
-    "_key": "Robe7",
+    "_key": "robe7",
     "_ko": "어둠의 로브",
     "_en": "Robe of Darkness"
   },
   {
-    "_key": "Robe3",
+    "_key": "robe3",
     "_ko": "로브",
     "_en": "Robe"
   },
   {
-    "_key": "Robe1_comment",
+    "_key": "robe1_comment",
     "_ko": "가벼운 천으로 만든 옷.",
     "_en": "A garment made of light fabric"
   },
   {
-    "_key": "Robe2_comment",
+    "_key": "robe2_comment",
     "_ko": "가벼운 천으로 만든 옷.",
     "_en": "A garment made of light fabric"
   },
   {
-    "_key": "Robe4_comment",
+    "_key": "robe4_comment",
     "_ko": "마법사가 사용하는 로브.",
     "_en": "A robe worn by wizards"
   },
   {
-    "_key": "Robe5_comment",
+    "_key": "robe5_comment",
     "_ko": "도사가 사용하는 옷.",
     "_en": "A garment worn by sages"
   },
   {
-    "_key": "Robe6_comment",
+    "_key": "robe6_comment",
     "_ko": "빛의 기운을 간직한 로브.",
     "_en": "A robe imbued with the essence of light"
   },
   {
-    "_key": "Robe7_comment",
+    "_key": "robe7_comment",
     "_ko": "어둠의 기운을 간직한 로브.",
     "_en": "A robe imbued with the essence of darknes"
   },
   {
-    "_key": "Robe3_comment",
+    "_key": "robe3_comment",
     "_ko": "가벼운 천으로 만든 옷.",
     "_en": "A garment made of light fabric"
   },
@@ -1500,7 +1500,7 @@
     "_en": "Armor made from troll leather"
   },
   {
-    "_key": "black box",
+    "_key": "blackbox",
     "_ko": "검은 상자",
     "_en": "Black Box"
   },
@@ -1530,7 +1530,7 @@
     "_en": "Gold Pouch"
   },
   {
-    "_key": "black box_comment",
+    "_key": "blackbox_comment",
     "_ko": "사용하면 무엇인가 나올 것 같다.",
     "_en": "It feels like something will come out when used"
   },
@@ -2305,7 +2305,7 @@
     "_en": "Ice Spear"
   },
   {
-    "_key": "venom4",
+    "_key": "poison4",
     "_ko": "맹독 폭풍",
     "_en": "Poison Storm"
   },
@@ -2380,27 +2380,27 @@
     "_en": "Ice Arrow"
   },
   {
-    "_key": "venom1",
+    "_key": "poison1",
     "_ko": "독침",
     "_en": "Poison Sting"
   },
   {
-    "_key": "venom2",
+    "_key": "poison2",
     "_ko": "맹독의 구",
     "_en": "Orb of Venom"
   },
   {
-    "_key": "venom3",
+    "_key": "poison3",
     "_ko": "독 바르기",
     "_en": "Apply Poison"
   },
   {
-    "_key": "venom5",
+    "_key": "poison5",
     "_ko": "맹독 폭탄",
     "_en": "Poison Bomb"
   },
   {
-    "_key": "venom6",
+    "_key": "poison6",
     "_ko": "맹독 구름",
     "_en": "Poison Cloud"
   },
@@ -2490,7 +2490,7 @@
     "_en": "Launches an ice spear at the enemy"
   },
   {
-    "_key": "venom4_comment",
+    "_key": "poison4_comment",
     "_ko": "거대한 맹독 폭풍을 일으킨다",
     "_en": "Unleashes a massive poison storm"
   },
@@ -2565,27 +2565,27 @@
     "_en": "Attacks the enemy with an ice arrow"
   },
   {
-    "_key": "venom1_comment",
+    "_key": "poison1_comment",
     "_ko": "독침으로 적을 공격한다",
     "_en": "Attacks the enemy with a poison sting"
   },
   {
-    "_key": "venom2_comment",
+    "_key": "poison2_comment",
     "_ko": "둥그런 맹독으로 적을 공격한다",
     "_en": "Attacks the enemy with a venomous orb"
   },
   {
-    "_key": "venom3_comment",
+    "_key": "poison3_comment",
     "_ko": "무기에 맹독을 바른다",
     "_en": "Coats the weapon with poison"
   },
   {
-    "_key": "venom5_comment",
+    "_key": "poison5_comment",
     "_ko": "맹독으로 만든 폭탄을 터트려서 공격한다",
     "_en": "Detonates a poison bomb to attack"
   },
   {
-    "_key": "venom6_comment",
+    "_key": "poison6_comment",
     "_ko": "넓은 범위에 맹독 구름을 소환한다",
     "_en": "Summons a poison cloud over a wide area"
   },

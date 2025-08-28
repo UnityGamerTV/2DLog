@@ -121,20 +121,20 @@ shield7_comment,무지막지하게 큰 방패,Colossally Large Shield
 shield8_comment,죽음의 기운이 깃든 방패,Shield Imbued with the Aura of Death
 shield9_comment,기사가 사용하는 방패,Shield Used by Knights
 shield10_comment,왕가의 문양이 새겨진 방패,Shield Engraved with the Royal Emblem
-Robe1,로브,Robe
-Robe2,로브,Robe
-Robe4,마법사 로브,Wizard's Robe
-Robe5,도사의 의복,Sage's Garment
-Robe6,빛의 로브,Robe of Light
-Robe7,어둠의 로브,Robe of Darkness
-Robe3,로브,Robe
-Robe1_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
-Robe2_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
-Robe4_comment,마법사가 사용하는 로브.,A robe worn by wizards
-Robe5_comment,도사가 사용하는 옷.,A garment worn by sages
-Robe6_comment,빛의 기운을 간직한 로브.,A robe imbued with the essence of light
-Robe7_comment,어둠의 기운을 간직한 로브.,A robe imbued with the essence of darknes
-Robe3_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
+robe1,로브,Robe
+robe2,로브,Robe
+robe4,마법사 로브,Wizard's Robe
+robe5,도사의 의복,Sage's Garment
+robe6,빛의 로브,Robe of Light
+robe7,어둠의 로브,Robe of Darkness
+robe3,로브,Robe
+robe1_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
+robe2_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
+robe4_comment,마법사가 사용하는 로브.,A robe worn by wizards
+robe5_comment,도사가 사용하는 옷.,A garment worn by sages
+robe6_comment,빛의 기운을 간직한 로브.,A robe imbued with the essence of light
+robe7_comment,어둠의 기운을 간직한 로브.,A robe imbued with the essence of darknes
+robe3_comment,가벼운 천으로 만든 옷.,A garment made of light fabric
 mace5,메이스,Mace
 mace3,플레일,Flail
 mace1,모닝스타,Morning Star
@@ -299,13 +299,13 @@ scalemail2_comment,가죽에 금속판을 덧댄 갑옷,Leather armor reinforced
 chainmail3_comment,금속 고리로 만들어진 갑옷,Armor made of interlocking metal rings
 crystalplatemail2_comment,수정 판금으로 만들어진 갑옷,Plate armor crafted from crystal
 troll leader armour2_comment,트롤 가죽으로 만든 갑옷,Armor made from troll leather
-black box,검은 상자,Black Box
+blackbox,검은 상자,Black Box
 deck1,카드 뭉치,Card Pack
 deck2,마법 카드 뭉치,Magic Card Pack
 deck3,전설 카드 뭉치,Legendary Card Pack
 gold1,골드,Gold
 gold2,골드 뭉치,Gold Pouch
-black box_comment,사용하면 무엇인가 나올 것 같다.,It feels like something will come out when used
+blackbox_comment,사용하면 무엇인가 나올 것 같다.,It feels like something will come out when used
 deck1_comment,사용하면 무슨 일이 생길 것 같다.,It feels like something will happen when used
 deck2_comment,사용하면 무슨 일이 생길 것 같다.,It feels like something will happen when used
 deck3_comment,사용하면 좋은 일이 생길 것 같다.,It feels like something will happen when used
@@ -460,7 +460,7 @@ cold3,냉기 폭풍,Frost Storm
 sum6,대악마 소환,Summon Archdemon
 fire1,화염 창,Flame Spear
 cold5,얼음 창,Ice Spear
-venom4,맹독 폭풍,Poison Storm
+poison4,맹독 폭풍,Poison Storm
 earth4,대지의 수정창,Crystal Spear of Earth
 nec5,저주,Curse
 nec6,악마 변신,Demonic Transformation
@@ -475,11 +475,11 @@ cold2,냉기의 손길,Touch of Frost
 cold6,차가운 회복,Cold Recovery
 cold7,급속 냉각,Rapid Chill
 cold8,얼음 화살,Ice Arrow
-venom1,독침,Poison Sting
-venom2,맹독의 구,Orb of Venom
-venom3,독 바르기,Apply Poison
-venom5,맹독 폭탄,Poison Bomb
-venom6,맹독 구름,Poison Cloud
+poison1,독침,Poison Sting
+poison2,맹독의 구,Orb of Venom
+poison3,독 바르기,Apply Poison
+poison5,맹독 폭탄,Poison Bomb
+poison6,맹독 구름,Poison Cloud
 earth5,모래 바람,Sandstorm
 earth1,암석 화살,Stone Arrow
 earth2,마비의 눈,Eye of Paralysis
@@ -497,7 +497,7 @@ cold3_comment,거대한 냉기 폭풍을 일으킨다,Summons a massive frost st
 sum6_comment,대악마를 소환한다,Summons an archdemon
 fire1_comment,화염창을 적에게 발사한다,Launches a flame spear at the enemy
 cold5_comment,얼음창을 적에게 발사한다,Launches an ice spear at the enemy
-venom4_comment,거대한 맹독 폭풍을 일으킨다,Unleashes a massive poison storm
+poison4_comment,거대한 맹독 폭풍을 일으킨다,Unleashes a massive poison storm
 earth4_comment,수정창을 적에게 발사한다,Fires a crystal spear at the enemy
 nec5_comment,적에게 저주를 건다,Casts a curse on the enemy
 nec6_comment,강력한 악마로 변신을 한다,Transforms into a powerful demon
@@ -512,11 +512,11 @@ cold2_comment,냉기를 이용해서 적을 공격한다,Attacks the enemy using
 cold6_comment,냉기의 힘으로 체력을 회복한다,Recovers health using the power of frost
 cold7_comment,차가운 냉기로 적을 얼린다,Freezes the enemy with chilling cold
 cold8_comment,얼음 화살로 적을 공격한다,Attacks the enemy with an ice arrow
-venom1_comment,독침으로 적을 공격한다,Attacks the enemy with a poison sting
-venom2_comment,둥그런 맹독으로 적을 공격한다,Attacks the enemy with a venomous orb
-venom3_comment,무기에 맹독을 바른다,Coats the weapon with poison
-venom5_comment,맹독으로 만든 폭탄을 터트려서 공격한다,Detonates a poison bomb to attack
-venom6_comment,넓은 범위에 맹독 구름을 소환한다,Summons a poison cloud over a wide area
+poison1_comment,독침으로 적을 공격한다,Attacks the enemy with a poison sting
+poison2_comment,둥그런 맹독으로 적을 공격한다,Attacks the enemy with a venomous orb
+poison3_comment,무기에 맹독을 바른다,Coats the weapon with poison
+poison5_comment,맹독으로 만든 폭탄을 터트려서 공격한다,Detonates a poison bomb to attack
+poison6_comment,넓은 범위에 맹독 구름을 소환한다,Summons a poison cloud over a wide area
 earth5_comment,작은 모래 바람으로 적을 공격한다,Attacks the enemy with a small sandstorm
 earth1_comment,암석 화살로 적을 공격한다,Attacks the enemy with a stone arrow
 earth2_comment,적을 마비 시킨다,Paralyzes the enemy

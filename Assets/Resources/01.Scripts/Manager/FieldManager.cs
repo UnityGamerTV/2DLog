@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -93,9 +92,9 @@ public class FieldManager : Singleton<FieldManager>, IManager
     public void CreateItem(Vector3 worldPos, GameObject map, MapData mapData, int itemIndex)
     {
         var item = resourceManager.Instantiate(ITEM_PATH);
-        SpriteRenderer spriteRenderer = item.GetComponent<SpriteRenderer>();
+        var spriteRenderer = item.GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = Array.Find(itemSprites, sprite => sprite.name.Equals(mapData.itemList[itemIndex]));
-        Animator animator = item.GetComponent<Animator>();
+        var animator = item.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetItemPathDic(mapData.itemList[itemIndex]));
         var itemController = item.GetComponent<ItemController>();
         itemControllerList.Add(itemController);
@@ -137,6 +136,19 @@ public class FieldManager : Singleton<FieldManager>, IManager
         item.transform.position = worldPos;
         item.name = mapData.itemList[itemIndex];
         item.transform.SetParent(map.transform);
+    }
+
+    public GameObject CreateItemObj(Vector3 worldPos, GameObject map, MapData mapData, int itemIndex)
+    {
+        var item = resourceManager.Instantiate(ITEM_PATH);
+        var spriteRenderer = item.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = Array.Find(itemSprites, sprite => sprite.name.Equals(mapData.itemList[itemIndex]));
+        var animator = item.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetItemPathDic(mapData.itemList[itemIndex]));
+        var itemController = item.GetComponent<ItemController>();
+        itemControllerList.Add(itemController);
+
+        return item;
     }
 
     public void CreateMonster(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)

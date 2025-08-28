@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: wolf Ware
+  m_Name: Wolf Ware
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1421101409, guid: a307a6729ecac974ea9d7c583111b274, type: 3}
+  m_Sprite: {fileID: 583700025, guid: 05e82d462ed9ef947a3e38232dcb4c08, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

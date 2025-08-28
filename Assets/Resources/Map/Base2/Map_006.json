@@ -39,8 +39,6 @@
     "helmet10",
     "helmet11",
     "helmet12",
-    "leader armour1",
-    "leader armour2",
     "ringmail1",
     "helmet4",
     "helmet5",
@@ -60,16 +58,11 @@
     "scalemail2",
     "chainmail1",
     "chainmail2",
-    "dragon armour2",
-    "dragon armour3",
-    "dragon armour4",
-    "dragon armour5",
     "boot1",
     "boot2",
     "boot3",
     "glove1",
     "glove2",
-    "glove3",
     "chainmail3",
     "platemail1",
     "platemail2",
@@ -92,8 +85,7 @@
     "robe2",
     "robe3",
     "troll leader armour1",
-    "troll leader armour2",
-    "dragon armour1"
+    "troll leader armour2"
   ],
   "monsterList": []
 }

@@ -21,6 +21,7 @@ public class Manager : MonoBehaviour
         ResourceManager.Instance.Init();
         TestManager.Instance.Init();
         FieldManager.Instance.Init();
+        FactoryManager.Instance.Init();
         MapManager.Instance.Init();
         CameraManager.Instance.Init();
         UIManager.Instance.Init();

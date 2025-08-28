@@ -12,7 +12,7 @@ public enum ItemDataType
 }
 
 
-public class ItemController : MonoBehaviour, IController
+public class ItemController : FieldObjBase, IController
 {
 
     public ItemDataType _itemDataType { get { return itemDataType; } set { itemDataType = value; } }

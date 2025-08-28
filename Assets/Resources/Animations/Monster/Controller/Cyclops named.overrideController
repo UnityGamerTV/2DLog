@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cyclops named
+  m_Name: Cyclops Named
   m_Controller: {fileID: 9100000, guid: a204af652c5c6724d97228c5c8b94667, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 25546eebe453bfb40b7de1774746bccf, type: 2}
