@@ -47,7 +47,7 @@ public class SummonManager
                 y = sumPos.y
             };
 
-            MonsterController mc = Slim.GetComponent<MonsterController>();
+            MonsterControllerEX mc = Slim.GetComponent<MonsterControllerEX>();
             mc.CellPos = pos;
 
             GameManager.Obj.Add(Slim);

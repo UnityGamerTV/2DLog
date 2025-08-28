@@ -231,7 +231,7 @@ public class PlayerController2 : CreatureController
         {
             playerStat ps = GetComponent<playerStat>();
             int damage = UnityEngine.Random.Range(ps.MinAttack, ps.MaxAttack + 1);
-            MonsterController mc = go.GetComponent<MonsterController>();
+            MonsterControllerEX mc = go.GetComponent<MonsterControllerEX>();
             mc.OnDamaged(damage);
         }
         // 대기시간

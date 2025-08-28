@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerController : MonoBehaviour,IController
+public class PlayerController : FieldObjBase, IController
 {
     [SerializeField] private PlayerService service;
 

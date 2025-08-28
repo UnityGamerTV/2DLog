@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Define;
 
-public class MonsterController : CreatureController
+public class MonsterControllerEX : CreatureController
 {
 
     //MonsterIdleState _monIdleState = MonsterIdleState.None;

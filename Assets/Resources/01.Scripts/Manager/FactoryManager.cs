@@ -1,18 +1,37 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 /// <summary>
-/// ÆÑÅä¸®¸¦ °ü¸®ÇÏ´Â ¸Å´ÏÀú 
+/// íŒ©í† ë¦¬ë¥¼ ê´€ë¦¬í•˜ëŠ” ë§¤ë‹ˆì € 
 /// </summary>
 public class FactoryManager : Singleton<FactoryManager>, IManager
 {
+    [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
+
+    public FactoryBase _itemFactory { get { return itemFactory; } set { itemFactory = value; } }
     [SerializeField] private FactoryBase itemFactory;
+    public FactoryBase _monsterFactory { get { return monsterFactory; } set { monsterFactory = value; } }
     [SerializeField] private FactoryBase monsterFactory;
+    public FactoryBase _playerFactory { get { return playerFactory; } set { playerFactory = value; } }
+    [SerializeField] private FactoryBase playerFactory;
 
     public void Init()
     {
-        // TODO ¼ö°¡ ´Ã¾î³ª¸é ·çÇÁÃ³¸®
+        InjectUtil.InjectSingleton(this);
+
+        // TODO ìˆ˜ê°€ ëŠ˜ì–´ë‚˜ë©´ ë£¨í”„ì²˜ë¦¬
         itemFactory = new ItemFactory();
         itemFactory.Init();
+
+        monsterFactory = new MonsterFactory();
+        monsterFactory.Init();
+
+        playerFactory = new PlayerFactory();
+        playerFactory.Init();
+
+        // ì˜ì¡´ì„± ì£¼ì…
+        fieldManager._itemFactory = _itemFactory;
+        fieldManager._monsterFactory = monsterFactory;
+        fieldManager._playerFactory = playerFactory;
     }
 
     public void Release()

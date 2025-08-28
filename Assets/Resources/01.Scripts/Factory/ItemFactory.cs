@@ -20,6 +20,8 @@ public class ItemFactory : FactoryBase
     {
         InjectUtil.InjectSingleton(this);
 
+        itemPathDic = new();
+
         itemSprites = resourceManager.LoadAll<Sprite>(ITEM_SPRITE_PATH);
         SetItemPathDic();
     }
