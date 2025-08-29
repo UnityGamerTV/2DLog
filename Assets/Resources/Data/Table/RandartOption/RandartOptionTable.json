@@ -1,0 +1,12 @@
+﻿[
+  {
+    "_range": "Option1",
+    "_startNum": "1",
+    "_endNum": "11"
+  },
+  {
+    "_range": "Option2",
+    "_startNum": "12",
+    "_endNum": "22"
+  }
+]
