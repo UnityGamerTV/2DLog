@@ -1,9 +1,9 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-/// TODO ÃßÈÄ ½Ã°£µÇ¸é string À» enumÀ¸·Î ±³Ã¼
+/// TODO ì¶”í›„ ì‹œê°„ë˜ë©´ string ì„ enumìœ¼ë¡œ êµì²´
 public class ObjectPoolManager : Singleton<ObjectPoolManager>, IManager
 {
     [SerializeField] private List<GameObject> objPool;

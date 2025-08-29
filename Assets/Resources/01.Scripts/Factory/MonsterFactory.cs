@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AnimationImporter.PyxelEdit;
 using UnityEngine;
 
 public class MonsterFactory : FactoryBase
@@ -8,11 +9,12 @@ public class MonsterFactory : FactoryBase
     [Singleton(typeof(ResourceManager))] private ResourceManager resourceManager;
     [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
     [Singleton(typeof(DataManager))] private DataManager dataManager;
+    [Singleton(typeof(ObjectPoolManager))] private ObjectPoolManager objectPoolManager;
 #if UNITY_EDITOR
     [Singleton(typeof(TestManager))] private TestManager testManager;
 #endif
-    private readonly string MONSTER_SPRITE_PATH = "Sprite/Monster/Monster";
     private readonly string MONSTER_PATH = "Prefabs/Monster/monster";
+    private readonly string MONSTER_SPRITE_PATH = "Sprite/Monster/Monster";
 
     private Sprite[] monsterSprites;
 
@@ -29,34 +31,6 @@ public class MonsterFactory : FactoryBase
         SetMonsterPathDic();
     }
 
-
-    public FieldObjBase CreateObj(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
-    {
-        // 생성
-        var monster = resourceManager.Instantiate(MONSTER_PATH);
-        SpriteRenderer spriteRenderer = monster.GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = Array.Find(monsterSprites, sprite => sprite.name.Equals(mapData.monsterList[monsterIndex]));
-        Animator animator = monster.GetComponent<Animator>();
-        string spriteName = spriteRenderer.sprite.name;
-        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetMonsterPathDic(mapData.monsterList[monsterIndex]));
-        var monsterController = monster.GetComponent<MonsterController>();
-#if UNITY_EDITOR
-        testManager._animators.Add(animator);
-#endif
-
-        // 데이터 입력
-        MonsterData monsterData = dataManager.AddMonsterData(spriteName);
-        var myMonsterData = monster.AddComponent<MonsterDataComponent>();
-        dataManager.CopyMonsterData(myMonsterData, monsterData);
-        //
-        monster.transform.position = worldPos;
-        monster.name = $"{mapData.monsterList[monsterIndex]}{monsterIndex + 1}";
-        monster.transform.SetParent(map.transform);
-        monsterIndex++;
-
-        return monsterController;
-    }
-
     private void SetMonsterPathDic()
     {
         string CONTROLLER_PATH = "Animations/Monster/Controller";
@@ -69,4 +43,59 @@ public class MonsterFactory : FactoryBase
     }
 
     private string GetMonsterPathDic(string spriteName) => monsterPathDic[spriteName];
+
+    public FieldObjBase CreateObj(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
+    {
+        // 생성
+        var monster = GetMonster();
+        // 기본 설정
+        SetPosition(monster, worldPos);
+        SetName(monster, mapData, monsterIndex);
+        SetParent(monster, map);
+        SetAnimator(monster, mapData, monsterIndex);
+        var monsterName = SetSprite(monster, mapData, monsterIndex);
+        // 데이터 입력
+        var monsterController = SetData(monster, monsterName);
+        return monsterController;
+    }
+
+    private GameObject GetMonster()
+    {
+        GameObject obj;
+        // 오브젝트 풀링 확인
+        obj = objectPoolManager.GetObjPool("monster");
+        if (obj == null)
+            obj = resourceManager.Instantiate(MONSTER_PATH);
+
+        return obj;
+    }
+
+    private void SetPosition(GameObject monster, Vector3 worldPos) => monster.transform.position = worldPos;
+    private void SetName(GameObject monster, MapData mapData, int monsterIndex) => monster.name = mapData.monsterList[monsterIndex];
+    private void SetParent(GameObject monster, GameObject map) => monster.transform.SetParent(map.transform);
+
+    private void SetAnimator(GameObject monster, MapData mapData, int monsterIndex)
+    {
+        Animator animator = monster.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>(GetMonsterPathDic(mapData.monsterList[monsterIndex]));
+#if UNITY_EDITOR
+        testManager._animators.Add(animator);
+#endif
+    }
+
+    private string SetSprite(GameObject monster, MapData mapData, int monsterIndex)
+    {
+        SpriteRenderer spriteRenderer = monster.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = Array.Find(monsterSprites, sprite => sprite.name.Equals(mapData.monsterList[monsterIndex]));
+        return spriteRenderer.sprite.name;
+    }
+
+    private MonsterController SetData(GameObject monster, string spriteName)
+    {
+        var monsterController = monster.GetComponent<MonsterController>();
+        MonsterData monsterData = dataManager.AddMonsterData(spriteName);
+        var myMonsterData = monster.AddComponent<MonsterDataComponent>();
+        dataManager.CopyMonsterData(myMonsterData, monsterData);
+        return monsterController;
+    }
 }
