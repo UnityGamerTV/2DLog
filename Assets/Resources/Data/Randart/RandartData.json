@@ -1,7 +1,7 @@
 ﻿[
   {
     "_no": "1",
-    "_name": "튼튼한",
+    "_name": "튼튼한 ",
     "_max_hp": "20",
     "_max_mp": "",
     "_min_attack": "",
@@ -14,11 +14,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption1"
   },
   {
     "_no": "2",
-    "_name": "똑똑한",
+    "_name": "똑똑한 ",
     "_max_hp": "",
     "_max_mp": "10",
     "_min_attack": "",
@@ -31,11 +32,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption2"
   },
   {
     "_no": "3",
-    "_name": "강력한",
+    "_name": "강력한 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "10",
@@ -48,11 +50,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption3"
   },
   {
     "_no": "4",
-    "_name": "수동적인",
+    "_name": "수동적인 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -65,11 +68,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption4"
   },
   {
     "_no": "5",
-    "_name": "화려한",
+    "_name": "화려한 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -82,11 +86,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption5"
   },
   {
     "_no": "6",
-    "_name": "뜨거운",
+    "_name": "뜨거운 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -99,11 +104,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption6"
   },
   {
     "_no": "7",
-    "_name": "차가운",
+    "_name": "차가운 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -116,11 +122,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption7"
   },
   {
     "_no": "8",
-    "_name": "단단한",
+    "_name": "단단한 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -133,11 +140,12 @@
     "_earth_res": "10",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption8"
   },
   {
     "_no": "9",
-    "_name": "어두운",
+    "_name": "어두운 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -150,11 +158,12 @@
     "_earth_res": "",
     "_dark_res": "10",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption9"
   },
   {
     "_no": "10",
-    "_name": "위험한",
+    "_name": "위험한 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -167,11 +176,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "10",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption10"
   },
   {
     "_no": "11",
-    "_name": "날렵한",
+    "_name": "날렵한 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -184,11 +194,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": "10"
+    "_avoid": "10",
+    "_option_name": "randartOption11"
   },
   {
     "_no": "12",
-    "_name": "피의",
+    "_name": "피의 ",
     "_max_hp": "20",
     "_max_mp": "",
     "_min_attack": "",
@@ -201,11 +212,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption12"
   },
   {
     "_no": "13",
-    "_name": "마력의",
+    "_name": "마력의 ",
     "_max_hp": "",
     "_max_mp": "10",
     "_min_attack": "",
@@ -218,11 +230,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption13"
   },
   {
     "_no": "14",
-    "_name": "공격의",
+    "_name": "공격의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "10",
@@ -235,11 +248,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption14"
   },
   {
     "_no": "15",
-    "_name": "수비의",
+    "_name": "수비의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -252,11 +266,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption15"
   },
   {
     "_no": "16",
-    "_name": "마법 공격의",
+    "_name": "마법 공격의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -269,11 +284,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption16"
   },
   {
     "_no": "17",
-    "_name": "불의",
+    "_name": "불의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -286,11 +302,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption17"
   },
   {
     "_no": "18",
-    "_name": "얼음의",
+    "_name": "얼음의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -303,11 +320,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption18"
   },
   {
     "_no": "19",
-    "_name": "바위의",
+    "_name": "바위의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -320,11 +338,12 @@
     "_earth_res": "10",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption19"
   },
   {
     "_no": "20",
-    "_name": "암흑 저항의",
+    "_name": "암흑 저항의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -337,11 +356,12 @@
     "_earth_res": "",
     "_dark_res": "10",
     "_poison_res": "",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption20"
   },
   {
     "_no": "21",
-    "_name": "맹독의",
+    "_name": "맹독의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -354,11 +374,12 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "10",
-    "_avoid": ""
+    "_avoid": "",
+    "_option_name": "randartOption21"
   },
   {
     "_no": "22",
-    "_name": "회피의",
+    "_name": "회피의 ",
     "_max_hp": "",
     "_max_mp": "",
     "_min_attack": "",
@@ -371,6 +392,7 @@
     "_earth_res": "",
     "_dark_res": "",
     "_poison_res": "",
-    "_avoid": "10"
+    "_avoid": "10",
+    "_option_name": "randartOption22"
   }
 ]

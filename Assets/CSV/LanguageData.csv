@@ -311,6 +311,13 @@ deck2_comment,사용하면 무슨 일이 생길 것 같다.,It feels like someth
 deck3_comment,사용하면 좋은 일이 생길 것 같다.,It feels like something will happen when used
 gold1_comment,많으면 많을수록 좋다.,"The more, the better"
 gold2_comment,많으면 많을수록 좋다.,"The more, the better"
+ring1,반지,Ring
+ring2,반지,Ring
+ring3,반지,Ring
+ring6,반지,Ring
+ring5,반지,Ring
+ring9,반지,Ring
+ring10,반지,Ring
 ring4,불의 기운이 깃든 반지,Ring of Fiery Aura
 ring8,죽음을 간직한 반지,Ring of Death’s Embrace
 ring11,땅의 힘을 모은 반지,Ring of Earth’s Might
@@ -327,6 +334,13 @@ ring13_comment,여신이 사용하는 반지,A ring used by a goddess
 ring14_comment,냉기에서 만들어진 반지,A ring formed from frost
 ring15_comment,그림자처럼 움직일 수 있는 반지,A ring that grants shadow-like movement
 ring16_comment,대마도사의 마력이 깃든 반지,A ring imbued with the magic of a grand sorcerer
+ring1_comment,신비한 반지,Ring of Mystery
+ring2_comment,신비한 반지,Ring of Mystery
+ring3_comment,신비한 반지,Ring of Mystery
+ring6_comment,신비한 반지,Ring of Mystery
+ring5_comment,마법 반지,Ring of Magic
+ring9_comment,마법 반지,Ring of Magic
+ring10_comment,마법 반지,Ring of Magic
 life_ring,생명의 반지,Ring of Life
 mana_ring,마나의 반지,Ring of Mana
 attack_ring,공격의 반지,Ring of Attack
@@ -349,6 +363,15 @@ earth_ring_comment,대지 저항력이 상승하는 반지,Ring that increases E
 dark_ring_comment,암흑 저항력이 상승하는 반지,Ring that increases Dark Resistance
 poison_ring_comment,독 저항력이 상승하는 반지,Ring that increases Poison Resistance
 avoid_ring_comment,회피률이 상승하는 반지,Ring that increases Evasion Rate
+amulet1,목걸이,
+amulet2,목걸이,
+amulet3,목걸이,
+amulet4,목걸이,
+amulet5,목걸이,
+amulet6,목걸이,
+amulet7,목걸이,
+amulet8,목걸이,
+amulet9,목걸이,
 amulet10,저주받은 악령의 목걸이,Cursed Spirit Amulet
 amulet11,숲의 활력을 지닌 목걸이,Amulet of Forest Vitality
 amulet12,붉은 고리 목걸이,Red Ring Amule
@@ -356,6 +379,15 @@ amulet13,해골 목걸이,Skull Amulet
 amulet14,바다를 품은 목걸이,Amulet of the Sea
 amulet15,철의 십자 목걸이,Iron Cross Amulet
 amulet16,파란 마녀의 목걸이,Blue Witch's Amulet
+amulet1_comment,신비한 목걸이,Amulet of Mystery
+amulet2_comment,신비한 목걸이,Amulet of Mystery
+amulet3_comment,신비한 목걸이,Amulet of Mystery
+amulet4_comment,신비한 목걸이,Amulet of Mystery
+amulet5_comment,신비한 목걸이,Amulet of Mystery
+amulet6_comment,신비한 목걸이,Amulet of Mystery
+amulet7_comment,마법 목걸이,Amulet of Magic
+amulet8_comment,마법 목걸이,Amulet of Magic
+amulet9_comment,마법 목걸이,Amulet of Magic
 amulet10_comment,저주받은 악령이 사용했던 목걸이,An amulet once worn by a cursed wraith
 amulet11_comment,숲속 엘프 전사가 사용하는 목걸이,An amulet worn by a forest elf warrior
 amulet12_comment,뜨거운 힘이 깃든 고리 목걸이,A ring-shaped amulet imbued with fiery power
@@ -769,3 +801,25 @@ Zombie Magi_comment,죽음 속에서도 마법을 쓰는 좀비,A zombie who ret
 Zombie Miner_comment,탄광에서 되살아난 좀비,A reanimated miner who once dug deep
 Zombie1_comment,느리지만 끈질긴 좀비,A slow but relentless undead
 Zombie3_comment,살아있는 자를 집요하게 쫓는 좀비,A corpse that persistently hunts the living
+randartOption1,튼튼한 ,Sturdy 
+randartOption2,똑똑한 ,Clever 
+randartOption3,강력한 ,Mighty 
+randartOption4,수동적인 ,Passive 
+randartOption5,화려한 ,Glorious 
+randartOption6,뜨거운 ,Fiery 
+randartOption7,차가운 ,Frosty 
+randartOption8,단단한 ,Solid 
+randartOption9,어두운 ,Dark 
+randartOption10,위험한 ,Perilous 
+randartOption11,날렵한 ,Swift 
+randartOption12,피의 ,of Blood 
+randartOption13,마력의 ,of Mana 
+randartOption14,공격의 ,of Attack 
+randartOption15,수비의 ,of Defense 
+randartOption16,마법 공격의 ,of Spellpower 
+randartOption17,불의 ,of Fire 
+randartOption18,얼음의 ,of Ice 
+randartOption19,바위의 ,of Stone 
+randartOption20,암흑 저항의 ,of Shadow Resistance 
+randartOption21,맹독의 ,of Venom 
+randartOption22,회피의 ,of Evasion 

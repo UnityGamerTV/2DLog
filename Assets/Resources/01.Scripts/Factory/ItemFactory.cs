@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
-using static UnityEditor.Progress;
 
 public class ItemFactory : FactoryBase
 {
@@ -124,6 +121,52 @@ public class ItemFactory : FactoryBase
         var myItemData = item.AddComponent<ItemDataComponent>();
         dataManager.CopyItemData(myItemData, itemData);
         itemController._baseDataComponent = myItemData;
+
+        // 랜다트 데이터 확인
+        RandartData randartData = (CheckRandart(spriteName));
+        if (randartData != null)
+            dataManager.CopyRandartData(myItemData, randartData);
+    }
+
+    private RandartData CheckRandart(string spriteName)
+    {
+        RandartData randartData1 = null;
+        RandartData randartData2 = null;
+        // 일단 랜다트를 전부 찾아보자
+        // 옵션 1개 랜다트 (기본 아이템)
+        string[] option1 = { "amulet1", "amulet2", "amulet3", "amulet4", "amulet5", "amulet6", "ring1", 
+            "ring2", "ring3", "ring6",
+        };
+        // 옵션 2개 랜다트 (레어 아이템)
+        string[] option2 = { "amulet7", "amulet8", "amulet9", "leader armour2", "ringmail2", 
+            "scalemail2", "chainmail3", "crystalplatemail2", "troll leader armour2", "axe7",",axe9", 
+            "bow3", "helmet3", "helmet10", "helmet15", "mace4", "mace8", "ring5", "ring9", "ring10",
+            "robe3", "spear5", "spear6", "spear8", "sword3", "sword6", "sword12", "sword16"
+        };
+
+        for (int i = 0; i < option1.Length; i++) {
+            if (string.Equals(spriteName, option1[i]))
+            {
+                // 랜다트 옵션 1개 넘김
+                RandartOptionTable table = dataManager.GetRandartTableOption(1);
+                return dataManager.AddRandartData(UnityEngine.Random.Range(table._startNum, table._endNum + 1));
+            }
+        }
+
+        for (int i = 0; i < option2.Length; i++)
+        {
+            if (string.Equals(spriteName, option2[i]))
+            {
+                // 랜다트 옵션 2개 넘김
+                RandartOptionTable table = dataManager.GetRandartTableOption(1);
+                randartData1 = dataManager.AddRandartData(UnityEngine.Random.Range(table._startNum, table._endNum + 1));
+                RandartOptionTable table2 = dataManager.GetRandartTableOption(2);
+                randartData2 = dataManager.AddRandartData(UnityEngine.Random.Range(table2._startNum, table2._endNum + 1));
+                randartData1 = dataManager.SumRandartData(randartData1, randartData2);
+                return randartData1;
+            }
+        }
+        return null;
     }
 
     private void SetPotionData(ItemController itemController, GameObject item, string spriteName)

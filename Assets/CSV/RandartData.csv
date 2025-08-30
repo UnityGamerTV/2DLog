@@ -1,23 +1,23 @@
-_no,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defence,_min_magic_attack,_max_magic_attack,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_avoid
-1,튼튼한,20,,,,,,,,,,,,
-2,똑똑한,,10,,,,,,,,,,,
-3,강력한,,,10,10,,,,,,,,,
-4,수동적인,,,,,4,,,,,,,,
-5,화려한,,,,,,10,10,,,,,,
-6,뜨거운,,,,,,,,10,,,,,
-7,차가운,,,,,,,,,10,,,,
-8,단단한,,,,,,,,,,10,,,
-9,어두운,,,,,,,,,,,10,,
-10,위험한,,,,,,,,,,,,10,
-11,날렵한,,,,,,,,,,,,,10
-12,피의,20,,,,,,,,,,,,
-13,마력의,,10,,,,,,,,,,,
-14,공격의,,,10,10,,,,,,,,,
-15,수비의,,,,,4,,,,,,,,
-16,마법 공격의,,,,,,10,10,,,,,,
-17,불의,,,,,,,,10,,,,,
-18,얼음의,,,,,,,,,10,,,,
-19,바위의,,,,,,,,,,10,,,
-20,암흑 저항의,,,,,,,,,,,10,,
-21,맹독의,,,,,,,,,,,,10,
-22,회피의,,,,,,,,,,,,,10
+_no,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defence,_min_magic_attack,_max_magic_attack,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_avoid,_option_name
+1,튼튼한 ,20,,,,,,,,,,,,,randartOption1
+2,똑똑한 ,,10,,,,,,,,,,,,randartOption2
+3,강력한 ,,,10,10,,,,,,,,,,randartOption3
+4,수동적인 ,,,,,4,,,,,,,,,randartOption4
+5,화려한 ,,,,,,10,10,,,,,,,randartOption5
+6,뜨거운 ,,,,,,,,10,,,,,,randartOption6
+7,차가운 ,,,,,,,,,10,,,,,randartOption7
+8,단단한 ,,,,,,,,,,10,,,,randartOption8
+9,어두운 ,,,,,,,,,,,10,,,randartOption9
+10,위험한 ,,,,,,,,,,,,10,,randartOption10
+11,날렵한 ,,,,,,,,,,,,,10,randartOption11
+12,피의 ,20,,,,,,,,,,,,,randartOption12
+13,마력의 ,,10,,,,,,,,,,,,randartOption13
+14,공격의 ,,,10,10,,,,,,,,,,randartOption14
+15,수비의 ,,,,,4,,,,,,,,,randartOption15
+16,마법 공격의 ,,,,,,10,10,,,,,,,randartOption16
+17,불의 ,,,,,,,,10,,,,,,randartOption17
+18,얼음의 ,,,,,,,,,10,,,,,randartOption18
+19,바위의 ,,,,,,,,,,10,,,,randartOption19
+20,암흑 저항의 ,,,,,,,,,,,10,,,randartOption20
+21,맹독의 ,,,,,,,,,,,,10,,randartOption21
+22,회피의 ,,,,,,,,,,,,,10,randartOption22

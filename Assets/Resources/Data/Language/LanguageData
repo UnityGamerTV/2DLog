@@ -1560,41 +1560,6 @@
     "_en": "\"The more"
   },
   {
-    "_key": "ring1",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring2",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring3",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring6",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring5",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring9",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
-    "_key": "ring10",
-    "_ko": "반지",
-    "_en": "Ring"
-  },
-  {
     "_key": "ring4",
     "_ko": "불의 기운이 깃든 반지",
     "_en": "Ring of Fiery Aura"
@@ -1673,41 +1638,6 @@
     "_key": "ring16_comment",
     "_ko": "대마도사의 마력이 깃든 반지",
     "_en": "A ring imbued with the magic of a grand sorcerer"
-  },
-  {
-    "_key": "ring1_comment",
-    "_ko": "신비한 반지",
-    "_en": "Ring of Mystery"
-  },
-  {
-    "_key": "ring2_comment",
-    "_ko": "신비한 반지",
-    "_en": "Ring of Mystery"
-  },
-  {
-    "_key": "ring3_comment",
-    "_ko": "신비한 반지",
-    "_en": "Ring of Mystery"
-  },
-  {
-    "_key": "ring6_comment",
-    "_ko": "신비한 반지",
-    "_en": "Ring of Mystery"
-  },
-  {
-    "_key": "ring5_comment",
-    "_ko": "마법 반지",
-    "_en": "Ring of Magic"
-  },
-  {
-    "_key": "ring9_comment",
-    "_ko": "마법 반지",
-    "_en": "Ring of Magic"
-  },
-  {
-    "_key": "ring10_comment",
-    "_ko": "마법 반지",
-    "_en": "Ring of Magic"
   },
   {
     "_key": "life_ring",
@@ -1820,51 +1750,6 @@
     "_en": "Ring that increases Evasion Rate"
   },
   {
-    "_key": "amulet1",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet2",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet3",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet4",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet5",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet6",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet7",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet8",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
-    "_key": "amulet9",
-    "_ko": "목걸이",
-    "_en": ""
-  },
-  {
     "_key": "amulet10",
     "_ko": "저주받은 악령의 목걸이",
     "_en": "Cursed Spirit Amulet"
@@ -1898,51 +1783,6 @@
     "_key": "amulet16",
     "_ko": "파란 마녀의 목걸이",
     "_en": "Blue Witch's Amulet"
-  },
-  {
-    "_key": "amulet1_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet2_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet3_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet4_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet5_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet6_comment",
-    "_ko": "신비한 목걸이",
-    "_en": "Amulet of Mystery"
-  },
-  {
-    "_key": "amulet7_comment",
-    "_ko": "마법 목걸이",
-    "_en": "Amulet of Magic"
-  },
-  {
-    "_key": "amulet8_comment",
-    "_ko": "마법 목걸이",
-    "_en": "Amulet of Magic"
-  },
-  {
-    "_key": "amulet9_comment",
-    "_ko": "마법 목걸이",
-    "_en": "Amulet of Magic"
   },
   {
     "_key": "amulet10_comment",
@@ -4011,112 +3851,112 @@
   },
   {
     "_key": "randartOption1",
-    "_ko": "튼튼한 ",
-    "_en": "Sturdy "
+    "_ko": "튼튼한",
+    "_en": "Sturdy"
   },
   {
     "_key": "randartOption2",
-    "_ko": "똑똑한 ",
-    "_en": "Clever "
+    "_ko": "똑똑한",
+    "_en": "Clever"
   },
   {
     "_key": "randartOption3",
-    "_ko": "강력한 ",
-    "_en": "Mighty "
+    "_ko": "강력한",
+    "_en": "Mighty"
   },
   {
     "_key": "randartOption4",
-    "_ko": "수동적인 ",
-    "_en": "Passive "
+    "_ko": "수동적인",
+    "_en": "Passive"
   },
   {
     "_key": "randartOption5",
-    "_ko": "화려한 ",
-    "_en": "Glorious "
+    "_ko": "화려한",
+    "_en": "Glorious"
   },
   {
     "_key": "randartOption6",
-    "_ko": "뜨거운 ",
-    "_en": "Fiery "
+    "_ko": "뜨거운",
+    "_en": "Fiery"
   },
   {
     "_key": "randartOption7",
-    "_ko": "차가운 ",
-    "_en": "Frosty "
+    "_ko": "차가운",
+    "_en": "Frosty"
   },
   {
     "_key": "randartOption8",
-    "_ko": "단단한 ",
-    "_en": "Solid "
+    "_ko": "단단한",
+    "_en": "Solid"
   },
   {
     "_key": "randartOption9",
-    "_ko": "어두운 ",
-    "_en": "Dark "
+    "_ko": "어두운",
+    "_en": "Dark"
   },
   {
     "_key": "randartOption10",
-    "_ko": "위험한 ",
-    "_en": "Perilous "
+    "_ko": "위험한",
+    "_en": "Perilous"
   },
   {
     "_key": "randartOption11",
-    "_ko": "날렵한 ",
-    "_en": "Swift "
+    "_ko": "날렵한",
+    "_en": "Swift"
   },
   {
     "_key": "randartOption12",
-    "_ko": "피의 ",
-    "_en": "of Blood "
+    "_ko": "피의",
+    "_en": "of Blood"
   },
   {
     "_key": "randartOption13",
-    "_ko": "마력의 ",
-    "_en": "of Mana "
+    "_ko": "마력의",
+    "_en": "of Mana"
   },
   {
     "_key": "randartOption14",
-    "_ko": "공격의 ",
-    "_en": "of Attack "
+    "_ko": "공격의",
+    "_en": "of Attack"
   },
   {
     "_key": "randartOption15",
-    "_ko": "수비의 ",
-    "_en": "of Defense "
+    "_ko": "수비의",
+    "_en": "of Defense"
   },
   {
     "_key": "randartOption16",
-    "_ko": "마법 공격의 ",
-    "_en": "of Spellpower "
+    "_ko": "마법 공격의",
+    "_en": "of Spellpower"
   },
   {
     "_key": "randartOption17",
-    "_ko": "불의 ",
-    "_en": "of Fire "
+    "_ko": "불의",
+    "_en": "of Fire"
   },
   {
     "_key": "randartOption18",
-    "_ko": "얼음의 ",
-    "_en": "of Ice "
+    "_ko": "얼음의",
+    "_en": "of Ice"
   },
   {
     "_key": "randartOption19",
-    "_ko": "바위의 ",
-    "_en": "of Stone "
+    "_ko": "바위의",
+    "_en": "of Stone"
   },
   {
     "_key": "randartOption20",
-    "_ko": "암흑 저항의 ",
-    "_en": "of Shadow Resistance "
+    "_ko": "암흑 저항의",
+    "_en": "of Shadow Resistance"
   },
   {
     "_key": "randartOption21",
-    "_ko": "맹독의 ",
-    "_en": "of Venom "
+    "_ko": "맹독의",
+    "_en": "of Venom"
   },
   {
     "_key": "randartOption22",
-    "_ko": "회피의 ",
-    "_en": "of Evasion "
+    "_ko": "회피의",
+    "_en": "of Evasion"
   }
 ]
