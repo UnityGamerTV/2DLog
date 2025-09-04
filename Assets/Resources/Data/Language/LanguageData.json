@@ -1580,6 +1580,11 @@
     "_en": "Ring"
   },
   {
+    "_key": "ring7",
+    "_ko": "반지",
+    "_en": "Ring"
+  },
+  {
     "_key": "ring5",
     "_ko": "반지",
     "_en": "Ring"
@@ -1691,6 +1696,11 @@
   },
   {
     "_key": "ring6_comment",
+    "_ko": "신비한 반지",
+    "_en": "Ring of Mystery"
+  },
+  {
+    "_key": "ring7_comment",
     "_ko": "신비한 반지",
     "_en": "Ring of Mystery"
   },

@@ -28,8 +28,8 @@ public class ItemDataComponent : BaseDataComponent
     [SerializeField] private int coldRes;
     public int? _earth_res { get { return earthRes; } set { earthRes = CheckNullValue(value); } }
     [SerializeField] private int earthRes;
-    public int? _dark_res { get { return dartRes; } set { dartRes = CheckNullValue(value); } }
-    [SerializeField] private int dartRes;
+    public int? _dark_res { get { return darkRes; } set { darkRes = CheckNullValue(value); } }
+    [SerializeField] private int darkRes;
     public int? _poison_res { get { return poisonRes; } set { poisonRes = CheckNullValue(value); } }
     [SerializeField] private int poisonRes;
     public int? _avoid { get { return avoid; } set { avoid = CheckNullValue(value); } }

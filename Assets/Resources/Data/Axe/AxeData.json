@@ -17,7 +17,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "1",
     "_nickName": "axe1"
   },
@@ -39,7 +39,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "1",
     "_nickName": "axe4"
   },
@@ -61,7 +61,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "2",
     "_nickName": "axe2"
   },
@@ -83,7 +83,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe3"
   },
@@ -105,7 +105,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe5"
   },
@@ -127,7 +127,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe8"
   },
@@ -149,7 +149,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe12"
   },
@@ -171,7 +171,7 @@
     "_avoid": "",
     "_item_property_type": "COLD",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe6"
   },
@@ -193,7 +193,7 @@
     "_avoid": "",
     "_item_property_type": "COLD",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe10"
   },
@@ -215,7 +215,7 @@
     "_avoid": "",
     "_item_property_type": "FIRE",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe11"
   },
@@ -237,7 +237,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "1",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe7"
   },
@@ -259,7 +259,7 @@
     "_avoid": "",
     "_item_property_type": "",
     "_hand": "2",
-    "_enhance_limit": "9",
+    "_enhance_limit": "3",
     "_skill_limit": "3",
     "_nickName": "axe9"
   }
