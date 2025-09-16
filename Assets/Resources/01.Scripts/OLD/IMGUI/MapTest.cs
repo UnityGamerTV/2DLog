@@ -162,8 +162,17 @@ public class MapTest : MonoBehaviour
         uiManager.ShowSceneUI<UI_Bottom_BaseController>(UI_SCENE_ENUM.UI_Bottom_Base);
         uiManager.ShowSceneUI<UI_Bottom_DirController>(UI_SCENE_ENUM.UI_Bottom_Dir);
         uiManager.ShowSceneUI<UI_Bottom_HotkeyController>(UI_SCENE_ENUM.UI_Bottom_Hotkey);
+        uiManager.ShowSceneUI<UI_Bottom_Equip_InvenController>(UI_SCENE_ENUM.UI_Bottom_Equip_Inven);
+        var UI_Bottom_Consume_Inven = uiManager.ShowSceneUI<UI_Bottom_Consume_InvenController>(UI_SCENE_ENUM.UI_Bottom_Consume_Inven);
+        UI_Bottom_Consume_Inven.gameObject.SetActive(false); // 임시 코드
         uiManager.ShowSceneUI<UI_Top_VitalContoller>(UI_SCENE_ENUM.UI_Top_Vital);
         uiManager.ShowSceneUI<UI_Top_CurrencyController>(UI_SCENE_ENUM.UI_Top_Currency);
+        uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
+        var UI_Popup_Skill = uiManager.ShowPopupUI<UI_Popup_SkillController>(UI_POPUP_ENUM.UI_Popup_Skill);
+        UI_Popup_Skill.gameObject.SetActive(false); // 임시 코드
+        var UI_Popup_Status = uiManager.ShowPopupUI<UI_Popup_StatusController>(UI_POPUP_ENUM.UI_Popup_Status);
+        UI_Popup_Status.gameObject.SetActive(false); // 임시 코드
+
     }
 
     public void DestroyMap()
