@@ -24,6 +24,7 @@ public class Manager : MonoBehaviour
         FactoryManager.Instance.Init();
         MapManager.Instance.Init();
         CameraManager.Instance.Init();
+        EventManager.Instance.Init();
         UIManager.Instance.Init();
     }
 

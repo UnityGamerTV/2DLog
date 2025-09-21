@@ -25,14 +25,14 @@ public class GameManager : MonoBehaviour
     SceneManagerEx _scene = new SceneManagerEx();
     ResourceManagerEX _resouce = new ResourceManagerEX();
     TurnManager _Turn = new TurnManager();
-    EventManager _evt = new EventManager();
+    EventManagerEX _evt = new EventManagerEX();
     YieldReturnManager _Yield = new YieldReturnManager();
 
 
     public static SceneManagerEx Scene { get { return Instance._scene; } }
     public static TurnManager TurnM { get { return Instance._Turn; } }
     public static ResourceManagerEX Resouce { get { return Instance._resouce; } }
-    public static EventManager evt { get { return Instance._evt; } }
+    public static EventManagerEX evt { get { return Instance._evt; } }
     public static YieldReturnManager Yield { get { return Instance._Yield; } }
     #endregion
 

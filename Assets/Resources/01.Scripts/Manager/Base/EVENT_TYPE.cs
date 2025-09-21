@@ -1,0 +1,8 @@
+
+public enum EVENT_TYPE 
+{
+    PLAYER_LEFT_MOVE,
+    PLAYER_RIGHT_MOVE,
+    PLAYER_UP_MOVE,
+    PLAYER_DOWN_MOVE,
+}
