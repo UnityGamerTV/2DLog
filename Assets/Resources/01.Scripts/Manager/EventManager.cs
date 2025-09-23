@@ -1,65 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventManager : Singleton<EventManager>, IManager
 {
-    private Dictionary<EVENT_TYPE, List<IListener>> listeners = new();
+    private Dictionary<Type, object> eventTables = new();
+
+    private Dictionary<TEnum, List<IListener>> GetTable<TEnum>() where TEnum : Enum
+    {
+        var type = typeof(TEnum);
+        if (!eventTables.TryGetValue(type, out var table))
+        {
+            table = new Dictionary<TEnum, List<IListener>>();
+            eventTables[type] = table;
+        }
+        return (Dictionary<TEnum, List<IListener>>)table;
+    }
 
     public void Init()
     {
 
     }
 
-    public void AddListener(EVENT_TYPE eventType, IListener listener)
+    public void AddListener<TEnum>(TEnum eventType, IListener listener) where TEnum : Enum
     {
-        List<IListener> listenList = null;
-
-        if(listeners.TryGetValue(eventType, out listenList))
+        var table = GetTable<TEnum>();
+        if (!table.TryGetValue(eventType, out var list))
         {
-            listenList.Add(listener);
-            return;
+            list = new List<IListener>();
+            table[eventType] = list;
         }
-
-        listenList = new List<IListener>();
-        listenList.Add(listener);
-        listeners.Add(eventType, listenList);
+        list.Add(listener);
     }
 
-    public void PostNotification(EVENT_TYPE eventType, Component sender, object param = null)
+    public void PostNotification<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
     {
-        List<IListener> listenList = null;
-        if (!listeners.TryGetValue(eventType, out listenList))
+        var table = GetTable<TEnum>();
+        if (!table.TryGetValue(eventType, out var list))
             return;
 
-        for (int i = 0; i < listenList.Count; i++)
+        foreach (var l in list)
+            l?.OnEvent(eventType, sender, param);
+    }
+
+    public void RemoveEvent<TEnum>(TEnum eventType) where TEnum : Enum
+    {
+        if (eventTables.TryGetValue(typeof(TEnum), out var obj))
         {
-            if (!listenList[i].Equals(null))
-                listenList[i].OnEvent(eventType, sender, param);
+            var table = (Dictionary<TEnum, List<IListener>>)obj;
+            table.Remove(eventType);
         }
     }
 
-    public void RemoveEvent(EVENT_TYPE eventType)
+    public void RemoveRedundancies<TEnum>() where TEnum : Enum
     {
-        listeners.Remove(eventType);
-    }
+        if (!eventTables.TryGetValue(typeof(TEnum), out var obj)) return;
 
-    public void RemoveRedundancies()
-    {
-        Dictionary<EVENT_TYPE, List<IListener>> tempListeners = new();
-
-        foreach (KeyValuePair<EVENT_TYPE, List<IListener>> item in listeners)
+        var table = (Dictionary<TEnum, List<IListener>>)obj;
+        foreach (var kv in table)
         {
-            for (int i = item.Value.Count -1; i>= 0; i++)
-            {
-                if (item.Value[i].Equals(null))
-                    item.Value.RemoveAt(i);
-            }
-
-            if (item.Value.Count > 0)
-                tempListeners.Add(item.Key, item.Value);
+            kv.Value.RemoveAll(l => l == null);
         }
-        listeners = tempListeners;
     }
 
     public void Release()

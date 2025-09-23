@@ -12,7 +12,7 @@ public class MonsterFactory : FactoryBase
 #if UNITY_EDITOR
     [Singleton(typeof(TestManager))] private TestManager testManager;
 #endif
-    private readonly string MONSTER_PATH = "Prefabs/Monster/monster";
+    private readonly string MONSTER_PATH = "Prefabs/Monster/Monster";
     private readonly string MONSTER_SPRITE_PATH = "Sprite/Monster/Monster";
 
     private Sprite[] monsterSprites;
@@ -62,7 +62,7 @@ public class MonsterFactory : FactoryBase
     {
         GameObject obj;
         // 오브젝트 풀링 확인
-        obj = objectPoolManager.GetObjPool("monster");
+        obj = objectPoolManager.GetObjPool("Monster");
         if (obj == null)
             obj = resourceManager.Instantiate(MONSTER_PATH);
 

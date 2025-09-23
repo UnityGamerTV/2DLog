@@ -11,7 +11,7 @@ public class PlayerRunState : StateMachineBehaviour
         if (controller == null)
             controller = animator.GetComponent<PlayerController>();
 
-        controller.SetPlayerState(PLAYER_STATE.RUN);
+        //controller.SetPlayerState(PLAYER_STATE.RUN);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

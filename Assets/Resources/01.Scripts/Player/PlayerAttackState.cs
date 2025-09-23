@@ -10,7 +10,7 @@ public class PlayerAttackState : StateMachineBehaviour
         if (controller == null)
             controller = animator.GetComponent<PlayerController>();
 
-        controller.SetPlayerState(PLAYER_STATE.ATTACK);
+        //controller.SetPlayerState(PLAYER_STATE.ATTACK);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -1,19 +1,39 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerController : FieldObjBase, IController
+public class PlayerController : FieldObjBase, IController, IListener
 {
-    [SerializeField] private PlayerService service;
+    [Singleton(typeof(EventManager))] private EventManager eventManager;
+    [Singleton(typeof(MapManager))] private MapManager mapManager;
+
+    [FindComponents("Service"), SerializeField] private PlayerService service;
+    [FindComponents("State"), SerializeField] private PlayerState state;
+
+    public void Init()
+    {
+        InjectUtil.InjectSingleton(this);
+        InjectUtil.InjectComponents(this);
+
+        service.Init();
+        state.Init();
+
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_DOWN_MOVE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_UP_MOVE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_LEFT_MOVE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_RIGHT_MOVE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
+
+        HandIdle();
+    }
 
     /// <summary>
-    /// ÀÓ½Ã MapTest¿¡¼­ »ç¿ëÇÔ 
-    /// ÃßÈÄ Å×½ºÆ®°¡ ÇÊ¿ä ¾øÀ» °æ¿ì »èÁ¦ÇØµµ µÊ
+    /// ì„ì‹œ MapTestì—ì„œ ì‚¬ìš©í•¨ 
+    /// ì¶”í›„ í…ŒìŠ¤íŠ¸ê°€ í•„ìš” ì—†ì„ ê²½ìš° ì‚­ì œí•´ë„ ë¨
     /// </summary>
-    public Animator GetAnimator() => service.GetAnimator();    
-    //
-    public void Init() => service.Init();
+    /// 
+    public Animator GetAnimator() => service.GetAnimator();
     //
     public void PlayAnim0() => service.PlayAnim0();
     public void PlayAnim1() => service.PlayAnim1();
@@ -21,14 +41,58 @@ public class PlayerController : FieldObjBase, IController
     public void PlayAnim3() => service.PlayAnim3();
 
 
-    // ¹ŞÀº string °ª ¶Ç´Â enum °ªÀ» Model ¿¡ ³Ñ°ÜÁÖ¸é ÀÚµ¿À¸·Î ½ºÇÁ¶óÀÌÆ® º¯°æ µÊ
+    // ë°›ì€ string ê°’ ë˜ëŠ” enum ê°’ì„ Model ì— ë„˜ê²¨ì£¼ë©´ ìë™ìœ¼ë¡œ ìŠ¤í”„ë¼ì´íŠ¸ ë³€ê²½ ë¨
     public void EquipHelmet(string helmetSpriteName) => service.EquipHelmet(helmetSpriteName);
     public void EquipArmour(string armourSpriteName) => service.EquipArmour(armourSpriteName);
     public void EquipShield(string shieldSpriteName) => service.EquipShield(shieldSpriteName);
 
-    // ÇÃ·¹ÀÌ¾î »óÅÂ °ü¸®¿ë
-    public void SetPlayerState(PLAYER_STATE playerState) => service.SetPlayerState(playerState);
+    public void PlayAnimation(PLAYER_STATE playerState) => service.PlayAnimation(playerState);
 
+    public void HandIdle()
+    {
+        SetPlayerState(state._idleState);
+        DoPlayerState();
+    }
+
+    // ì´ë™ ê´€ë ¨ ëª¨ìŒ
+    #region PlayerMove
+    public void HandleMove(Vector3 dir)
+    {
+        Vector3 newDir = dir;
+        // í•´ë‹¹ ë§µì„ ê°ˆ ìˆ˜ ìˆëŠ”ì§€ í™•ì¸ í•„ìš”
+        if (!mapManager.CanMoveTo(gameObject.transform.position + newDir))
+            newDir = Vector3.zero;
+
+        if (newDir.Equals(Vector3.right))
+            SetFilpXSprite(false);
+
+        if (newDir.Equals(Vector3.left))
+            SetFilpXSprite(true);
+
+        SetMoveDir(newDir);
+        SetPlayerState(state._moveState);
+        DoPlayerState();
+    }
+
+
+    public Vector3 GetMoveDir() => service.GetMoveDir();
+    public void SetMoveDir(Vector3 dir) => service.SetMoveDir(dir);
+    public void SetPlayerState(IState state) => service.SetPlayerState(state);
+    public void DoPlayerState() => service.DoPlayerState();
+    public void SetFilpXSprite(bool isFilp) => service.SetFilpXSprite(isFilp);
+
+    #endregion
+
+    void IListener.OnEvent<TEnum>(TEnum eventType, Component sender, object param)
+    {
+        switch (eventType)
+        {
+            case EVENT_PLAYER.PLAYER_DOWN_MOVE: HandleMove(Vector3.down); break;
+            case EVENT_PLAYER.PLAYER_UP_MOVE: HandleMove(Vector3.up); break;
+            case EVENT_PLAYER.PLAYER_LEFT_MOVE: HandleMove(Vector3.left); break;
+            case EVENT_PLAYER.PLAYER_RIGHT_MOVE: HandleMove(Vector3.right); break;
+        }
+    }
 
     public void Release()
     {

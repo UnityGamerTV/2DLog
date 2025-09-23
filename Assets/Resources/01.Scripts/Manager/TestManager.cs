@@ -24,7 +24,7 @@ public class TestManager : Singleton<TestManager>, IManager
             one.SetInteger("State", StateNum);
         }
 
-        playerController.SetPlayerState((PLAYER_STATE)StateNum);
+        //playerController.SetPlayerState3((PLAYER_STATE)StateNum);
 
         if (StateNum < 3)
         {

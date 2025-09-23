@@ -17,6 +17,8 @@ public class PlayerDataComponent : MonoBehaviour
     [SerializeField] private SHIELD_TYPE shieldType;
     public PLAYER_STATE _playerState { get { return playerState; } set { playerState = value; } }
     [SerializeField] private PLAYER_STATE playerState;
+    public Vector3 _dir { get { return dir; } set { dir = value; } }
+    [SerializeField] private Vector3 dir;
 }
 
 public enum HELMET_TYPE
@@ -93,7 +95,8 @@ public enum SHIELD_TYPE
 public enum PLAYER_STATE
 {
     IDLE = 0,
-    RUN = 1,
+    MOVE = 1,
     ATTACK = 2,
     DIE = 3,
+    ENDTURN = 4,
 }

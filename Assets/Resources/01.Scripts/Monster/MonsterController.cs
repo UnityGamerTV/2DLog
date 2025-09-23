@@ -6,11 +6,11 @@ public class MonsterController : FieldObjBase, IController
 {
     public void Init()
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void Release()
     {
-        throw new System.NotImplementedException();
+        
     }
 }

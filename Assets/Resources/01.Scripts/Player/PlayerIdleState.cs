@@ -9,16 +9,18 @@ public class PlayerIdleState : IState
 
     public void OnStateEnter()
     {
-        controller.SetPlayerState(PLAYER_STATE.IDLE);
-    }
-
-    public void OnStateExit()
-    {
-        throw new System.NotImplementedException();
+        controller.PlayAnimation(PLAYER_STATE.IDLE);
+        OnStateUpdate();
     }
 
     public void OnStateUpdate()
     {
-        throw new System.NotImplementedException();
+
     }
+
+    public void OnStateExit()
+    {
+        
+    }
+
 }

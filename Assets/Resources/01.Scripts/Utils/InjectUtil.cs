@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -40,11 +40,11 @@ public static class InjectUtil
 
             if (attribute == null)
             {
-                LogUtil.Log($"ÇÊµå '{field.Name}'¿¡ ´ëÇØ FindComponentAttribute°¡ ¾ø½À´Ï´Ù.");
+                LogUtil.Log($"í•„ë“œ '{field.Name}'ì— ëŒ€í•´ FindComponentAttributeê°€ ì—†ìŠµë‹ˆë‹¤.");
                 continue;
             }
 
-            // ÇÊµå Å¸ÀÔ¿¡ µû¶ó ºĞ±â
+            // í•„ë“œ íƒ€ì…ì— ë”°ë¼ ë¶„ê¸°
             if (field.FieldType.IsArray)
             {
                 InjectArrayField(field, attribute, script);
@@ -60,7 +60,7 @@ public static class InjectUtil
         }
     }
 
-    // ¹è¿­ ÇÊµå Ã³¸®
+    // ë°°ì—´ í•„ë“œ ì²˜ë¦¬
     private static void InjectArrayField(FieldInfo field, FindComponentsAttribute attribute, MonoBehaviour script)
     {
         Type elementType = field.FieldType.GetElementType();
@@ -76,7 +76,7 @@ public static class InjectUtil
         field.SetValue(script, componentArray);
     }
 
-    // ¸®½ºÆ® ÇÊµå Ã³¸®
+    // ë¦¬ìŠ¤íŠ¸ í•„ë“œ ì²˜ë¦¬
     private static void InjectListField(FieldInfo field, FindComponentsAttribute attribute, MonoBehaviour script)
     {
         Type elementType = field.FieldType.GetGenericArguments()[0];
@@ -90,14 +90,20 @@ public static class InjectUtil
         field.SetValue(script, componentsList);
     }
 
-    // ´ÜÀÏ ÄÄÆ÷³ÍÆ® ÇÊµå Ã³¸®
+    // ë‹¨ì¼ ì»´í¬ë„ŒíŠ¸ í•„ë“œ ì²˜ë¦¬
     private static void InjectSingleComponent(FieldInfo field, FindComponentsAttribute attribute, MonoBehaviour script)
     {
-        Transform tr = FindChild(attribute.gameObjectNames[0], script.transform);
+        Transform tr;
+        // í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ê°€ ë£¨íŠ¸ì¸ì§€ í™•ì¸
+        if (script.transform == script.transform.root)
+            tr = FindChild(attribute.gameObjectNames[0], script.transform);
+        else
+            tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
+        
 
         if (tr == null)
         {
-            LogUtil.Log($"°ÔÀÓ¿ÀºêÁ§Æ® '{attribute.gameObjectNames[0]}'ÀÇ TransformÀ» Ã£Áö ¸øÇß½À´Ï´Ù.");
+            LogUtil.Log($"ê²Œì„ì˜¤ë¸Œì íŠ¸ '{attribute.gameObjectNames[0]}'ì˜ Transformì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
             return;
         }
 
@@ -105,32 +111,37 @@ public static class InjectUtil
 
         if (component == null)
         {
-            LogUtil.Log($"°ÔÀÓ¿ÀºêÁ§Æ® '{attribute.gameObjectNames[0]}'¿¡¼­ '{field.FieldType}' ÄÄÆ÷³ÍÆ®¸¦ Ã£Áö ¸øÇß½À´Ï´Ù.");
+            LogUtil.Log($"ê²Œì„ì˜¤ë¸Œì íŠ¸ '{attribute.gameObjectNames[0]}'ì—ì„œ '{field.FieldType}' ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
             return;
         }
 
         field.SetValue(script, component);
     }
 
-    // ¿©·¯ °ÔÀÓ ¿ÀºêÁ§Æ®¿¡¼­ ÄÄÆ÷³ÍÆ®¸¦ °¡Á®¿À´Â °øÅë ÇÔ¼ö
+    // ì—¬ëŸ¬ ê²Œì„ ì˜¤ë¸Œì íŠ¸ì—ì„œ ì»´í¬ë„ŒíŠ¸ë¥¼ ê°€ì ¸ì˜¤ëŠ” ê³µí†µ í•¨ìˆ˜
     private static List<Component> GetComponentsFromGameObjects(FindComponentsAttribute attribute, Type componentType, MonoBehaviour script)
     {
         List<Component> componentsList = new List<Component>();
 
         foreach (string gameObjectName in attribute.gameObjectNames)
         {
-            Transform tr = FindChild(gameObjectName, script.transform);
+            Transform tr;
+            // í˜„ì¬ ìŠ¤í¬ë¦½íŠ¸ê°€ ë£¨íŠ¸ì¸ì§€ í™•ì¸
+            if (script.transform == script.transform.root)
+                tr = FindChild(attribute.gameObjectNames[0], script.transform);
+            else
+                tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
 
             if (tr == null)
             {
-                LogUtil.Log($"°ÔÀÓ¿ÀºêÁ§Æ® '{gameObjectName}'ÀÇ TransformÀ» Ã£Áö ¸øÇß½À´Ï´Ù.");
+                LogUtil.Log($"ê²Œì„ì˜¤ë¸Œì íŠ¸ '{gameObjectName}'ì˜ Transformì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
                 continue;
             }
 
             Component component = tr.GetComponent(componentType);
             if (component == null)
             {
-                LogUtil.Log($"°ÔÀÓ¿ÀºêÁ§Æ® '{gameObjectName}'¿¡¼­ '{componentType}' ÄÄÆ÷³ÍÆ®¸¦ Ã£Áö ¸øÇß½À´Ï´Ù.");
+                LogUtil.Log($"ê²Œì„ì˜¤ë¸Œì íŠ¸ '{gameObjectName}'ì—ì„œ '{componentType}' ì»´í¬ë„ŒíŠ¸ë¥¼ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤.");
                 continue;
             }
 
@@ -141,10 +152,22 @@ public static class InjectUtil
     }
 
     /// <summary>
-    /// °ÔÀÓ¿ÀºêÁ§Æ®ÀÇ TransformÀ» Ã£´Â Àç±Í ÇÔ¼ö
+    /// ê°™ì€ ë£¨íŠ¸ ê·¸ë£¹ ë‚´ì—ì„œ ì´ë¦„ìœ¼ë¡œ Transform ì°¾ê¸° (ë¶€ëª¨/ìì‹ ëª¨ë‘ íƒìƒ‰)
     /// </summary>
-    /// <param name="name">Å¸°Ù °ÔÀÓ¿ÀºêÁ§Æ® ÀÌ¸§</param>
-    /// <param name="tr">Ã£´Â ½ÃÀÛ À§Ä¡ Transform</param>
+    public static Transform FindInSameRoot(string name, Transform startTr)
+    {
+        // 1. ë‚´ê°€ ì†í•œ ë£¨íŠ¸ êµ¬í•˜ê¸°
+        Transform root = startTr.root;
+
+        // 2. ë£¨íŠ¸ ê¸°ì¤€ìœ¼ë¡œ ì „ì²´ íƒìƒ‰
+        return FindChild(name, root);
+    }
+
+    /// <summary>
+    /// ê²Œì„ì˜¤ë¸Œì íŠ¸ì˜ Transformì„ ì°¾ëŠ” ì¬ê·€ í•¨ìˆ˜
+    /// </summary>
+    /// <param name="name">íƒ€ê²Ÿ ê²Œì„ì˜¤ë¸Œì íŠ¸ ì´ë¦„</param>
+    /// <param name="tr">ì°¾ëŠ” ì‹œì‘ ìœ„ì¹˜ Transform</param>
     /// <returns></returns>
     public static Transform FindChild(string name, Transform tr)
     {

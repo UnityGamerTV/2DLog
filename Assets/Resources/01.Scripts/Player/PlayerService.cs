@@ -1,12 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 
-public class PlayerService : MonoBehaviour
+public partial class PlayerService : MonoBehaviour
 {
-    [SerializeField] private PlayerView view;
-    [SerializeField] private PlayerDataComponent model;
+    [FindComponents("View"), SerializeField] private PlayerView view;
+    [FindComponents("Model"), SerializeField] private PlayerDataComponent model;
+    [FindComponents("State"), SerializeField] private PlayerState state;
+
+    private IState preState;
+    private IState tempState;
+    private IState curState;
 
     public Animator GetAnimator()
     {
@@ -15,6 +18,8 @@ public class PlayerService : MonoBehaviour
 
     public void Init()
     {
+        InjectUtil.InjectComponents(this);
+
         view.Init();
     }
 
@@ -84,9 +89,28 @@ public class PlayerService : MonoBehaviour
         LogUtil.Log("장착할 수 있는 쉴드가 없습니다.");
     }
 
-    public void SetPlayerState(PLAYER_STATE playerState)
+    public void PlayAnimation(PLAYER_STATE playerState)
     {
         model._playerState = playerState;
-        view.SetAnimation(playerState);
+        view.PlayAnimation(playerState);
+    }
+
+    public Vector3 GetMoveDir() => model._dir;
+    public void SetMoveDir(Vector3 dir) => model._dir = dir;
+    public void SetFilpXSprite(bool isFilp) => view.SetFilpXSprite(isFilp);
+
+    public void SetPlayerState(IState state)
+    {
+        tempState = curState;
+        curState = state;
+        preState = tempState;
+    }
+
+    public void DoPlayerState()
+    {
+        if (preState != null)
+            preState.OnStateExit();
+
+        curState.OnStateEnter();
     }
 }

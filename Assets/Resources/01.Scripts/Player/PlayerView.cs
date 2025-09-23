@@ -1,41 +1,44 @@
-using System.Collections;
+ï»¿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PlayerView : MonoBehaviour
 {
-    [SerializeField] private PlayerController controller;
-    [SerializeField] private PlayerDataComponent model;
+    [FindComponents("Player"), SerializeField] private PlayerController controller;
+    [FindComponents("Model"), SerializeField] private PlayerDataComponent model;
 
     /// <summary>
-    /// MapTest ¿¡¼­ Å×½ºÆ® ¿ëµµ·Î »ç¿ëÇÔ
+    /// MapTest ì—ì„œ í…ŒìŠ¤íŠ¸ ìš©ë„ë¡œ ì‚¬ìš©í•¨
     /// </summary>
     public Animator _bodyAnimator { get => bodyAnimator; }
-    [SerializeField] private Animator bodyAnimator;
+    [FindComponents("Player"), SerializeField] private Animator bodyAnimator;
     //
 
-    // º¸¿©Áö´Â ÀåÂø ½ºÇÁ¶óÀÌÆ® ·£´õ·¯
-    [SerializeField] private SpriteRenderer helmetSpriteRenderer;
-    [SerializeField] private SpriteRenderer armourSpriteRenderer;
-    [SerializeField] private SpriteRenderer shieldSpriteRenderer;
+    // ë³´ì—¬ì§€ëŠ” ì¥ì°© ìŠ¤í”„ë¼ì´íŠ¸ ëœë”ëŸ¬
+    [FindComponents("Helmet"), SerializeField] private SpriteRenderer helmetSpriteRenderer;
+    [FindComponents("Armour"), SerializeField] private SpriteRenderer armourSpriteRenderer;
+    [FindComponents("Shield"), SerializeField] private SpriteRenderer shieldSpriteRenderer;
+    [FindComponents("Body"), SerializeField] private SpriteRenderer bodySpriteRenderer;
 
-    // º¸¿©Áö´Â ÀåÂø ½ºÇÁ¶óÀÌÆ® Enum Á¤º¸
+    // ë³´ì—¬ì§€ëŠ” ì¥ì°© ìŠ¤í”„ë¼ì´íŠ¸ Enum ì •ë³´
     [SerializeField] private HELMET_TYPE helmetType;
     [SerializeField] private ARMOUR_TYPE armourType;
     [SerializeField] private SHIELD_TYPE shieldType;
     [SerializeField] private PLAYER_STATE playerState;
 
-    // º¸¿©Áö´Â ÀåÂø ½ºÇÁ¶óÀÌÆ® µñ¼Å³Ê¸®
+    // ë³´ì—¬ì§€ëŠ” ì¥ì°© ìŠ¤í”„ë¼ì´íŠ¸ ë”•ì…”ë„ˆë¦¬
     [SerializeField] private Dictionary<Enum, Sprite[]> spriteDic = new Dictionary<Enum, Sprite[]>();
+
 
     public void Init()
     {
-        // ½½¶óÀÌ½ºÇÑ 2D ½ºÇÁ¶óÀÌÆ® Á¤º¸¸¦ µñ¼Å³Ê¸®¿¡¼­ °ü¸®
+        InjectUtil.InjectComponents(this);
+
+        // ìŠ¬ë¼ì´ìŠ¤í•œ 2D ìŠ¤í”„ë¼ì´íŠ¸ ì •ë³´ë¥¼ ë”•ì…”ë„ˆë¦¬ì—ì„œ ê´€ë¦¬
         GetResource<HELMET_TYPE>();
         GetResource<ARMOUR_TYPE>();
         GetResource<SHIELD_TYPE>();
-        // Model µ¥ÀÌÅÍ¶û ¿¬°á >> ¸ğµ¨ µ¥ÀÌÅÍ°¡ º¯ÇÏ¸é ÀÌº¥Æ®·Î ¹Ş¾Æ¿È >> ÃßÈÄ Pull ¹æ½Ä °í¹Î?
+        // Model ë°ì´í„°ë‘ ì—°ê²° >> ëª¨ë¸ ë°ì´í„°ê°€ ë³€í•˜ë©´ ì´ë²¤íŠ¸ë¡œ ë°›ì•„ì˜´ >> ì¶”í›„ Pull ë°©ì‹ ê³ ë¯¼?
         model.helmetEquipAction += GetHelmetData;
         model.armourEquipAction += GetArmourData;
         model.shieldEquipAction += GetShieldData;
@@ -48,8 +51,8 @@ public class PlayerView : MonoBehaviour
             string result = one.ToString();
             result = result.Replace("_", " ");
             // TODO
-            // ÃßÈÄ ¸®¼Ò½º ¸Å´ÏÀú¿¡¼­ ·¡ÇÎÇØ¼­ »ç¿ëÇÏ´øÁö (ÇöÀç´Â ÀÌÂÊÀÌ ¸¶À½¿¡ ´õ µéÀ½)
-            // ¸®¼Ò½º ¸Å´ÏÀú¿¡¼­ ¸ğµç ½ºÇÁ¶óÀÌÆ®¸¦ ÀÏ°ı °ü¸®
+            // ì¶”í›„ ë¦¬ì†ŒìŠ¤ ë§¤ë‹ˆì €ì—ì„œ ë˜í•‘í•´ì„œ ì‚¬ìš©í•˜ë˜ì§€ (í˜„ì¬ëŠ” ì´ìª½ì´ ë§ˆìŒì— ë” ë“¤ìŒ)
+            // ë¦¬ì†ŒìŠ¤ ë§¤ë‹ˆì €ì—ì„œ ëª¨ë“  ìŠ¤í”„ë¼ì´íŠ¸ë¥¼ ì¼ê´„ ê´€ë¦¬
             Sprite[] sprites = Resources.LoadAll<Sprite>($"Animations/Player/Sprites/{result}");
             spriteDic.Add(one, sprites);
         }
@@ -71,34 +74,6 @@ public class PlayerView : MonoBehaviour
         SetAnimSprite(0);
     }
      
-
-    private void SetAnimSprite2(int spritesNum)
-    {
-        if (helmetType.Equals(HELMET_TYPE.none))
-            helmetSpriteRenderer.sprite = null;
-        else
-        {
-            var helmetSprites = spriteDic[helmetType];
-            helmetSpriteRenderer.sprite = helmetSprites[spritesNum];
-        }
-
-        if (armourType.Equals(ARMOUR_TYPE.none))
-            armourSpriteRenderer.sprite = null;
-        else
-        {
-            var armourSprites = spriteDic[armourType];
-            armourSpriteRenderer.sprite = armourSprites[spritesNum];
-        }
-
-
-        if (shieldType.Equals(SHIELD_TYPE.none))
-            shieldSpriteRenderer.sprite = null;
-        else
-        {
-            var shieldSprites = spriteDic[shieldType];
-            shieldSpriteRenderer.sprite = shieldSprites[spritesNum];
-        }
-    }
 
     private void SetAnimSprite(int spritesNum)
     {
@@ -132,8 +107,14 @@ public class PlayerView : MonoBehaviour
     public void PlayAnim2() => SetAnimSprite(CalSpriteOrder() + 2);
     public void PlayAnim3() => SetAnimSprite(CalSpriteOrder() + 3);
 
+    public void PlayAnimation(PLAYER_STATE playerState) => bodyAnimator.SetInteger("State", (int)playerState);
 
-    public void SetAnimation(PLAYER_STATE playerState) => bodyAnimator.SetInteger("State", (int)playerState);
-    
+    public void SetFilpXSprite(bool isFilpX)
+    {
+        helmetSpriteRenderer.flipX = isFilpX;
+        armourSpriteRenderer.flipX = isFilpX;
+        shieldSpriteRenderer.flipX = isFilpX;
+        bodySpriteRenderer.flipX = isFilpX;
+    }
 }
 

@@ -161,15 +161,21 @@ public class MapTest : MonoBehaviour
 
         var UI_Scene_Ability_Inven = uiManager.ShowSceneUI<UI_Scene_Ability_InvenController>(UI_SCENE_ENUM.UI_Scene_Ability_Inven);
         UI_Scene_Ability_Inven.gameObject.SetActive(false); // 임시 코드
+        
         uiManager.ShowSceneUI<UI_Scene_Bottom_BaseController>(UI_SCENE_ENUM.UI_Scene_Bottom_Base);
-        uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
-        uiManager.ShowSceneUI<UI_Scene_Equip_InvenController>(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
+        var UI_Scene_Bottom_Dir = uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
+        UI_Scene_Bottom_Dir.Init();
+
+        var UI_Scene_Equip_Inven = uiManager.ShowSceneUI<UI_Scene_Equip_InvenController>(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
+        UI_Scene_Equip_Inven.gameObject.SetActive(false);
         var UI_Bottom_Consume_Inven = uiManager.ShowSceneUI<UI_Scene_Consume_InvenController>(UI_SCENE_ENUM.UI_Scene_Consume_Inven);
         UI_Bottom_Consume_Inven.gameObject.SetActive(false); // 임시 코드
-        uiManager.ShowSceneUI<UI_Scene_HotkeyController>(UI_SCENE_ENUM.UI_Scene_Hotkey);
+        var UI_Scene_Hotkey = uiManager.ShowSceneUI<UI_Scene_HotkeyController>(UI_SCENE_ENUM.UI_Scene_Hotkey);
+        UI_Scene_Hotkey.gameObject.SetActive(false);
         uiManager.ShowSceneUI<UI_Scene_Top_CurrencyController>(UI_SCENE_ENUM.UI_Scene_Top_Currency);
         uiManager.ShowSceneUI<UI_Scene_Top_VitalController>(UI_SCENE_ENUM.UI_Scene_Top_Vital);
-        uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
+        var UI_Popup_Item = uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
+        UI_Popup_Item.gameObject.SetActive(false);
         var UI_Popup_Skill = uiManager.ShowPopupUI<UI_Popup_SkillController>(UI_POPUP_ENUM.UI_Popup_Skill);
         UI_Popup_Skill.gameObject.SetActive(false); // 임시 코드
         var UI_Popup_Status = uiManager.ShowPopupUI<UI_Popup_StatusController>(UI_POPUP_ENUM.UI_Popup_Status);

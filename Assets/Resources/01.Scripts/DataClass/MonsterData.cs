@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 
 [Serializable]
 public class MonsterData
@@ -42,7 +42,7 @@ public enum MagicType
     COLD1,
     COLD2,
     COLD3,
-    // COLD4 ÇØ´ç ÀÌ¹ÌÁö¸¦ »ç¿ë ¾ÈÇØ¼­ Á¦°Å
+    // COLD4 í•´ë‹¹ ì´ë¯¸ì§€ë¥¼ ì‚¬ìš© ì•ˆí•´ì„œ ì œê±°
     COLD5,
     COLD6,
     COLD7,

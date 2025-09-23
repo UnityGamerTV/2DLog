@@ -11,7 +11,7 @@ public class PlayerDieState : StateMachineBehaviour
         if (controller == null)
             controller= animator.GetComponent<PlayerController>();
 
-        controller.SetPlayerState(PLAYER_STATE.DIE);
+        //controller.SetPlayerState(PLAYER_STATE.DIE);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

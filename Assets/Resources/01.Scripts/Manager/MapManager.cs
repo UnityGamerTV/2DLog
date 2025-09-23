@@ -33,8 +33,8 @@ public partial class MapManager : Singleton<MapManager>, IManager
     [SerializeField] private bool[,] isCollision;
     [SerializeField] private PLAYER_POS playerPos;
     // 아이템
-    [SerializeField] bool[,] isItem;
-    [SerializeField] bool[,] isMonster;
+    [SerializeField] private bool[,] isItem;
+    [SerializeField] private bool[,] isMonster;
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
@@ -179,7 +179,7 @@ public partial class MapManager : Singleton<MapManager>, IManager
             }
         }
 
-        isItem = new bool[itemTiles.Count, xCount];
+        isItem = new bool[yCount, xCount];
         int itemIndex = 0;
         // 아이템 생성
         for (int y = 0; y < itemTiles.Count; y++)
@@ -201,7 +201,7 @@ public partial class MapManager : Singleton<MapManager>, IManager
             }
         }
 
-        isMonster = new bool[monsterTiles.Count, xCount];
+        isMonster = new bool[yCount, xCount];
         int monsterIndex = 0;
         // 몬스터 생성
         for (int y = 0; y < monsterTiles.Count; y++)
@@ -220,6 +220,9 @@ public partial class MapManager : Singleton<MapManager>, IManager
                     Vector3 worldPos = CellToWorld(cellX, cellY);
                     fieldManager.CreateMonster(worldPos, map, mapData, monsterIndex);
                     monsterIndex++;
+
+                    // 몬스터 위치를 배열에 기록
+                    isMonster[flippedY, x] = true;
                 }
             }
         }
@@ -235,8 +238,51 @@ public partial class MapManager : Singleton<MapManager>, IManager
     // 월드 좌표 → 셀 좌표
     public Vector3Int WorldToCell(Vector3 worldPosition)
     {
-        return baseTilemap.WorldToCell(worldPosition);
+        Vector3 adjustedPos = worldPosition - baseTilemap.cellSize / 2f;
+        return baseTilemap.WorldToCell(adjustedPos);
     }
+
+    private bool CanMoveTo(int tileX, int tileY)
+    {
+        if (isCollision == null || isMonster == null || mapData == null)
+            return false;
+
+        int xCount = isCollision.GetLength(1);
+        int yCount = isCollision.GetLength(0);
+
+        // tileX/Y를 배열 인덱스로 변환
+        int indexX = tileX - mapData.bounds.xMin;
+        int indexY = tileY - mapData.bounds.yMin;
+
+        // 범위 체크
+        if (indexX < 0 || indexX >= xCount || indexY < 0 || indexY >= yCount)
+            return false;
+
+        // Y축 보정: indexY가 이미 맵 좌표 기준이므로 직접 사용
+        // ParsingTextMap에서 flippedY로 저장했으므로, indexY를 그대로 사용
+
+        // 디버깅용
+        LogUtil.Log($"Input: tileX={tileX}, tileY={tileY}");
+        LogUtil.Log($"Converted: indexX={indexX}, indexY={indexY}");
+        LogUtil.Log($"Collision: {isCollision[indexY, indexX]}, Monster: {isMonster[indexY, indexX]}");
+
+        // 충돌 or 몬스터 있는 곳은 불가
+        if (isCollision[indexY, indexX]) return false;
+        if (isMonster[indexY, indexX]) return false;
+
+        return true;
+    }
+
+
+    /// <summary>
+    /// 월드 좌표를 입력받아 이동 가능 여부 확인
+    /// </summary>
+    public bool CanMoveTo(Vector3 worldPos)
+    {
+        Vector3Int cellPos = WorldToCell(worldPos);
+        return CanMoveTo(cellPos.x, cellPos.y);
+    }
+
 
     public void Release()
     {
