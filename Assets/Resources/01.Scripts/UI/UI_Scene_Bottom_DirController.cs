@@ -36,6 +36,8 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
         rightButton.onClick.RemoveListener(service.OnClickRightButton);
         upButton.onClick.RemoveListener(service.OnClickUpButton);
         downButton.onClick.RemoveListener(service.OnClickDownButton);
+
+        eventManager.RemoveListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
     }
 
     void IListener.OnEvent<TEnum>(TEnum event_Type, Component sender, object param)

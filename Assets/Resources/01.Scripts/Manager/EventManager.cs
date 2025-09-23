@@ -44,6 +44,29 @@ public class EventManager : Singleton<EventManager>, IManager
             l?.OnEvent(eventType, sender, param);
     }
 
+    public void RemoveListener<TEnum>(TEnum eventType, IListener listener) where TEnum : Enum
+    {
+        var table = GetTable<TEnum>();
+        if (table.TryGetValue(eventType, out var list))
+            list.Remove(listener);
+
+        if (list.Count == 0)
+            RemoveEvent(eventType);
+    }
+
+
+    public void RemoveNullListeners<TEnum>(TEnum eventType) where TEnum : Enum
+    {
+        var table = GetTable<TEnum>();
+        if (table.TryGetValue(eventType, out var list))
+        {
+            list.RemoveAll(l => l == null);
+
+            if (list.Count == 0)
+                RemoveEvent(eventType);
+        }
+    }
+
     public void RemoveEvent<TEnum>(TEnum eventType) where TEnum : Enum
     {
         if (eventTables.TryGetValue(typeof(TEnum), out var obj))
