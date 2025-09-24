@@ -48,14 +48,13 @@ public class PlayerController : FieldObjBase, IController, IListener
 
     public void PlayAnimation(PLAYER_STATE playerState) => service.PlayAnimation(playerState);
 
-    public void HandIdle()
-    {
-        SetPlayerState(state._idleState);
-        DoPlayerState();
-    }
+    public void IsValidPosition(Vector3 dir) => service.IsValidPosition(dir);
+
+    public void HandIdle() => service.HandIdle();
 
     // 이동 관련 모음
     #region PlayerMove
+
     public void HandleMove(Vector3 dir)
     {
         Vector3 newDir = dir;
@@ -87,10 +86,10 @@ public class PlayerController : FieldObjBase, IController, IListener
     {
         switch (eventType)
         {
-            case EVENT_PLAYER.PLAYER_DOWN_MOVE: HandleMove(Vector3.down); break;
-            case EVENT_PLAYER.PLAYER_UP_MOVE: HandleMove(Vector3.up); break;
-            case EVENT_PLAYER.PLAYER_LEFT_MOVE: HandleMove(Vector3.left); break;
-            case EVENT_PLAYER.PLAYER_RIGHT_MOVE: HandleMove(Vector3.right); break;
+            case EVENT_PLAYER.PLAYER_DOWN_MOVE: IsValidPosition(Vector3.down); break;
+            case EVENT_PLAYER.PLAYER_UP_MOVE: IsValidPosition(Vector3.up); break;
+            case EVENT_PLAYER.PLAYER_LEFT_MOVE: IsValidPosition(Vector3.left); break;
+            case EVENT_PLAYER.PLAYER_RIGHT_MOVE: IsValidPosition(Vector3.right); break;
         }
     }
 

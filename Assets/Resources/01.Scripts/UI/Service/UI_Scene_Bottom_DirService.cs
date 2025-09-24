@@ -18,7 +18,7 @@ public class UI_Scene_Bottom_DirService : MonoBehaviour
         InjectUtil.InjectComponents(this);
     }
 
-    public void OnClickLeftButton() { eventManager.PostNotification(EVENT_PLAYER.PLAYER_LEFT_MOVE, this); OffAllButton(); }
+    public void OnClickLeftButton() { eventManager.PostNotification(EVENT_PLAYER.PLAYER_LEFT_MOVE, this);OffAllButton(); }
 
     public void OnClickRightButton() { eventManager.PostNotification(EVENT_PLAYER.PLAYER_RIGHT_MOVE, this); OffAllButton(); }
 

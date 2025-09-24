@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterView : MonoBehaviour
 {
-    [FindComponents("Monster")] private SpriteRenderer spriteRenderer;
+    [FindComponents("Monster"), SerializeField] private SpriteRenderer spriteRenderer;
 
     public void Init()
     {

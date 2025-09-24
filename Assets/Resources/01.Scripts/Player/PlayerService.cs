@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 public partial class PlayerService : MonoBehaviour
 {
+    [Singleton(typeof(MapManager))] private MapManager mapManager;
     [FindComponents("View"), SerializeField] private PlayerView view;
     [FindComponents("Model"), SerializeField] private PlayerDataComponent model;
     [FindComponents("State"), SerializeField] private PlayerState state;
@@ -18,8 +19,10 @@ public partial class PlayerService : MonoBehaviour
 
     public void Init()
     {
+        InjectUtil.InjectSingleton(this);
         InjectUtil.InjectComponents(this);
 
+        state.Init();
         view.Init();
     }
 
@@ -29,7 +32,7 @@ public partial class PlayerService : MonoBehaviour
     public void PlayAnim3() => view.PlayAnim3();
 
 
-    // ���� string �� �Ǵ� enum ���� Model �� �Ѱ��ָ� �ڵ����� ��������Ʈ ���� ��
+    // 받은 string 값 또는 enum 값을 Model 에 넘겨주면 자동으로 스프라이트 변경 됨
     public void EquipHelmet(string helmetSpriteName)
     {
         if (helmetSpriteName.Equals("") || helmetSpriteName.Equals(String.Empty) || helmetSpriteName.Equals(" "))
@@ -46,7 +49,7 @@ public partial class PlayerService : MonoBehaviour
                 return;
             }
         }
-        LogUtil.Log("������ �� �ִ� ����� �����ϴ�.");
+        LogUtil.Log("장착할 수 있는 헬멧이 없습니다.");
     }
 
     public void EquipArmour(string armourSpriteName)
@@ -67,7 +70,7 @@ public partial class PlayerService : MonoBehaviour
                 return;
             }
         }
-        LogUtil.Log("������ �� �ִ� ������ �����ϴ�.");
+        LogUtil.Log("장착할 수 있는 갑옷이 없습니다.");
     }
 
     public void EquipShield(string shieldSpriteName)
@@ -86,13 +89,73 @@ public partial class PlayerService : MonoBehaviour
                 return;
             }
         }
-        LogUtil.Log("������ �� �ִ� ���尡 �����ϴ�.");
+        LogUtil.Log("장착할 수 있는 쉴드가 없습니다.");
     }
 
     public void PlayAnimation(PLAYER_STATE playerState)
     {
         model._playerState = playerState;
         view.PlayAnimation(playerState);
+    }
+
+    // 이건 방향키 이벤트 전용으로 사용해야 될 것 같은 느낌이?
+    // 추후 마법이나 스킬은 다른 이벤트를 받아서 쓰는게 어떨까?
+    public void IsValidPosition(Vector3 dir)
+    {
+        // 몬스터 체크
+        if (HasMonsterAt(dir) != null) 
+            return;
+        // 아이템 체크
+        //if (HasItemAt(dir) != null) 
+            //return;
+        // 이동
+        HasCollisionAt(dir);
+    }
+
+    private MonsterController HasMonsterAt(Vector3 dir)
+    {
+        // 몬스터 체크
+        var monsterController = mapManager.HasMonsterAt(transform.position + dir);
+        if (monsterController == null)
+            return null;
+
+        // 몬스터가 있을 경우 해야될 상태를 넣을 것 // 기본 공격 // 스킬 // 마법 
+        return monsterController;
+    }
+
+    private ItemController HasItemAt(Vector3 dir)
+    {
+        // 아이템 체크
+        var itemController = mapManager.HasItemAt(transform.position + dir);
+        if (itemController == null)
+            return null;
+
+        // 아이템이 있을 경우 해야될 상태를 넣을 것 
+        return itemController;
+    }
+
+    private void HasCollisionAt(Vector3 dir)
+    {
+        Vector3 newDir = dir;
+        // 이동 체크
+        if (!mapManager.HasCollisionAt(gameObject.transform.position + newDir))
+            newDir = Vector3.zero;
+
+        if (newDir.x > 0) // 0 보다 크면 오른쪽
+            SetFilpXSprite(false);
+
+        if (newDir.x < 0) // 0 보다 작으면 왼쪽
+            SetFilpXSprite(true);
+
+        SetMoveDir(newDir);
+        SetPlayerState(state._moveState);
+        DoPlayerState();
+    }
+
+    public void HandIdle()
+    {
+        SetPlayerState(state._idleState);
+        DoPlayerState();
     }
 
     public Vector3 GetMoveDir() => model._dir;

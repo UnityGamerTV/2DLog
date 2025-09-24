@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class MonsterDataComponent : MonoBehaviour
@@ -47,5 +47,44 @@ public class MonsterDataComponent : MonoBehaviour
     MagicType CheckMagicType(MagicType? data)
     {
         return data ?? MagicType.NONE;
+    }
+
+
+    public void OnDamaged(AttackType attackType, int damage)
+    {
+        int resValue = CalResistanceValue(attackType); //속성 확인 후 저항값 
+        CalDamaged(damage, resValue);         //대미지 계산 
+    }
+
+    private int CalResistanceValue(AttackType attackType)
+    {
+        int resValue = 0;
+
+        switch (attackType)
+        {
+            case AttackType.FIRE: resValue = fireRes; break;
+            case AttackType.COLD: resValue = coldRes; break;
+            case AttackType.DARK: resValue = darkRes; break;
+            case AttackType.MELEE: resValue = defence; break;
+            case AttackType.POISON: resValue = poisonRes; break;
+        }
+        return resValue;
+    }
+
+    private void CalDamaged(int damage, int resistValue)
+    {
+        int calDamage = damage - resistValue;
+        int tempHp = currentHp;
+        if (calDamage > 0)
+        {
+            tempHp -= calDamage;
+            if (tempHp < 0)
+            {
+                tempHp = 0;
+                // 죽었다는 광역 이벤트 추가
+            }
+
+            currentHp = tempHp; // view 에 hp바 적용 델리게이트 추가
+        }
     }
 }

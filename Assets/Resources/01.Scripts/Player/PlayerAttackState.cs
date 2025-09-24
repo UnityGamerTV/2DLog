@@ -2,38 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackState : StateMachineBehaviour
+public class PlayerAttackState : IState
 {
-    [SerializeField] private PlayerController controller;
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if (controller == null)
-            controller = animator.GetComponent<PlayerController>();
+    private PlayerController controller;
 
-        //controller.SetPlayerState(PLAYER_STATE.ATTACK);
+    public PlayerAttackState (PlayerController controller)
+    {
+        this.controller = controller;
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public void OnStateEnter()
+    {
+        controller.PlayAnimation(PLAYER_STATE.ATTACK);
+        OnStateUpdate();
+    }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public void OnStateExit()
+    {
+        
+    }
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    public void OnStateUpdate()
+    {
+        
+    }
 }
