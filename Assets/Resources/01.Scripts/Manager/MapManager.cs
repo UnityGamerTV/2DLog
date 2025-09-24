@@ -12,10 +12,10 @@ public struct PLAYER_POS
     public int tileX { get; set; }
 }
 
-/// <summary>
-/// 맵 생성 전용
-/// </summary>
-/// 
+    /// <summary>
+    /// 맵 생성 전용
+    /// </summary>
+    /// 
 public partial class MapManager : Singleton<MapManager>, IManager
 {
     [Singleton(typeof(ResourceManager))] private ResourceManager resourceManager;
@@ -29,12 +29,12 @@ public partial class MapManager : Singleton<MapManager>, IManager
     [SerializeField] private Tilemap baseTilemap;
     [SerializeField] private MapData mapData;
 
-    // 
     [SerializeField] private bool[,] isCollision;
     [SerializeField] private PLAYER_POS playerPos;
-    // 아이템
-    [SerializeField] private bool[,] isItem;
-    [SerializeField] private bool[,] isMonster;
+    
+    [SerializeField] private bool[,] isItem; // 아이템
+    [SerializeField] private bool[,] isMonster; // 몬스터
+
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
@@ -195,7 +195,9 @@ public partial class MapManager : Singleton<MapManager>, IManager
                 if (line[x] == '0')
                 {
                     Vector3 worldPos = CellToWorld(cellX, cellY);
-                    fieldManager.CreateItem(worldPos, map, mapData, itemIndex);
+                    var itemController = fieldManager.CreateItem(worldPos, map, mapData, itemIndex);
+                    fieldManager._itemDic.Add(new Vector2Int(x, flippedY), itemController);
+                    isItem[flippedY, x] = true;
                     itemIndex++;
                 }
             }
@@ -216,13 +218,11 @@ public partial class MapManager : Singleton<MapManager>, IManager
 
                 if (line[x] == '0')
                 {
-                    // 월드 좌표로 변경
-                    Vector3 worldPos = CellToWorld(cellX, cellY);
-                    fieldManager.CreateMonster(worldPos, map, mapData, monsterIndex);
+                    Vector3 worldPos = CellToWorld(cellX, cellY);// 월드 좌표로 변경 (생성 좌표 계산하기 위해)
+                    var monsterController = fieldManager.CreateMonster(worldPos, map, mapData, monsterIndex); // 필드 매니저에서 생성 관리
+                    fieldManager._monsterDic.Add(new Vector2Int(x, flippedY), monsterController); // 딕셔너리에는 배열 좌표로 관리
+                    isMonster[flippedY, x] = true; // 몬스터 위치를 배열에 기록
                     monsterIndex++;
-
-                    // 몬스터 위치를 배열에 기록
-                    isMonster[flippedY, x] = true;
                 }
             }
         }
@@ -240,6 +240,19 @@ public partial class MapManager : Singleton<MapManager>, IManager
     {
         Vector3 adjustedPos = worldPosition - baseTilemap.cellSize / 2f;
         return baseTilemap.WorldToCell(adjustedPos);
+    }
+
+    // 셀 좌표 -> 2D 배열 인덱스 좌표
+    public Vector2Int CellToIndex(int cellX, int cellY)
+    {
+        Vector2Int indexPos = new Vector2Int();
+        // cellX/Y를 배열 인덱스로 변환
+        int indexX = cellX - mapData.bounds.xMin;
+        int indexY = cellY - mapData.bounds.yMin;
+
+        indexPos.x = indexX;
+        indexPos.y = indexY;
+        return indexPos;
     }
 
     private bool CanMoveTo(int tileX, int tileY)
@@ -273,6 +286,84 @@ public partial class MapManager : Singleton<MapManager>, IManager
         return true;
     }
 
+
+    private MonsterController HasMonsterAt(Vector2Int indexPos)
+    {
+        int indexX = indexPos.x;
+        int indexY = indexPos.y;
+
+        int xCount = isCollision.GetLength(1);
+        int yCount = isCollision.GetLength(0);
+
+        // 범위 체크
+        if (indexX < 0 || indexX >= xCount || indexY < 0 || indexY >= yCount)
+            LogUtil.LogError("범위를 벗어나는 좌표입니다.");
+
+        // Y축 보정: indexY가 이미 맵 좌표 기준이므로 직접 사용
+        // ParsingTextMap에서 flippedY로 저장했으므로, indexY를 그대로 사용
+
+        if (!isMonster[indexY, indexX]) 
+            return null;
+
+        return fieldManager._monsterDic[indexPos];
+    }
+
+    private ItemController HasItemAt(Vector2Int indexPos)
+    {
+        int indexX = indexPos.x;
+        int indexY = indexPos.y;
+
+        int xCount = isCollision.GetLength(1);
+        int yCount = isCollision.GetLength(0);
+
+        // 범위 체크
+        if (indexX < 0 || indexX >= xCount || indexY < 0 || indexY >= yCount)
+            LogUtil.LogError("범위를 벗어나는 좌표입니다.");
+
+        if (!isItem[indexY, indexX])
+            return null;
+
+        return fieldManager._itemDic[indexPos];
+    }
+
+    private bool HasCollisionAt(Vector2Int indexPos)
+    {
+        int indexX = indexPos.x;
+        int indexY = indexPos.y;
+
+        int xCount = isCollision.GetLength(1);
+        int yCount = isCollision.GetLength(0);
+
+        // 범위 체크
+        if (indexX < 0 || indexX >= xCount || indexY < 0 || indexY >= yCount)
+            LogUtil.LogError("범위를 벗어나는 좌표입니다.");
+
+        if(isCollision[indexY, indexX]) 
+            return false;
+
+        return true;
+    }
+
+    public MonsterController HasMonsterAt(Vector3 worldPos)
+    {
+        Vector3Int cellPos = WorldToCell(worldPos);
+        Vector2Int indexPos = CellToIndex(cellPos.x, cellPos.y);
+        return HasMonsterAt(indexPos);
+    }
+
+    public ItemController HasItemAt(Vector3 worldPos)
+    {
+        Vector3Int cellPos = WorldToCell(worldPos);
+        Vector2Int indexPos = CellToIndex(cellPos.x, cellPos.y);
+        return HasItemAt(indexPos);
+    }
+
+    public bool HasCollisionAt(Vector3 worldPos)
+    {
+        Vector3Int cellPos = WorldToCell(worldPos);
+        Vector2Int indexPos = CellToIndex(cellPos.x, cellPos.y);
+        return HasCollisionAt(indexPos);
+    }
 
     /// <summary>
     /// 월드 좌표를 입력받아 이동 가능 여부 확인

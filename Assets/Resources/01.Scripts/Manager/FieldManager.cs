@@ -16,10 +16,12 @@ public class FieldManager : Singleton<FieldManager>, IManager
 
     public PlayerController _playerController { get { return playerController; } set { playerController = value; } }
     [SerializeField] private PlayerController playerController;
-    public List<MonsterController> _monsterControllerList { get { return monsterControllerList; } set { monsterControllerList = value; } }
-    [SerializeField] private List<MonsterController> monsterControllerList;
-    public List<ItemController> _ItemControllerList { get { return itemControllerList; } set { itemControllerList = value; } }
-    [SerializeField] private List<ItemController> itemControllerList;
+
+    public Dictionary<Vector2Int, MonsterController> _monsterDic { get { return monsterDic; } set { monsterDic = value; } }
+    [SerializeField] private Dictionary<Vector2Int, MonsterController> monsterDic;
+
+    public Dictionary<Vector2Int, ItemController> _itemDic { get { return itemDic; } set { itemDic = value; } }
+    [SerializeField] private Dictionary<Vector2Int, ItemController> itemDic;
 
     public FactoryBase _itemFactory { set { itemFactory = value; } }
     private FactoryBase itemFactory;
@@ -32,20 +34,20 @@ public class FieldManager : Singleton<FieldManager>, IManager
     {
         InjectUtil.InjectSingleton(this);
 
-        monsterControllerList = new();
-        itemControllerList = new();
+        monsterDic = new();
+        itemDic = new();
     }
 
-    public void CreateItem(Vector3 worldPos, GameObject map, MapData mapData, int itemIndex)
+    public ItemController CreateItem(Vector3 worldPos, GameObject map, MapData mapData, int itemIndex)
     {
         var item = itemFactory.CreateObj(worldPos, map, mapData, itemIndex);
-            itemControllerList.Add((ItemController)item);
+            return(ItemController)item;
     }
 
-    public void CreateMonster(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
+    public MonsterController CreateMonster(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
     {
         var monster = monsterFactory.CreateObj(worldPos, map, mapData, monsterIndex);
-        monsterControllerList.Add((MonsterController)monster);
+        return (MonsterController)monster;
     }
 
     public void CreatePlayer(Vector3 worldPos, GameObject map, MapData mapData = null, int index = 0)
