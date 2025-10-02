@@ -13,7 +13,8 @@ public class FactoryManager : Singleton<FactoryManager>, IManager
     [SerializeField] private FactoryBase monsterFactory;
     public FactoryBase _playerFactory { get { return playerFactory; } set { playerFactory = value; } }
     [SerializeField] private FactoryBase playerFactory;
-
+    public ParticleFactoryBase _particleFactory { get { return particleFactory; } set { particleFactory = value; } }
+    [SerializeField] private ParticleFactoryBase particleFactory;
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
@@ -27,6 +28,9 @@ public class FactoryManager : Singleton<FactoryManager>, IManager
 
         playerFactory = new PlayerFactory();
         playerFactory.Init();
+
+        particleFactory = new ParticleFactory();
+        particleFactory.Init();
 
         // 의존성 주입
         fieldManager._itemFactory = _itemFactory;

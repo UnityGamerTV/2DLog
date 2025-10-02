@@ -26,6 +26,7 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
         downButton.onClick.AddListener(service.OnClickDownButton);
 
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
     }
 
     public override void Release()
@@ -38,13 +39,15 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
         downButton.onClick.RemoveListener(service.OnClickDownButton);
 
         eventManager.RemoveListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
+        eventManager.RemoveListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
     }
 
     void IListener.OnEvent<TEnum>(TEnum event_Type, Component sender, object param)
     {
-        if (event_Type.Equals(EVENT_PLAYER.PLAYER_MOVE_COMPLETE))
+        switch(event_Type)
         {
-            service.OnAllButton();
+            case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: service.OnAllButton();break;
+            case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: service.OnAllButton();break;
         }
     }
 }

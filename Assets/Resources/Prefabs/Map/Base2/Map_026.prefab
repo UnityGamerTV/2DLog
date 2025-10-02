@@ -12842,7 +12842,7 @@ GameObject:
   - component: {fileID: 1507769208786015898}
   m_Layer: 0
   m_Name: Map_026
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,0 +1,6 @@
+If you are using the effects in a Universal 2D project, install the packages in order:
+
+1. Retro Arsenal URP Upgrade (2021-3-12f1)
+2. Retro Arsenal URP 2D Fix (2021-3-11f1)
+
+The 2D Fix should not be necessary to import in a 3D project.

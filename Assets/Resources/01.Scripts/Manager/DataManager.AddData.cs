@@ -196,4 +196,44 @@ public partial class DataManager : Singleton<DataManager>
             _comment = GetLocalizedText($"{spriteName}_comment"),
         };
     }
+
+    public ParticleData AddParticleData(string particleName)
+    {
+        MagicData magicData = null;
+
+        if (!magicDic.TryGetValue(particleName, out magicData))
+            return null;
+
+        return new ParticleData
+        {
+            // DecoratorDataComponent
+            _max_hp = magicData._max_hp,
+            _max_mp = magicData._max_mp,
+            _min_attack = magicData._min_attack,
+            _max_attack = magicData._max_attack,
+            _defence = magicData._defence,
+            _min_magic_attack = magicData._min_magic_attack,
+            _max_magic_attack = magicData._max_magic_attack,
+            _fire_res = magicData._fire_res,
+            _cold_res = magicData._cold_res,
+            _earth_res = magicData._earth_res,
+            _dark_res = magicData._dark_res,
+            _poison_res = magicData._poison_res,
+            _avoid = magicData._avoid,
+            // ParticleDataComponent
+            _name = magicData._name,
+            _base_damage = magicData._base_damage,
+            _reach = magicData._reach,
+            _range = magicData._range,
+            _magic_attack_type = magicData._magic_attack_type,
+            _mp_consume = magicData._mp_consume,
+            _skill_limit = magicData._skill_limit,
+            _magic_property_type = magicData._magic_property_type,
+            _turn = magicData._turn,
+            _magic_effect_type = magicData._magic_effect_type,
+            _nickName = magicData._nickName,
+            _icon = magicData._icon,
+            _comment = magicData._comment,
+        };
+    }
 }

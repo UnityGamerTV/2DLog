@@ -10,9 +10,9 @@ public class PlayerState : MonoBehaviour
     private IState idleState;
     public IState _moveState { get { return moveState; } }
     private IState moveState;
-
-
+    public IState _attackState { get { return attackState; } }
     private IState attackState;
+
     private IState dieState;
     private IState endTurnState;
     private IState abilityState;
@@ -23,5 +23,6 @@ public class PlayerState : MonoBehaviour
 
         idleState = new PlayerIdleState(controller);
         moveState = new PlayerMoveState(controller);
+        attackState = new PlayerAttackState(controller);
     }
 }

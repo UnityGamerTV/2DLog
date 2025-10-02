@@ -17,7 +17,6 @@ public class PlayerController : FieldObjBase, IController, IListener
         InjectUtil.InjectComponents(this);
 
         service.Init();
-        state.Init();
 
         eventManager.AddListener(EVENT_PLAYER.PLAYER_DOWN_MOVE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_UP_MOVE, this);
@@ -55,25 +54,6 @@ public class PlayerController : FieldObjBase, IController, IListener
     // 이동 관련 모음
     #region PlayerMove
 
-    public void HandleMove(Vector3 dir)
-    {
-        Vector3 newDir = dir;
-        // 해당 맵을 갈 수 있는지 확인 필요
-        if (!mapManager.CanMoveTo(gameObject.transform.position + newDir))
-            newDir = Vector3.zero;
-
-        if (newDir.Equals(Vector3.right))
-            SetFilpXSprite(false);
-
-        if (newDir.Equals(Vector3.left))
-            SetFilpXSprite(true);
-
-        SetMoveDir(newDir);
-        SetPlayerState(state._moveState);
-        DoPlayerState();
-    }
-
-
     public Vector3 GetMoveDir() => service.GetMoveDir();
     public void SetMoveDir(Vector3 dir) => service.SetMoveDir(dir);
     public void SetPlayerState(IState state) => service.SetPlayerState(state);
@@ -90,6 +70,7 @@ public class PlayerController : FieldObjBase, IController, IListener
             case EVENT_PLAYER.PLAYER_UP_MOVE: IsValidPosition(Vector3.up); break;
             case EVENT_PLAYER.PLAYER_LEFT_MOVE: IsValidPosition(Vector3.left); break;
             case EVENT_PLAYER.PLAYER_RIGHT_MOVE: IsValidPosition(Vector3.right); break;
+            case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: HandIdle(); break;
         }
     }
 

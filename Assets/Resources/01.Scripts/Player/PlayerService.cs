@@ -119,6 +119,18 @@ public partial class PlayerService : MonoBehaviour
         if (monsterController == null)
             return null;
 
+        Vector3 newDir = dir;
+
+        if (newDir.x > 0) // 0 보다 크면 오른쪽
+            SetFilpXSprite(false);
+
+        if (newDir.x < 0) // 0 보다 작으면 왼쪽
+            SetFilpXSprite(true);
+
+        SetMoveDir(newDir);
+        SetPlayerState(state._attackState);
+        DoPlayerState();
+
         // 몬스터가 있을 경우 해야될 상태를 넣을 것 // 기본 공격 // 스킬 // 마법 
         return monsterController;
     }

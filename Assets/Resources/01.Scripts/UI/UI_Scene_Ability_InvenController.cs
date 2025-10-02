@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class UI_Scene_Ability_InvenController : UI_Scene
 {
-    // Start is called before the first frame update
-    void Start()
+    [FindComponents("Service"), SerializeField] private UI_Scene_Ability_InvenService service;
+
+    public override void Init()
     {
+        base.Init();
         
+        InjectUtil.InjectComponents(this);
+        service.Init();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Release()
     {
-        
+        base.Release();
+
+        service.Release();
     }
 }

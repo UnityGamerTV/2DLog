@@ -29,6 +29,8 @@ public class FieldManager : Singleton<FieldManager>, IManager
     private FactoryBase monsterFactory;
     public FactoryBase _playerFactory { set { playerFactory = value; } }
     private FactoryBase playerFactory;
+    public ParticleFactoryBase _particleFactory { set { particleFactory = value; } }
+    private ParticleFactoryBase particleFactory;
 
     public void Init()
     {
@@ -60,6 +62,11 @@ public class FieldManager : Singleton<FieldManager>, IManager
 #endif
     }
 
+    public ParticleController CreateParticle(Vector3 worldPos, GameObject map, ParticleType particleType)
+    {
+        var particleController = particleFactory.CreateParticle(worldPos, map, particleType);
+        return (ParticleController)particleController;
+    }
 
     public void Release()
     {

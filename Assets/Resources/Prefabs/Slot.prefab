@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 5383888690891851754}
   m_Layer: 5
   m_Name: Slot
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3458092528436845783}
   m_Layer: 5
   m_Name: Slider_HealthBar_Attack
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
