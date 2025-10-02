@@ -130,4 +130,37 @@ public partial class DataManager : Singleton<DataManager>
         target._magic2 = newMonsterData._magic2;
         target._comment = newMonsterData._comment;
     }
+
+    public void CopyParticleData(ParticleDataComponent target, ParticleData newParticleData)
+    {
+        // DecoratorDataComponent
+        target._max_hp = newParticleData._max_hp;
+        target._max_mp = newParticleData._max_mp;
+        target._min_attack = newParticleData._min_attack;
+        target._max_attack = newParticleData._max_attack;
+        target._defence = newParticleData._defence;
+        target._min_magic_attack = newParticleData._min_magic_attack;
+        target._max_magic_attack = newParticleData._max_magic_attack;
+        target._fire_res = newParticleData._fire_res;
+        target._cold_res = newParticleData._cold_res;
+        target._earth_res = newParticleData._earth_res;
+        target._dark_res = newParticleData._dark_res;
+        target._poison_res = newParticleData._poison_res;
+        target._avoid = newParticleData._avoid;
+        // ParticleDataComponent
+        target._name = newParticleData._name;
+        target._base_damage = newParticleData._base_damage;
+        target._reach = newParticleData._reach;
+        target._range = newParticleData._range;
+        target._magic_attack_type = newParticleData._magic_attack_type;
+        target._mp_consume = newParticleData._mp_consume;
+        target._skill_limit = newParticleData._skill_limit;
+        target._magic_property_type = newParticleData._magic_property_type;
+        target._turn = newParticleData._turn;
+        target._magic_effect_type = newParticleData._magic_effect_type;
+        target._nickName = newParticleData._nickName;
+        target._icon = newParticleData._icon;
+        target._comment = newParticleData._comment;
+    }
 }
+

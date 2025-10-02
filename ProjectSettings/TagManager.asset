@@ -9,6 +9,9 @@ TagManager:
   - Right
   - Left
   - Monster
+  - PrefabRoot
+  - Missile
+  - Target
   layers:
   - Default
   - TransparentFX

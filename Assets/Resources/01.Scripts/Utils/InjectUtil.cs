@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Reflection;
+using UnityEditor;
 
 [AttributeUsage(AttributeTargets.Field)]
 public class FindComponentsAttribute : Attribute
@@ -95,11 +96,10 @@ public static class InjectUtil
     {
         Transform tr;
         // 현재 스크립트가 루트인지 확인
-        if (script.transform == script.transform.root)
+        if (script.transform.CompareTag("PrefabRoot"))
             tr = FindChild(attribute.gameObjectNames[0], script.transform);
         else
             tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
-        
 
         if (tr == null)
         {
@@ -126,8 +126,9 @@ public static class InjectUtil
         foreach (string gameObjectName in attribute.gameObjectNames)
         {
             Transform tr;
+
             // 현재 스크립트가 루트인지 확인
-            if (script.transform == script.transform.root)
+            if (script.transform.CompareTag("PrefabRoot"))
                 tr = FindChild(attribute.gameObjectNames[0], script.transform);
             else
                 tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
@@ -157,10 +158,17 @@ public static class InjectUtil
     public static Transform FindInSameRoot(string name, Transform startTr)
     {
         // 1. 내가 속한 루트 구하기
-        Transform root = startTr.root;
+        Transform findTr = null;
+        while (findTr == null)
+        {
+            if (startTr.CompareTag("PrefabRoot"))
+                findTr = startTr;
+
+            startTr = startTr.parent;
+        }
 
         // 2. 루트 기준으로 전체 탐색
-        return FindChild(name, root);
+        return FindChild(name, findTr);
     }
 
     /// <summary>

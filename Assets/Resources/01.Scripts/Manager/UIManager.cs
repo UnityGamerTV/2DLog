@@ -74,12 +74,14 @@ public class UIManager : Singleton<UIManager>, IManager
     /// <returns></returns>
     public T ShowSceneUI<T>(UI_SCENE_ENUM ui_enum) where T : UI_Scene
     {
+        // 이건 나중에 오브젝트 풀로 수정
         GameObject go = resourceManager.Instantiate($"{GetUIScenePath(ui_enum)}");
         T sceneUI = Util.GetOrAddComponent<T>(go);
         order++;
         sceneStack.Push(sceneUI);
         go.transform.SetParent(root.transform);
         SetCanvase(go);
+        sceneUI.Init();
         return sceneUI;
     }
 
@@ -91,13 +93,13 @@ public class UIManager : Singleton<UIManager>, IManager
     /// <returns></returns>
     public T ShowPopupUI<T>(UI_POPUP_ENUM ui_enum) where T : UI_Popup
     {
+        // 이건 나중에 오브젝트 풀로 수정
         GameObject go = resourceManager.Instantiate($"{GetUIPopupPath(ui_enum)}");
         T popup = Util.GetOrAddComponent<T>(go);
         order++;
         popupStack.Push(popup);
-
         go.transform.SetParent(root.transform);
-
+        popup.Init();
         return popup;
     }
 
@@ -118,19 +120,20 @@ public class UIManager : Singleton<UIManager>, IManager
             return;
 
         UI_Popup popup = popupStack.Pop();
-        Destroy(popup.gameObject);
+        popup.Release();
+        Destroy(popup.gameObject); // 이건 오브젝트 풀로 나중에 수정
         popup = null;
         order--;
     }
 
-    public void CloseSceneUI()
+    public void CloseSceneUI(UI_Scene sceneUI)
     {
-        //if (sceneUI == null)
-        //    return;
+        if (sceneUI == null)
+            return;
 
-        //GameManager.Resouce.Destroy(sceneUI.gameObject);
-        //sceneUI = null;
-        //order--;
+        GameManager.Resouce.Destroy(sceneUI.gameObject); // 이건 오브젝트 풀로 나중에 수정
+        sceneUI = null;
+        order--;
     }
 
     public void CloseAllPopupUI()

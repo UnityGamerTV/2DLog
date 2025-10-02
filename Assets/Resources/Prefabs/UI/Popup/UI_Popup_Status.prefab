@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 1016403129500230251}
   m_Layer: 5
   m_Name: UI_Popup_Status
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

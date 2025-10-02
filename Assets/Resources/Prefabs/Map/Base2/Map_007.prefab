@@ -27256,7 +27256,7 @@ GameObject:
   - component: {fileID: 4463247952008166015}
   m_Layer: 0
   m_Name: Map_007
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

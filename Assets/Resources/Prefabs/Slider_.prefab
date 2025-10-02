@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 5668075041211814648}
   m_Layer: 5
   m_Name: Slider_
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

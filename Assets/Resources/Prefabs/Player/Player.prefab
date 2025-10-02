@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   view: {fileID: 6889625580343911965}
   model: {fileID: 1188961125135920459}
-  state: {fileID: 0}
+  state: {fileID: 8952350474858150051}
 --- !u!1 &2890254330143517973
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 6243772217850080948}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: PrefabRoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,6 +341,7 @@ MonoBehaviour:
   helmetSpriteRenderer: {fileID: 7801391062926453412}
   armourSpriteRenderer: {fileID: 1057264197661730140}
   shieldSpriteRenderer: {fileID: 2200659846224941881}
+  bodySpriteRenderer: {fileID: 1259001431593818971}
   helmetType: 0
   armourType: 0
   shieldType: 0
@@ -389,11 +390,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128d3b064372b914aae26111570967f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 0
+  maxMp: 0
+  minAttack: 0
+  maxAttack: 0
+  defence: 0
+  minMagicAttack: 0
+  maxMagicAttack: 0
+  fireRes: 0
+  coldRes: 0
+  earthRes: 0
+  darkRes: 0
+  poisonRes: 0
+  avoid: 0
   helmetType: 0
   armourType: 0
   shieldType: 0
   playerState: 0
   dir: {x: 0, y: 0, z: 0}
+  level: 0
+  currentHp: 0
+  currentMp: 0
+  arrowSkillLevel: 0
+  axeSkillLevel: 0
+  maceSkillLevel: 0
+  spearSkillLevel: 0
+  staffSkillLevel: 0
+  swordSkillLevel: 0
+  coldSkillLevel: 0
+  earthSkillLevel: 0
+  darkSkillLevel: 0
+  fireSkillLevel: 0
+  poisonSkillLevel: 0
 --- !u!1 &4975650674974696276
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,4 +636,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a242ca7b11e3e4f902c77f073f6184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
+  controller: {fileID: 6243772217850080948}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PlayerDataComponent : MonoBehaviour
+public class PlayerDataComponent : DecoratorDataComponent
 {
     public Action helmetEquipAction;
     public Action armourEquipAction;
@@ -19,6 +19,39 @@ public class PlayerDataComponent : MonoBehaviour
     [SerializeField] private PLAYER_STATE playerState;
     public Vector3 _dir { get { return dir; } set { dir = value; } }
     [SerializeField] private Vector3 dir;
+    //
+    public int? _level { get { return level; } set { level = CheckNullValue(value); } }
+    [SerializeField] private int level;
+    public int? _current_hp { get { return currentHp; } set { currentHp = CheckNullValue(value); } }
+    [SerializeField] private int currentHp;
+    public int? _current_mp { get { return currentMp; } set { currentMp = CheckNullValue(value); } }
+    [SerializeField] private int currentMp;
+    public int? _arrow_skill_level { get { return arrowSkillLevel; } set { arrowSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int arrowSkillLevel;
+    public int? _axe_skill_level { get { return axeSkillLevel; } set { axeSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int axeSkillLevel;
+    public int? _mace_skill_level { get { return maceSkillLevel; } set { maceSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int maceSkillLevel;
+    public int? _spear_skill_level { get { return spearSkillLevel; } set { spearSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int spearSkillLevel;
+    public int? _staff_skill_level { get { return staffSkillLevel; } set { staffSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int staffSkillLevel;
+    public int? _sword_skill_level { get { return swordSkillLevel; } set { swordSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int swordSkillLevel;
+    public int? _cold_skill_level { get { return coldSkillLevel; } set { coldSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int coldSkillLevel;
+    public int? _earth_skill_level { get { return earthSkillLevel; } set { earthSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int earthSkillLevel;
+    public int? _dark_skill_level { get { return darkSkillLevel; } set { darkSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int darkSkillLevel;
+    public int? _fire_skill_level { get { return fireSkillLevel; } set { fireSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int fireSkillLevel;
+    public int? _poison_skill_level { get { return poisonSkillLevel; } set { poisonSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int poisonSkillLevel;
+
+    public override void Operation() { }
+
+    public override void Revert() { }
 }
 
 public enum HELMET_TYPE
