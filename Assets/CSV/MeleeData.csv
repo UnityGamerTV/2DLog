@@ -1,0 +1,12 @@
+_id,_name,_base_damage,_cast_range,_effect_radius,_magic_cast_type,_mp_consume,_required_skill_level,_element_type,_turn,_status_effect_type,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_nickname,_icon
+1,칼 기본 공격,,1,SINGLE,TARGET,0,0,,,,,,,,,,,,,,,,,MELEEDATA,sword1,sword1
+2,창 기본 공격,,2,SINGLE,TARGET,0,0,,,,,,,,,,,,,,,,,MELEEDATA,spear1,spear1
+3,활 기본 공격,,4,SINGLE,MISSILE,0,0,,,,,,,,,,,,,,,,,MELEEDATA,bow1,bow1
+4,도끼 기본 공격,,1,SINGLE,TARGET,0,0,,,,,,,,,,,,,,,,,MELEEDATA,axe1,axe1
+5,메이스 기본 공격,,1,SINGLE,TARGET,0,0,,,,,,,,,,,,,,,,,MELEEDATA,mace1,mace1
+6,스태프 기본 공격,,1,SINGLE,TARGET,0,0,,,,,,,,,,,,,,,,,MELEEDATA,staff1,staff1
+7,칼 특수 공격,,1,SINGLE,TARGET,9,3,,,,,,,,,,,,,,,,,MELEEDATA,sword2,sword2
+8,창 특수 공격,,3,THREE_HORIZONTAL,TARGET,9,3,,,,,,,,,,,,,,,,,MELEEDATA,spear2,spear2
+9,활 특수 공격,,4,SINGLE,TARGET,9,3,,,,,,,,,,,,,,,,,MELEEDATA,bow2,bow2
+10,도끼 특수 공격,,1,EIGHT_DIRECTIONS,TARGET,9,3,,,,,,,,,,,,,,,,,MELEEDATA,axe2,axe2
+11,메이스 특수 공격,,1,SINGLE,TARGET,9,3,,,,,,,,,,,,,,,,,MELEEDATA,mace2,mace2

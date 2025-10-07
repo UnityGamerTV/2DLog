@@ -36,6 +36,7 @@ public class FactoryManager : Singleton<FactoryManager>, IManager
         fieldManager._itemFactory = _itemFactory;
         fieldManager._monsterFactory = monsterFactory;
         fieldManager._playerFactory = playerFactory;
+        fieldManager._particleFactory = particleFactory;
     }
 
     public void Release()

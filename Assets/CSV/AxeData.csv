@@ -1,13 +1,13 @@
-_no,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defence,_min_magic_attack,_max_magic_attack,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_avoid,_item_property_type,_hand,_enhance_limit,_skill_limit,_nickName
-1,돌도끼,,,5,10,,,,,,,,,,,1,3,1,axe1
-2,손도끼,,,10,15,,,,,,,,,,,1,3,1,axe4
-3,전투도끼,,,15,20,,,,,,,,,,,1,3,2,axe2
-4,넓적날 도끼,,,25,30,,,,,,,,,,,1,3,3,axe3
-5,양날 도끼,,,25,35,,,,,,,,,,,2,3,3,axe5
-6,대형 양날 도끼,,,30,35,,,,,,,,,,,2,3,3,axe8
-7,처형인의 도끼,,,40,45,,,,,,,,,,,2,3,3,axe12
-8,푸른빛의 넓적날 도끼,20,,30,35,,,,,20,,,10,,COLD,1,3,3,axe6
-9,푸른빛의 대형 양날 도끼,20,,35,40,,,,,20,,,10,,COLD,2,3,3,axe10
-10,붉은빛의 대형 양날 도끼,20,,35,40,,,,20,,,,10,,FIRE,2,3,3,axe11
-11,넓적날 도끼,,,25,30,,,,,,,,,,,1,3,3,axe7
-12,대형 양날 도끼,,,30,35,,,,,,,,,,,2,3,3,axe9
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,돌도끼,,,5,10,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,1,,3,1,axe1
+2,손도끼,,,10,15,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,1,,3,1,axe4
+3,전투도끼,,,15,20,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,1,,3,2,axe2
+4,넓적날 도끼,,,25,30,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,1,,3,3,axe3
+5,양날 도끼,,,25,35,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,2,,3,3,axe5
+6,대형 양날 도끼,,,30,35,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,2,,3,3,axe8
+7,처형인의 도끼,,,40,45,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,2,,3,3,axe12
+8,푸른빛의 넓적날 도끼,20,,30,35,,,,,20,,,10,,ITEMDATA,EQUIPMENT,AXE,WEAPON,COLD,1,,3,3,axe6
+9,푸른빛의 대형 양날 도끼,20,,35,40,,,,,20,,,10,,ITEMDATA,EQUIPMENT,AXE,WEAPON,COLD,2,,3,3,axe10
+10,붉은빛의 대형 양날 도끼,20,,35,40,,,,20,,,,10,,ITEMDATA,EQUIPMENT,AXE,WEAPON,FIRE,2,,3,3,axe11
+11,넓적날 도끼,,,25,30,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,1,,3,3,axe7
+12,대형 양날 도끼,,,30,35,,,,,,,,,,ITEMDATA,EQUIPMENT,AXE,WEAPON,,2,,3,3,axe9

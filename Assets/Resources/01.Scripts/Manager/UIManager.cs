@@ -16,7 +16,9 @@ public class UIManager : Singleton<UIManager>, IManager
     [SerializeField] private Dictionary<UI_POPUP_ENUM, string> popupDic; // popupPaht dic
 
     private Stack<UI_Popup> popupStack;
-    private Stack<UI_Scene> sceneStack;
+    //private Stack<UI_Scene> sceneStack;
+    private Dictionary<UI_SCENE_ENUM, UI_Scene> sceneObjDic;
+    //private Dictionary<UI_POPUP_ENUM, UI_Popup> popupObjDic;
 
     private readonly string SCENE_UI_PATH = "Prefabs/UI/Scene/";
     private readonly string POPUP_UI_PATH = "Prefabs/UI/Popup/";
@@ -29,7 +31,8 @@ public class UIManager : Singleton<UIManager>, IManager
         sceneDic = new();
         popupDic = new();
         popupStack = new();
-        sceneStack = new();
+        //sceneStack = new();
+        sceneObjDic = new();
 
         SetDic();
     }
@@ -74,15 +77,32 @@ public class UIManager : Singleton<UIManager>, IManager
     /// <returns></returns>
     public T ShowSceneUI<T>(UI_SCENE_ENUM ui_enum) where T : UI_Scene
     {
-        // 이건 나중에 오브젝트 풀로 수정
+        // 관리중인지 체크 후 반환
+        var checkSceneUI = CheckSceneObjDic(ui_enum);
+        if (checkSceneUI)
+            return (T)checkSceneUI;
+
+        // 없으면 생성 후 반환
         GameObject go = resourceManager.Instantiate($"{GetUIScenePath(ui_enum)}");
         T sceneUI = Util.GetOrAddComponent<T>(go);
         order++;
-        sceneStack.Push(sceneUI);
+        sceneObjDic.Add(ui_enum, sceneUI);
         go.transform.SetParent(root.transform);
         SetCanvase(go);
         sceneUI.Init();
         return sceneUI;
+    }
+
+    private UI_Scene CheckSceneObjDic(UI_SCENE_ENUM ui_enum)
+    {
+        UI_Scene objDic = null;
+
+        if (!sceneObjDic.TryGetValue(ui_enum, out objDic))
+            return null;
+
+        objDic.gameObject.SetActive(true);
+        SetCanvase(objDic.gameObject);
+        return objDic;
     }
 
     /// <summary>
@@ -126,14 +146,11 @@ public class UIManager : Singleton<UIManager>, IManager
         order--;
     }
 
-    public void CloseSceneUI(UI_Scene sceneUI)
+    public void CloseSceneUI(UI_SCENE_ENUM uiSceneEnum)
     {
-        if (sceneUI == null)
-            return;
-
-        GameManager.Resouce.Destroy(sceneUI.gameObject); // 이건 오브젝트 풀로 나중에 수정
-        sceneUI = null;
-        order--;
+        var checkSceneUI = CheckSceneObjDic(uiSceneEnum);
+        if (checkSceneUI != null)
+            checkSceneUI.gameObject.SetActive(false);
     }
 
     public void CloseAllPopupUI()

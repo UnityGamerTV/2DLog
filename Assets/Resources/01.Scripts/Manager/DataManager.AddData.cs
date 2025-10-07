@@ -12,20 +12,20 @@ public partial class DataManager : Singleton<DataManager>
 
         return new RandartData
         {
-            _no = randartData._no,
+            _id = randartData._id,
             _max_hp = randartData._max_hp,
             _max_mp = randartData._max_mp,
             _min_attack = randartData._min_attack,
             _max_attack = randartData._max_attack,
-            _defence = randartData._defence,
+            _defense = randartData._defense,
             _min_magic_attack = randartData._min_magic_attack,
             _max_magic_attack = randartData._max_magic_attack,
-            _fire_res = randartData._fire_res,
-            _cold_res = randartData._cold_res,
-            _earth_res = randartData._earth_res,
-            _dark_res = randartData._dark_res,
-            _poison_res = randartData._poison_res,
-            _avoid = randartData._avoid,
+            _fire_resist = randartData._fire_resist,
+            _cold_resist = randartData._cold_resist,
+            _earth_resist = randartData._earth_resist,
+            _dark_resist = randartData._dark_resist,
+            _poison_resist = randartData._poison_resist,
+            _evasion = randartData._evasion,
             _option_name = randartData._option_name,
 
             _name = GetLocalizedText(randartData._option_name),
@@ -38,7 +38,7 @@ public partial class DataManager : Singleton<DataManager>
 
         List<Dictionary<string, ItemData>> itemDictionaries = new()
         {
-            amuletDic, armourDic, axeDic, bootsDic, bowDic,
+            amuletDic, armorDic, axeDic, bootsDic, bowDic,
             gloveDic, helmetDic, maceDic, ringDic, robeDic,
             shieldDic, spearDic, staffDic, swordDic, etcDic
         };
@@ -49,25 +49,30 @@ public partial class DataManager : Singleton<DataManager>
             {
                 return new ItemData
                 {
-                    _no = itemData._no,
+                    _id = itemData._id,
                     _max_hp = itemData._max_hp,
                     _max_mp = itemData._max_mp,
                     _min_attack = itemData._min_attack,
                     _max_attack = itemData._max_attack,
-                    _defence = itemData._defence,
+                    _defense = itemData._defense,
                     _min_magic_attack = itemData._min_magic_attack,
                     _max_magic_attack = itemData._max_magic_attack,
-                    _fire_res = itemData._fire_res,
-                    _cold_res = itemData._cold_res,
-                    _earth_res = itemData._earth_res,
-                    _dark_res = itemData._dark_res,
-                    _poison_res = itemData._poison_res,
-                    _avoid = itemData._avoid,
-                    _item_property_type = itemData._item_property_type,
-                    _hand = itemData._hand,
-                    _enhance_limit = itemData._enhance_limit,
-                    _skill_limit = itemData._skill_limit,
-                    _nickName = itemData._nickName,
+                    _fire_resist = itemData._fire_resist,
+                    _cold_resist = itemData._cold_resist,
+                    _earth_resist = itemData._earth_resist,
+                    _dark_resist = itemData._dark_resist,
+                    _poison_resist = itemData._poison_resist,
+                    _evasion = itemData._evasion,
+                    _data_type = itemData._data_type,
+                    _inventory_type = itemData._inventory_type,
+                    _Item_type = itemData._Item_type,
+                    _slot_type = itemData._slot_type,
+                    _element_type = itemData._element_type,
+                    _hand_type = itemData._hand_type,
+                    _current_enhance = itemData._current_enhance,
+                    _max_enhance = itemData._max_enhance,
+                    _required_skill_level = itemData._required_skill_level,
+                    _nickname = itemData._nickname,
 
                     _name = GetLocalizedText(spriteName),
                     _comment = GetLocalizedText($"{spriteName}_comment"),
@@ -86,24 +91,27 @@ public partial class DataManager : Singleton<DataManager>
 
         return new PotionData
         {
-            _no = potionData._no,
+            _id = potionData._id,
             _max_hp = potionData._max_hp,
             _current_hp = potionData._current_hp,
             _max_mp = potionData._max_mp,
             _current_mp = potionData._current_mp,
             _min_attack = potionData._min_attack,
             _max_attack = potionData._max_attack,
-            _defence = potionData._defence,
+            _defense = potionData._defense,
             _min_magic_attack = potionData._min_magic_attack,
             _max_magic_attack = potionData._max_magic_attack,
-            _fire_res = potionData._fire_res,
-            _cold_res = potionData._cold_res,
-            _earth_res = potionData._earth_res,
-            _dark_res = potionData._dark_res,
-            _poison_res = potionData._poison_res,
-            _avoid = potionData._avoid,
+            _fire_resist = potionData._fire_resist,
+            _cold_resist = potionData._cold_resist,
+            _earth_resist = potionData._earth_resist,
+            _dark_resist = potionData._dark_resist,
+            _poison_resist = potionData._poison_resist,
+            _evasion = potionData._evasion,
+            _data_type = potionData._data_type,
+            _inventory_type = potionData._inventory_type,
+            _item_type = potionData._item_type,
             _turn = potionData._turn,
-            _nickName = potionData._nickName,
+            _nickname = potionData._nickname,
 
             _name = GetLocalizedText(spriteName),
             _comment = GetLocalizedText($"{spriteName}_comment"),
@@ -119,11 +127,14 @@ public partial class DataManager : Singleton<DataManager>
 
         return new ScrollData
         {
-            _no = scrollData._no,
-            _avoid = scrollData._avoid,
-            _enhance = scrollData._enhance,
+            _id = scrollData._id,
+            _evasion = scrollData._evasion,
+            _enhance_value = scrollData._enhance_value,
+            _data_type = scrollData._data_type,
+            _inventory_type = scrollData._inventory_type,
+            _item_type = scrollData._item_type,
             _turn = scrollData._turn,
-            _nickName = scrollData._nickName,
+            _nickname = scrollData._nickname,
 
             _name = GetLocalizedText(spriteName),
             _comment = GetLocalizedText($"{spriteName}_comment"),
@@ -139,34 +150,74 @@ public partial class DataManager : Singleton<DataManager>
 
         return new MagicData
         {
-            _no = magicData._no,
+            _id = magicData._id,
             _base_damage = magicData._base_damage,
-            _reach = magicData._reach,
-            _range = magicData._range,
-            _magic_attack_type = magicData._magic_attack_type,
+            _cast_range = magicData._cast_range,
+            _effect_radius = magicData._effect_radius,
+            _magic_cast_type = magicData._magic_cast_type,
             _mp_consume = magicData._mp_consume,
-            _skill_limit = magicData._skill_limit,
-            _magic_property_type = magicData._magic_property_type,
+            _required_skill_level = magicData._required_skill_level,
+            _element_type = magicData._element_type,
             _turn = magicData._turn,
-            _magic_effect_type = magicData._magic_effect_type,
+            _status_effect_type = magicData._status_effect_type,
             _max_hp = magicData._max_hp,
             _max_mp = magicData._max_mp,
             _min_attack = magicData._min_attack,
             _max_attack = magicData._max_attack,
-            _defence = magicData._defence,
+            _defense = magicData._defense,
             _min_magic_attack = magicData._min_magic_attack,
             _max_magic_attack = magicData._max_magic_attack,
-            _fire_res = magicData._fire_res,
-            _cold_res = magicData._cold_res,
-            _earth_res = magicData._earth_res,
-            _dark_res = magicData._dark_res,
-            _poison_res = magicData._poison_res,
-            _avoid = magicData._avoid,
-            _nickName = magicData._nickName,
+            _fire_resist = magicData._fire_resist,
+            _cold_resist = magicData._cold_resist,
+            _earth_resist = magicData._earth_resist,
+            _dark_resist = magicData._dark_resist,
+            _poison_resist = magicData._poison_resist,
+            _evasion = magicData._evasion,
+            _nickname = magicData._nickname,
             _icon = magicData._icon,
 
             _name = GetLocalizedText(spriteName),
             _comment = GetLocalizedText($"{spriteName}_comment"),
+        };
+    }
+
+    public MeleeData AddMeleeData(string abilityName)
+    {
+        MeleeData meleeData = null;
+
+        if (!meleeDic.TryGetValue(abilityName, out meleeData))
+            return null;
+
+        return new MeleeData
+        {
+            _id = meleeData._id,
+            _base_damage = meleeData._base_damage,
+            _cast_range = meleeData._cast_range,
+            _effect_radius = meleeData._effect_radius,
+            _magic_cast_type = meleeData._magic_cast_type,
+            _mp_consume = meleeData._mp_consume,
+            _required_skill_level = meleeData._required_skill_level,
+            _element_type = meleeData._element_type,
+            _turn = meleeData._turn,
+            _status_effect_type = meleeData._status_effect_type,
+            _max_hp = meleeData._max_hp,
+            _max_mp = meleeData._max_mp,
+            _min_attack = meleeData._min_attack,
+            _max_attack = meleeData._max_attack,
+            _defense = meleeData._defense,
+            _min_magic_attack = meleeData._min_magic_attack,
+            _max_magic_attack = meleeData._max_magic_attack,
+            _fire_resist = meleeData._fire_resist,
+            _cold_resist = meleeData._cold_resist,
+            _earth_resist = meleeData._earth_resist,
+            _dark_resist = meleeData._dark_resist,
+            _poison_resist = meleeData._poison_resist,
+            _evasion = meleeData._evasion,
+            _nickname = meleeData._nickname,
+            _icon = meleeData._icon,
+
+            _name = GetLocalizedText(abilityName),
+            _comment = GetLocalizedText($"{abilityName}_comment"),
         };
     }
 
@@ -182,18 +233,98 @@ public partial class DataManager : Singleton<DataManager>
             _max_hp = monsterData._max_hp,
             _min_attack = monsterData._min_attack,
             _max_attack = monsterData._max_attack,
-            _defence = monsterData._defence,
-            _fire_res = monsterData._fire_res,
-            _cold_res = monsterData._cold_res,
-            _earth_res = monsterData._earth_res,
-            _dark_res = monsterData._dark_res,
-            _poison_res = monsterData._poison_res,
-            _attackType = monsterData._attackType,
+            _defense = monsterData._defense,
+            _fire_resist = monsterData._fire_resist,
+            _cold_resist = monsterData._cold_resist,
+            _earth_resist = monsterData._earth_resist,
+            _dark_resist = monsterData._dark_resist,
+            _poison_resist = monsterData._poison_resist,
+            _element_type = monsterData._element_type,
             _magic1 = monsterData._magic1,
             _magic2 = monsterData._magic2,
 
             _name = GetLocalizedText(spriteName),
             _comment = GetLocalizedText($"{spriteName}_comment"),
+        };
+    }
+
+    public ParticleData AddMagicParticleData(string particleName)
+    {
+        MagicData magicData = null;
+
+        if (!magicDic.TryGetValue(particleName, out magicData))
+            return null;
+
+        return new ParticleData
+        {
+            // DecoratorDataComponent
+            _max_hp = magicData._max_hp,
+            _max_mp = magicData._max_mp,
+            _min_attack = magicData._min_attack,
+            _max_attack = magicData._max_attack,
+            _defense = magicData._defense,
+            _min_magic_attack = magicData._min_magic_attack,
+            _max_magic_attack = magicData._max_magic_attack,
+            _fire_resist = magicData._fire_resist,
+            _cold_resist = magicData._cold_resist,
+            _earth_resist = magicData._earth_resist,
+            _dark_resist = magicData._dark_resist,
+            _poison_resist = magicData._poison_resist,
+            _evasion = magicData._evasion,
+            // ParticleDataComponent
+            _name = magicData._name,
+            _base_damage = magicData._base_damage,
+            _cast_range = magicData._cast_range,
+            _effect_radius = magicData._effect_radius,
+            _magic_cast_type = magicData._magic_cast_type,
+            _mp_consume = magicData._mp_consume,
+            _required_skill_level = magicData._required_skill_level,
+            _element_type = magicData._element_type,
+            _turn = magicData._turn,
+            _status_effect_type = magicData._status_effect_type,
+            _nickname = magicData._nickname,
+            _icon = magicData._icon,
+            _comment = magicData._comment,
+        };
+    }
+
+    public ParticleData AddMeleeParticleData(string particleName)
+    {
+        MeleeData meleeData = null;
+
+        if (!meleeDic.TryGetValue(particleName, out meleeData))
+            return null;
+
+        return new ParticleData
+        {
+            // DecoratorDataComponent
+            _max_hp = meleeData._max_hp,
+            _max_mp = meleeData._max_mp,
+            _min_attack = meleeData._min_attack,
+            _max_attack = meleeData._max_attack,
+            _defense = meleeData._defense,
+            _min_magic_attack = meleeData._min_magic_attack,
+            _max_magic_attack = meleeData._max_magic_attack,
+            _fire_resist = meleeData._fire_resist,
+            _cold_resist = meleeData._cold_resist,
+            _earth_resist = meleeData._earth_resist,
+            _dark_resist = meleeData._dark_resist,
+            _poison_resist = meleeData._poison_resist,
+            _evasion = meleeData._evasion,
+            // ParticleDataComponent
+            _name = meleeData._name,
+            _base_damage = meleeData._base_damage,
+            _cast_range = meleeData._cast_range,
+            _effect_radius = meleeData._effect_radius,
+            _magic_cast_type = meleeData._magic_cast_type,
+            _mp_consume = meleeData._mp_consume,
+            _required_skill_level = meleeData._required_skill_level,
+            _element_type = meleeData._element_type,
+            _turn = meleeData._turn,
+            _status_effect_type = meleeData._status_effect_type,
+            _nickname = meleeData._nickname,
+            _icon = meleeData._icon,
+            _comment = meleeData._comment,
         };
     }
 
@@ -211,27 +342,27 @@ public partial class DataManager : Singleton<DataManager>
             _max_mp = magicData._max_mp,
             _min_attack = magicData._min_attack,
             _max_attack = magicData._max_attack,
-            _defence = magicData._defence,
+            _defense = magicData._defense,
             _min_magic_attack = magicData._min_magic_attack,
             _max_magic_attack = magicData._max_magic_attack,
-            _fire_res = magicData._fire_res,
-            _cold_res = magicData._cold_res,
-            _earth_res = magicData._earth_res,
-            _dark_res = magicData._dark_res,
-            _poison_res = magicData._poison_res,
-            _avoid = magicData._avoid,
+            _fire_resist = magicData._fire_resist,
+            _cold_resist = magicData._cold_resist,
+            _earth_resist = magicData._earth_resist,
+            _dark_resist = magicData._dark_resist,
+            _poison_resist = magicData._poison_resist,
+            _evasion = magicData._evasion,
             // ParticleDataComponent
             _name = magicData._name,
             _base_damage = magicData._base_damage,
-            _reach = magicData._reach,
-            _range = magicData._range,
-            _magic_attack_type = magicData._magic_attack_type,
+            _cast_range = magicData._cast_range,
+            _effect_radius = magicData._effect_radius,
+            _magic_cast_type = magicData._magic_cast_type,
             _mp_consume = magicData._mp_consume,
-            _skill_limit = magicData._skill_limit,
-            _magic_property_type = magicData._magic_property_type,
+            _required_skill_level = magicData._required_skill_level,
+            _element_type = magicData._element_type,
             _turn = magicData._turn,
-            _magic_effect_type = magicData._magic_effect_type,
-            _nickName = magicData._nickName,
+            _status_effect_type = magicData._status_effect_type,
+            _nickname = magicData._nickname,
             _icon = magicData._icon,
             _comment = magicData._comment,
         };

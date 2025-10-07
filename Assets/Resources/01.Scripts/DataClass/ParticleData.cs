@@ -5,31 +5,31 @@ using UnityEngine;
 public class ParticleData : MonoBehaviour
 {
     // DecoratorDataComponent
-    public int? _max_hp;
-    public int? _max_mp;
-    public int? _min_attack;
-    public int? _max_attack;
-    public int? _defence;
-    public int? _min_magic_attack;
-    public int? _max_magic_attack;
-    public int? _fire_res;
-    public int? _cold_res;
-    public int? _earth_res;
-    public int? _dark_res;
-    public int? _poison_res;
-    public int? _avoid;
+    public int? _max_hp { get; set; }
+    public int? _max_mp { get; set; }
+    public int? _min_attack { get; set; }
+    public int? _max_attack { get; set; }
+    public int? _defense { get; set; }
+    public int? _min_magic_attack { get; set; }
+    public int? _max_magic_attack { get; set; }
+    public int? _fire_resist { get; set; }
+    public int? _cold_resist { get; set; }  
+    public int? _earth_resist { get; set; }
+    public int? _dark_resist { get; set; }
+    public int? _poison_resist { get; set; }
+    public int? _evasion {  get; set; }
     // ParticleDataComponent
-    public string _name;
-    public int? _base_damage;
-    public int? _reach;
-    public int? _range;
-    public MagicAttackType? _magic_attack_type;
-    public int? _mp_consume;
-    public int? _skill_limit;
-    public MagicPropertyType? _magic_property_type;
-    public int? _turn;
-    public MagicEffectType? _magic_effect_type;
-    public string _nickName;
-    public string _icon;
-    public string _comment;
+    public string _name { get; set; }
+    public int? _base_damage {  get; set; }
+    public int? _cast_range { get; set; }
+    public EffectRadius? _effect_radius { get; set; }
+    public MagicCastType? _magic_cast_type { get; set; }
+    public int? _mp_consume { get; set; }
+    public int? _required_skill_level { get; set; }
+    public ElementType? _element_type { get; set; }
+    public int? _turn { get; set; }
+    public StatusEffectType? _status_effect_type { get; set; }
+    public string _nickname { get; set; }
+    public string _icon { get; set; }
+    public string _comment { get; set; }
 }

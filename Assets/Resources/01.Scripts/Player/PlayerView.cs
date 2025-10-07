@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class PlayerView : MonoBehaviour
 {
+    [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
+    [Singleton(typeof(MapManager))] private MapManager mapManager;
+    
     [FindComponents("Player"), SerializeField] private PlayerController controller;
     [FindComponents("Model"), SerializeField] private PlayerDataComponent model;
 
@@ -29,10 +33,13 @@ public class PlayerView : MonoBehaviour
     // 보여지는 장착 스프라이트 딕셔너리
     [SerializeField] private Dictionary<Enum, Sprite[]> spriteDic = new Dictionary<Enum, Sprite[]>();
 
+    // GetItem 파티클
+    [SerializeField] private ParticleSystem getItemParticle;
 
     public void Init()
     {
         InjectUtil.InjectComponents(this);
+        InjectUtil.InjectSingleton(this);
 
         // 슬라이스한 2D 스프라이트 정보를 딕셔너리에서 관리
         GetResource<HELMET_TYPE>();
@@ -115,6 +122,14 @@ public class PlayerView : MonoBehaviour
         armourSpriteRenderer.flipX = isFilpX;
         shieldSpriteRenderer.flipX = isFilpX;
         bodySpriteRenderer.flipX = isFilpX;
+    }
+
+    // 아이템 얻는 파티클 생성
+    public void GetItemComplete()
+    {
+        Vector3 worldPos = transform.position;
+        var particleController = fieldManager.CreateParticle(worldPos, controller.gameObject, ParticleType.ItemEffect_item1);
+        particleController.Play();
     }
 }
 

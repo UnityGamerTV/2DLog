@@ -1290,7 +1290,7 @@
     "_en": "A large double-edged axe"
   },
   {
-    "_key": "leader armour1",
+    "_key": "leader_armour1",
     "_ko": "가죽 갑옷",
     "_en": "Leather Armor"
   },
@@ -1320,27 +1320,27 @@
     "_en": "Crystal Plate Armor"
   },
   {
-    "_key": "troll leader armour1",
+    "_key": "troll_leader_armour1",
     "_ko": "트롤 가죽 갑옷",
     "_en": "Troll Leather Armor"
   },
   {
-    "_key": "dragon armour1",
+    "_key": "dragon_armour1",
     "_ko": "회색 용 갑옷",
     "_en": "Gray Dragon Armor"
   },
   {
-    "_key": "dragon armour2",
+    "_key": "dragon_armour2",
     "_ko": "붉은 용 갑옷",
     "_en": "Red Dragon Armor"
   },
   {
-    "_key": "dragon armour3",
+    "_key": "dragon_armour3",
     "_ko": "푸른 용 갑옷",
     "_en": "Blue Dragon Armor"
   },
   {
-    "_key": "dragon armour4",
+    "_key": "dragon_armour4",
     "_ko": "황금 용 갑옷",
     "_en": "Golden Dragon Armor"
   },
@@ -1360,12 +1360,12 @@
     "_en": "Golden Plate Armor"
   },
   {
-    "_key": "dragon armour5",
+    "_key": "dragon_armour5",
     "_ko": "고대 용 갑옷",
     "_en": "Ancient Dragon Armor"
   },
   {
-    "_key": "leader armour2",
+    "_key": "leader_armour2",
     "_ko": "가죽 갑옷",
     "_en": "Leather Armor"
   },
@@ -1390,12 +1390,12 @@
     "_en": "Crystal Plate Armor"
   },
   {
-    "_key": "troll leader armour2",
+    "_key": "troll_leader_armour2",
     "_ko": "트롤 가죽 갑옷",
     "_en": "Troll Leather Armor"
   },
   {
-    "_key": "leader armour1_comment",
+    "_key": "leader_armour1_comment",
     "_ko": "가죽으로 만든 갑옷",
     "_en": "Armor made of leather"
   },
@@ -1425,27 +1425,27 @@
     "_en": "Plate armor crafted from crystal"
   },
   {
-    "_key": "troll leader armour1_comment",
+    "_key": "troll_leader_armour1_comment",
     "_ko": "트롤 가죽으로 만든 갑옷",
     "_en": "Armor made from troll leather"
   },
   {
-    "_key": "dragon armour1_comment",
+    "_key": "dragon_armour1_comment",
     "_ko": "회색 용의 비늘로 만든 갑옷",
     "_en": "Armor crafted from the scales of a gray dragon"
   },
   {
-    "_key": "dragon armour2_comment",
+    "_key": "dragon_armour2_comment",
     "_ko": "붉은 용의 비늘로 만든 갑옷",
     "_en": "Armor crafted from the scales of a red dragon"
   },
   {
-    "_key": "dragon armour3_comment",
+    "_key": "dragon_armour3_comment",
     "_ko": "푸른 용의 비늘로 만든 갑옷",
     "_en": "Armor crafted from the scales of a blue dragon"
   },
   {
-    "_key": "dragon armour4_comment",
+    "_key": "dragon_armour4_comment",
     "_ko": "황금 용의 비늘로 만든 갑옷",
     "_en": "Armor crafted from the scales of a golden dragon"
   },
@@ -1465,12 +1465,12 @@
     "_en": "Plate armor made from golden dragon scales"
   },
   {
-    "_key": "dragon armour5_comment",
+    "_key": "dragon_armour5_comment",
     "_ko": "고대 용의 비늘로 만든 갑옷",
     "_en": "Armor made from the scales of an ancient dragon"
   },
   {
-    "_key": "leader armour2_comment",
+    "_key": "leader_armour2_comment",
     "_ko": "가죽으로 만든 갑옷",
     "_en": "Armor made of leather"
   },
@@ -1495,7 +1495,7 @@
     "_en": "Plate armor crafted from crystal"
   },
   {
-    "_key": "troll leader armour2_comment",
+    "_key": "troll_leader_armour2_comment",
     "_ko": "트롤 가죽으로 만든 갑옷",
     "_en": "Armor made from troll leather"
   },
@@ -2210,102 +2210,102 @@
     "_en": "Of Evasion"
   },
   {
-    "_key": "curePotion",
+    "_key": "cure_potion",
     "_ko": "상태이상 회복 물약",
     "_en": "Cure Potion"
   },
   {
-    "_key": "healingPotion",
+    "_key": "healing_potion",
     "_ko": "체력 회복 물약",
-    "_en": "HealingPotion"
+    "_en": "Healing Potion"
   },
   {
-    "_key": "manaPotion",
+    "_key": "mana_potion",
     "_ko": "마력 회복 물약",
     "_en": "Mana Potion"
   },
   {
-    "_key": "invisibilityPotion",
+    "_key": "invisibility_potion",
     "_ko": "투명화 물약",
     "_en": "Invisibility Potion"
   },
   {
-    "_key": "powPotion",
+    "_key": "pow_potion",
     "_ko": "광폭화 물약",
     "_en": "Power Potion"
   },
   {
-    "_key": "resPotion",
+    "_key": "res_potion",
     "_ko": "저항력 증가 물약",
     "_en": "Resistance Potion"
   },
   {
-    "_key": "speedPotion",
+    "_key": "speed_potion",
     "_ko": "속도 증가 물약",
     "_en": "Speed Potion"
   },
   {
-    "_key": "treePotion",
+    "_key": "tree_potion",
     "_ko": "나무 변신 물약",
     "_en": "Tree Potion"
   },
   {
-    "_key": "intPotion",
+    "_key": "int_potion",
     "_ko": "마법 공격력 증가 물약",
     "_en": "Intelligence Potion"
   },
   {
-    "_key": "lvUpPotion",
+    "_key": "lvup_potion",
     "_ko": "레벨 업 물약",
     "_en": "LV-Up Potion"
   },
   {
-    "_key": "curePotion_comment",
+    "_key": "cure_potion_comment",
     "_ko": "상태이상을 회복한다",
     "_en": "Cures abnormal status effects"
   },
   {
-    "_key": "healingPotion_comment",
+    "_key": "healing_potion_comment",
     "_ko": "체력을 회복한다",
     "_en": "Restores health"
   },
   {
-    "_key": "manaPotion_comment",
+    "_key": "mana_potion_comment",
     "_ko": "마력을 회복한다",
     "_en": "Restores mana"
   },
   {
-    "_key": "invisibilityPotion_comment",
+    "_key": "invisibility_potion_comment",
     "_ko": "투명하게 변신한다",
     "_en": "Transforms into an invisible state"
   },
   {
-    "_key": "powPotion_comment",
+    "_key": "pow_potion_comment",
     "_ko": "분노에 휩싸여 순간적으로 강해진다",
     "_en": "Temporarily empowered by rage"
   },
   {
-    "_key": "resPotion_comment",
+    "_key": "res_potion_comment",
     "_ko": "마법저항력이 높아진다",
     "_en": "Increases magic resistance"
   },
   {
-    "_key": "speedPotion_comment",
+    "_key": "speed_potion_comment",
     "_ko": "속도가 증가한다",
     "_en": "Increases speed"
   },
   {
-    "_key": "treePotion_comment",
+    "_key": "tree_potion_comment",
     "_ko": "나무로 변신한다",
     "_en": "Transforms into a tree"
   },
   {
-    "_key": "intPotion_comment",
+    "_key": "int_potion_comment",
     "_ko": "마법 공격력이 증가한다",
     "_en": "Increases magic attack power"
   },
   {
-    "_key": "lvUpPotion_comment",
+    "_key": "lvup_potion_comment",
     "_ko": "레벨이 오른다",
     "_en": "Levels up"
   },

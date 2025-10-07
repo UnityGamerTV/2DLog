@@ -1,60 +1,108 @@
 using UnityEngine;
+using static UnityEditor.LightingExplorerTableColumn;
 
 public class BaseDataComponent : MonoBehaviour { }
 
-public class ItemDataComponent : BaseDataComponent
+public class ItemDataComponent : DecoratorDataComponent
 {
-    public int _no { get { return no; } set { no = value; } }
-    [SerializeField] private int no;
+    protected DecoratorDataComponent decoData;
+
+    public DecoratorDataComponent Set(DecoratorDataComponent decoData)
+    {
+        this.decoData = decoData;
+        return this;
+    }
+
+    public int _id { get { return id; } set { id = value; } }
+    [SerializeField] private int id;
     public string _name { get { return itemName; } set { itemName = value; } }
     [SerializeField] private string itemName;
-    public int? _max_hp { get { return maxHp; } set { maxHp = CheckNullValue(value); } }
-    [SerializeField] private int maxHp;
-    public int? _max_mp { get { return maxMp; } set { maxMp = CheckNullValue(value); } }
-    [SerializeField] private int maxMp;
-    public int? _min_attack { get { return minAttack; } set { minAttack = CheckNullValue(value); } }
-    [SerializeField] private int minAttack;
-    public int? _max_attack { get { return maxAttack; } set { maxAttack = CheckNullValue(value); } }
-    [SerializeField] private int maxAttack;
-    public int? _defence { get { return defence; } set { defence = CheckNullValue(value); } }
-    [SerializeField] private int defence;
-    public int? _min_magic_attack { get { return minMagicAttack; } set { minMagicAttack = CheckNullValue(value); } }
-    [SerializeField] private int minMagicAttack;
-    public int? _max_magic_attack { get { return maxMagicAttack; } set { maxMagicAttack = CheckNullValue(value); } }
-    [SerializeField] private int maxMagicAttack;
-    public int? _fire_res { get { return fireRes; } set { fireRes = CheckNullValue(value); } }
-    [SerializeField] private int fireRes;
-    public int? _cold_res { get { return coldRes; } set { coldRes = CheckNullValue(value); } }
-    [SerializeField] private int coldRes;
-    public int? _earth_res { get { return earthRes; } set { earthRes = CheckNullValue(value); } }
-    [SerializeField] private int earthRes;
-    public int? _dark_res { get { return darkRes; } set { darkRes = CheckNullValue(value); } }
-    [SerializeField] private int darkRes;
-    public int? _poison_res { get { return poisonRes; } set { poisonRes = CheckNullValue(value); } }
-    [SerializeField] private int poisonRes;
-    public int? _avoid { get { return avoid; } set { avoid = CheckNullValue(value); } }
-    [SerializeField] private int avoid;
-    public ItemPropertyType? _item_property_type { get { return itemPropertyType; } set { itemPropertyType = CheckItemPropertyType(value); } }
-    [SerializeField] private ItemPropertyType itemPropertyType;
-    public int? _hand { get { return hand; } set { hand = CheckNullValue(value); } }
-    [SerializeField] private int hand;
-    public int? _enhance_limit { get { return enhanceLimit; } set { enhanceLimit = CheckNullValue(value); } }
-    [SerializeField] private int enhanceLimit;
-    public int? _skill_limit { get { return skillLimit; } set { skillLimit = CheckNullValue(value); } }
-    [SerializeField] private int skillLimit;
-    public string _nickName { get { return nickName; } set { nickName = value; } }
-    [SerializeField] private string nickName;
+    public DataType? _dataType { get { return dataType; } set { dataType = CheckDataType(value); } }
+    [SerializeField] private DataType dataType;
+    public InventoryType? _inventoryType { get { return inventoryType; } set { inventoryType = CheckInventoryType(value); } }
+    [SerializeField] private InventoryType inventoryType;
+    public ItemType? _item_type { get { return itemType; } set { itemType = CheckItemType(value); } }
+    [SerializeField] private ItemType itemType;
+    public SlotType? _slot_type { get { return slotType; } set { slotType = CheckSlotType(value); } }
+    [SerializeField] private SlotType slotType;
+    public ElementType? _element_type { get { return elementType; } set { elementType = CheckElementType(value); } }
+    [SerializeField] private ElementType elementType;
+    public int? _hand_type { get { return handType; } set { handType = CheckNullValue(value); } }
+    [SerializeField] private int handType;
+    public int? _current_enhance { get { return currentEnhance; } set { currentEnhance = CheckNullValue(value); } }
+    [SerializeField] private int currentEnhance;
+    public int? _max_enhance { get { return maxEnhance; } set { maxEnhance = CheckNullValue(value); } }
+    [SerializeField] private int maxEnhance;
+    public int? _required_skill_level { get { return requiredSkillLevel; } set { requiredSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int requiredSkillLevel;
+    public string _nickname { get { return nickname; } set { nickname = value; } }
+    [SerializeField] private string nickname;
     public string _comment { get { return comment; } set { comment = value; } }
     [SerializeField] private string comment;
 
-    T CheckNullValue<T>(T? data) where T : struct
+
+    public override void Operation()
     {
-        return data ?? default;
+        decoData.Operation();
+        decoData._current_hp += currentHp;
+        decoData._current_mp += currentMp;
+        decoData._max_hp += maxHp;
+        decoData._max_mp += maxMp;
+        decoData._min_attack += minAttack;
+        decoData._max_attack += maxAttack;
+        decoData._defense += defense;
+        decoData._min_magic_attack += minMagicAttack;
+        decoData._max_magic_attack += minMagicAttack;
+        decoData._fire_resist += fireResist;
+        decoData._cold_resist += coldResist;
+        decoData._earth_resist += earthResist;
+        decoData._dark_resist += darkResist;
+        decoData._poison_resist += poisonResist;
+        decoData._evasion += evasion;
     }
 
-    ItemPropertyType CheckItemPropertyType(ItemPropertyType? data)
+    public override void Revert()
     {
-        return data ?? ItemPropertyType.NONE;
+        decoData.Revert();
+        decoData._current_hp -= currentHp;
+        decoData._current_mp -= currentMp;
+        decoData._max_hp -= maxHp;
+        decoData._max_mp -= maxMp;
+        decoData._min_attack -= minAttack;
+        decoData._max_attack -= maxAttack;
+        decoData._defense -= defense;
+        decoData._min_magic_attack -= minMagicAttack;
+        decoData._max_magic_attack -= minMagicAttack;
+        decoData._fire_resist -= fireResist;
+        decoData._cold_resist -= coldResist;
+        decoData._earth_resist -= earthResist;
+        decoData._dark_resist -= darkResist;
+        decoData._poison_resist -= poisonResist;
+        decoData._evasion -= evasion;
+    }
+    DataType CheckDataType(DataType? data)
+    {
+        return data ?? DataType.NONE;
+    }
+
+    InventoryType CheckInventoryType(InventoryType? data)
+    {
+        return data ?? InventoryType.NONE;
+    }
+
+    ItemType CheckItemType(ItemType? data)
+    {
+        return data ?? ItemType.NONE;
+    }
+
+    SlotType CheckSlotType(SlotType? data)
+    {
+        return data ?? SlotType.NONE;
+    }
+
+    ElementType CheckElementType(ElementType? data)
+    {
+        return data ?? ElementType.NONE;
     }
 }
 

@@ -1,10 +1,12 @@
-public class PlayerIdleState : IState
-{
-    private PlayerController controller;
+using UnityEngine;
 
-    public PlayerIdleState(PlayerController controller)
+public class PlayerIdleState : MonoBehaviour, IState
+{
+    [FindComponents("Player")] private PlayerController controller;
+
+    public void Init()
     {
-        this.controller = controller;
+        InjectUtil.InjectComponents(this);
     }
 
     public void OnStateEnter()

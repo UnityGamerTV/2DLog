@@ -1,38 +1,38 @@
-_no,_name,_base_damage,_reach,_range,_magic_attack_type,_mp_consume,_skill_limit,_magic_property_type,_turn,_magic_effect_type,_max_hp,_max_mp,_min_attack,_max_attack,_defence,_min_magic_attack,_max_magic_attack,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_avoid,_nickName,_icon
-1,화염 폭풍,40,5,25,TARGET,9,3,FIRE,2,BURN,,,,,,,,,,,,,,fire6,magic2
-2,냉기 폭풍,40,5,25,TARGET,9,3,COLD,4,FREEZE,,,,,,,,,,,,,,cold3,magic3
-3,대악마 소환,,1,1,SELF,9,3,SUM,40,,,,,,,,,,,,,,,sum6,magic6
-4,화염 창,35,4,1,TARGET,7,3,FIRE,,,,,,,,,,,,,,,,fire1,magic2
-5,얼음 창,35,4,1,TARGET,7,3,COLD,,,,,,,,,,,,,,,,cold5,magic3
-6,맹독 폭풍,20,5,25,TARGET,9,3,POISON,5,POISON,,,,,,,,,,,,,,poison4,magic1
-7,대지의 수정창,60,4,1,TARGET,7,3,EARTH,,,,,,,,,,,,,,,,earth4,magic4
-8,저주,,4,1,TARGET,7,3,NECRO,20,CURSE,,,,,,,,,,,,,,nec5,magic5
-9,악마 변신,,0,1,SELF,7,3,NECRO,40,,50,,10,10,8,10,10,,,,10,10,,nec6,magic5
-10,악마 소환,,1,1,SELF,7,3,SUM,40,,,,,,,,,,,,,,,sum5,magic6
-11,불꽃 발화,5,4,1,MISSILE,1,1,FIRE,,,,,,,,,,,,,,,,fire5,magic2
-12,화염 화살,10,4,1,MISSILE,3,1,FIRE,,,,,,,,,,,,,,,,fire7,magic2
-13,화염의 힘,,0,1,SELF,2,1,FIRE,20,,,,10,15,,,,,,,,,,fire3,magic2
-14,화염구,20,4,9,MISSILE,5,2,FIRE,,,,,,,,,,,,,,,,fire4,magic2
-15,화염 벽,20,3,1,TARGET,4,2,FIRE,,,,,,,,,,,,,,,,fire2,magic2
-16,냉기 갑옷,,0,1,SELF,2,1,COLD,20,,20,,,,4,,,,10,,,,,cold1,magic3
-17,냉기의 손길,10,0,1,TARGET,3,1,COLD,,,,,,,,,,,,,,,,cold2,magic3
-18,차가운 회복,10,0,1,SELF,5,2,COLD,10,,,,,,,,,,,,,,,cold6,magic3
-19,급속 냉각,,4,1,TARGET,4,2,COLD,4,FREEZE,,,,,,,,,,,,,,cold7,magic3
-20,얼음 화살,10,4,1,MISSILE,3,1,COLD,,,,,,,,,,,,,,,,cold8,magic3
-21,독침,10,4,1,MISSILE,1,1,POISON,5,POISON,,,,,,,,,,,,,,poison1,magic1
-22,맹독의 구,20,4,1,MISSILE,5,2,POISON,5,POISON,,,,,,,,,,,,,,poison2,magic1
-23,독 바르기,10,0,1,SELF,2,1,POISON,20,POISON,,,,,,,,,,,,,,poison3,magic1
-24,맹독 폭탄,15,4,9,TARGET,4,2,POISON,5,POISON,,,,,,,,,,,,,,poison5,magic1
-25,맹독 구름,10,4,5,TARGET,3,1,POISON,5,POISON,,,,,,,,,,,,,,poison6,magic1
-26,모래 바람,5,4,1,MISSILE,1,1,EARTH,,,,,,,,,,,,,,,,earth5,magic4
-27,암석 화살,15,4,1,MISSILE,3,1,EARTH,,,,,,,,,,,,,,,,earth1,magic4
-28,마비의 눈,,4,1,TARGET,4,2,EARTH,5,PARALYSIS,,,,,,,,,,,,,,earth2,magic4
-29,석상의 형상,10,0,1,SELF,2,1,EARTH,40,,30,,10,10,4,,,,,10,,,,earth3,magic4
-30,해골 소환,,1,1,TARGET,1,1,NECRO,40,,,,,,,,,,,,,,,nec1,magic5
-31,고통,10,4,1,MISSILE,3,1,NECRO,,,,,,,,,,,,,,,,nec2,magic5
-32,좀비 소환,,1,1,TARGET,5,2,NECRO,40,,,,,,,,,,,,,,,nec3,magic5
-33,언데드 말살,35,4,1,MISSILE,4,2,NECRO,,,,,,,,,,,,,,,,nec4,magic5
-34,작은 동물 소환,,1,1,SELF,1,1,SUM,40,,,,,,,,,,,,,,,sum1,magic6
-35,늑대 소환,,1,1,SELF,3,1,SUM,40,,,,,,,,,,,,,,,sum2,magic6
-36,코끼리 소환,,1,1,SELF,5,2,SUM,40,,,,,,,,,,,,,,,sum3,magic6
-37,요정 소환,,1,1,SELF,4,2,SUM,40,,,,,,,,,,,,,,,sum4,magic6
+_id,_name,_base_damage,_cast_range,_effect_radius,_magic_cast_type,_mp_consume,_required_skill_level,_element_type,_turn,_status_effect_type,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_nickname,_icon
+1,화염 폭풍,40,5,NINE_SQUARE,TARGET,9,3,FIRE,2,BURN,,,,,,,,,,,,,,MAGICDATA,fire6,magic2
+2,냉기 폭풍,40,5,NINE_SQUARE,TARGET,9,3,COLD,4,FREEZE,,,,,,,,,,,,,,MAGICDATA,cold3,magic3
+3,대악마 소환,,1,SINGLE,SELF,9,3,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum6,magic6
+4,화염 창,35,4,SINGLE,TARGET,7,3,FIRE,,,,,,,,,,,,,,,,MAGICDATA,fire1,magic2
+5,얼음 창,35,4,SINGLE,TARGET,7,3,COLD,,,,,,,,,,,,,,,,MAGICDATA,cold5,magic3
+6,맹독 폭풍,20,5,NINE_SQUARE,TARGET,9,3,POISON,5,POISON,,,,,,,,,,,,,,MAGICDATA,poison4,magic1
+7,대지의 수정창,60,4,SINGLE,TARGET,7,3,EARTH,,,,,,,,,,,,,,,,MAGICDATA,earth4,magic4
+8,저주,,4,SINGLE,TARGET,7,3,NECRO,20,CURSE,,,,,,,,,,,,,,MAGICDATA,nec5,magic5
+9,악마 변신,,0,SINGLE,SELF,7,3,NECRO,40,,50,,10,10,8,10,10,,,,10,10,,MAGICDATA,nec6,magic5
+10,악마 소환,,1,SINGLE,SELF,7,3,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum5,magic6
+11,불꽃 발화,5,4,SINGLE,MISSILE,1,1,FIRE,,,,,,,,,,,,,,,,MAGICDATA,fire5,magic2
+12,화염 화살,10,4,SINGLE,MISSILE,3,1,FIRE,,,,,,,,,,,,,,,,MAGICDATA,fire7,magic2
+13,화염의 힘,,0,SINGLE,SELF,2,1,FIRE,20,,,,10,15,,,,,,,,,,MAGICDATA,fire3,magic2
+14,화염구,20,4,FIVE_CROSS,MISSILE,5,2,FIRE,,,,,,,,,,,,,,,,MAGICDATA,fire4,magic2
+15,화염 벽,20,3,SINGLE,TARGET,4,2,FIRE,,,,,,,,,,,,,,,,MAGICDATA,fire2,magic2
+16,냉기 갑옷,,0,SINGLE,SELF,2,1,COLD,20,,20,,,,4,,,,10,,,,,MAGICDATA,cold1,magic3
+17,냉기의 손길,10,0,SINGLE,TARGET,3,1,COLD,,,,,,,,,,,,,,,,MAGICDATA,cold2,magic3
+18,차가운 회복,10,0,SINGLE,SELF,5,2,COLD,10,,,,,,,,,,,,,,,MAGICDATA,cold6,magic3
+19,급속 냉각,,4,SINGLE,TARGET,4,2,COLD,4,FREEZE,,,,,,,,,,,,,,MAGICDATA,cold7,magic3
+20,얼음 화살,10,4,SINGLE,MISSILE,3,1,COLD,,,,,,,,,,,,,,,,MAGICDATA,cold8,magic3
+21,독침,10,4,SINGLE,MISSILE,1,1,POISON,5,POISON,,,,,,,,,,,,,,MAGICDATA,poison1,magic1
+22,맹독의 구,20,4,SINGLE,MISSILE,5,2,POISON,5,POISON,,,,,,,,,,,,,,MAGICDATA,poison2,magic1
+23,독 바르기,10,0,SINGLE,SELF,2,1,POISON,20,POISON,,,,,,,,,,,,,,MAGICDATA,poison3,magic1
+24,맹독 폭탄,15,4,FIVE_CROSS,TARGET,4,2,POISON,5,POISON,,,,,,,,,,,,,,MAGICDATA,poison5,magic1
+25,맹독 구름,10,4,THREE_HORIZONTAL,TARGET,3,1,POISON,5,POISON,,,,,,,,,,,,,,MAGICDATA,poison6,magic1
+26,모래 바람,5,4,SINGLE,MISSILE,1,1,EARTH,,,,,,,,,,,,,,,,MAGICDATA,earth5,magic4
+27,암석 화살,15,4,SINGLE,MISSILE,3,1,EARTH,,,,,,,,,,,,,,,,MAGICDATA,earth1,magic4
+28,마비의 눈,,4,SINGLE,TARGET,4,2,EARTH,5,PARALYSIS,,,,,,,,,,,,,,MAGICDATA,earth2,magic4
+29,석상의 형상,10,0,SINGLE,SELF,2,1,EARTH,40,,30,,10,10,4,,,,,10,,,,MAGICDATA,earth3,magic4
+30,해골 소환,,1,SINGLE,TARGET,1,1,NECRO,40,,,,,,,,,,,,,,,MAGICDATA,nec1,magic5
+31,고통,10,4,SINGLE,MISSILE,3,1,NECRO,,,,,,,,,,,,,,,,MAGICDATA,nec2,magic5
+32,좀비 소환,,1,SINGLE,TARGET,5,2,NECRO,40,,,,,,,,,,,,,,,MAGICDATA,nec3,magic5
+33,언데드 말살,35,4,SINGLE,MISSILE,4,2,NECRO,,,,,,,,,,,,,,,,MAGICDATA,nec4,magic5
+34,작은 동물 소환,,1,SINGLE,SELF,1,1,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum1,magic6
+35,늑대 소환,,1,SINGLE,SELF,3,1,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum2,magic6
+36,코끼리 소환,,1,SINGLE,SELF,5,2,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum3,magic6
+37,요정 소환,,1,SINGLE,SELF,4,2,SUM,40,,,,,,,,,,,,,,,MAGICDATA,sum4,magic6

@@ -4,5 +4,20 @@ using UnityEngine;
 
 public class UI_Scene_Equip_InvenController : UI_Scene
 {
+    [FindComponents("Service"), SerializeField] private UI_Scene_Equip_InvenService service;
 
+    public override void Init()
+    {
+        base.Init();
+
+        InjectUtil.InjectComponents(this);
+        service.Init();
+    }
+
+    public override void Release()
+    {
+        base.Release();
+
+        service.Release();
+    }
 }

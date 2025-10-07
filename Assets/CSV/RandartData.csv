@@ -1,4 +1,4 @@
-_no,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defence,_min_magic_attack,_max_magic_attack,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_avoid,_option_name
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_option_name
 1,튼튼한 ,20,,,,,,,,,,,,,randartOption1
 2,똑똑한 ,,10,,,,,,,,,,,,randartOption2
 3,강력한 ,,,10,10,,,,,,,,,,randartOption3

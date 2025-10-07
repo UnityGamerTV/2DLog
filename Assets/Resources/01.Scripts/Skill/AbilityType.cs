@@ -1,7 +1,7 @@
 public enum AbilityType
 {
-    arrow1,
-    arrow2,
+    bow1,
+    bow2,
     mace1,
     mace2,
     spear1,
@@ -9,6 +9,8 @@ public enum AbilityType
     staff1,
     sword1,
     sword2,
+    axe1,
+    axe2,
     cold1,
     cold2,
     cold3,
@@ -46,4 +48,5 @@ public enum AbilityType
     sum4,
     sum5,
     sum6,
+    NONE,
 }

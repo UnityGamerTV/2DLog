@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +13,7 @@ public class ParticleFactory : ParticleFactoryBase
 
     private readonly string PARTICLE_PATH = "Prefabs/Effect";
 
-    // String »ç¿ëÀ» ÁÙÀÌ±â À§ÇÑ Ä³½Ì¿ë
+    // String ì‚¬ìš©ì„ ì¤„ì´ê¸° ìœ„í•œ ìºì‹±ìš©
     private Dictionary<string, string> particlePathDic;
 
     public void Init()
@@ -32,7 +32,7 @@ public class ParticleFactory : ParticleFactoryBase
         {
             particlePathDic.Add(particle.name, $"{PARTICLE_PATH}/{particle.name}");
         }
-        // °øÅë ÆÄÆ¼Å¬ ¼öµ¿º¸Á¤
+        // ê³µí†µ íŒŒí‹°í´ ìˆ˜ë™ë³´ì •
         particlePathDic.Add("MagicEffect_nec1", $"{PARTICLE_PATH}/MagicEffect_sum1");
         particlePathDic.Add("MagicEffect_nec3", $"{PARTICLE_PATH}/MagicEffect_sum1");
         particlePathDic.Add("MagicEffect_sum2", $"{PARTICLE_PATH}/MagicEffect_sum1");
@@ -43,11 +43,11 @@ public class ParticleFactory : ParticleFactoryBase
 
     private string GetParticlePathDic(string particleName) => particlePathDic[particleName];
 
-    public ParticleBase CreateParticle(Vector3 worldPos, GameObject map, ParticleType particleType)
+    public ParticleBase CreateParticle(Vector3 worldPos, GameObject parent, ParticleType particleType)
     {
         var particle = GetParticle(particleType);
         SetPosition(particle, worldPos);
-        SetParent(particle, map);
+        SetParent(particle, parent);
         var particleController = SetData(particle, particleType);
         return particleController;
     }
@@ -56,16 +56,19 @@ public class ParticleFactory : ParticleFactoryBase
     {
         var particleName = particleType.ToString();
         GameObject obj;
-        // ¿ÀºêÁ§Æ® Ç®¸µ È®ÀÎ
+        // ì˜¤ë¸Œì íŠ¸ í’€ë§ í™•ì¸
         obj = objectPoolManager.GetObjPool(particleName);
         if (obj == null)
-            obj = resourceManager.Instantiate(particlePathDic[particleName]);
-
+        {
+            var particleController = resourceManager.Instantiate<ParticleController>(particlePathDic[particleName]);
+            particleController.Init();
+            return particleController.gameObject;
+        }
         return obj;
     }
 
     private void SetPosition(GameObject particle, Vector3 worldPos) => particle.transform.position = worldPos;
-    private void SetParent(GameObject particle, GameObject map) => particle.transform.SetParent(map.transform);
+    private void SetParent(GameObject particle, GameObject parent) => particle.transform.SetParent(parent.transform);
     private ParticleBase GetParticleBase(GameObject particle) => particle.GetComponent<ParticleBase>();
 
     private string ConvertToParticleType(ParticleType particleType)
@@ -83,14 +86,28 @@ public class ParticleFactory : ParticleFactoryBase
     public ParticleController SetData(GameObject particle, ParticleType particleType)
     {
         var particleName = ConvertToParticleType(particleType);
-        if (particleName == null) 
-            return null;
+        var particleNumber = (int)particleType;
 
-        ParticleData particleData = dataManager.AddParticleData(particleName);
-        var myParticleData = particle.AddComponent<ParticleDataComponent>();
-        dataManager.CopyParticleData(myParticleData, particleData);
+        ParticleDataComponent myParticleData = null;
+
+        if (particleNumber <= 45) // ParticleType - MagicEffect = 45ê¹Œì§€
+        {
+            ParticleData particleData = dataManager.AddMagicParticleData(particleName);
+            myParticleData = particle.AddComponent<ParticleDataComponent>();
+            dataManager.CopyParticleData(myParticleData, particleData);
+        }
+        else if (particleNumber >= 46 && particleNumber <= 56) // ParticleType - MeleeEffect
+        {
+            ParticleData particleData = dataManager.AddMeleeParticleData(particleName);
+            myParticleData = particle.AddComponent<ParticleDataComponent>();
+            dataManager.CopyParticleData(myParticleData, particleData);
+        }
+        else // ë°ì´í„°ê°€ í•„ìš”ì—†ëŠ” ì´í™íŠ¸
+        { }
+
         var particleController = particle.GetComponent<ParticleController>();
-        particleController._particleDataComponent = myParticleData;
+        if (particleController != null) 
+            particleController._particleDataComponent = myParticleData;
 
         return particleController;
     }

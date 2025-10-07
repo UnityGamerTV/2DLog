@@ -3959,7 +3959,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leader armour1
+      name: leader_armour1
       rect:
         serializedVersion: 2
         x: 0
@@ -3980,7 +3980,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: leader armour2
+      name: leader_armour2
       rect:
         serializedVersion: 2
         x: 72
@@ -4253,7 +4253,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll leader armour1
+      name: troll_leader_armour1
       rect:
         serializedVersion: 2
         x: 1008
@@ -4274,7 +4274,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: troll leader armour2
+      name: troll_leader_armour2
       rect:
         serializedVersion: 2
         x: 1080
@@ -4295,7 +4295,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dragon armour1
+      name: dragon_armour1
       rect:
         serializedVersion: 2
         x: 1152
@@ -4316,7 +4316,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dragon armour2
+      name: dragon_armour2
       rect:
         serializedVersion: 2
         x: 1224
@@ -4337,7 +4337,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dragon armour3
+      name: dragon_armour3
       rect:
         serializedVersion: 2
         x: 1296
@@ -4358,7 +4358,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dragon armour4
+      name: dragon_armour4
       rect:
         serializedVersion: 2
         x: 1368
@@ -4379,7 +4379,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dragon armour5
+      name: dragon_armour5
       rect:
         serializedVersion: 2
         x: 1440
@@ -4946,7 +4946,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: resPotion
+      name: res_potion
       rect:
         serializedVersion: 2
         x: 0
@@ -4967,7 +4967,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: intPotion
+      name: int_potion
       rect:
         serializedVersion: 2
         x: 72
@@ -4988,7 +4988,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: powPotion
+      name: pow_potion
       rect:
         serializedVersion: 2
         x: 216
@@ -5009,7 +5009,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: manaPotion
+      name: mana_potion
       rect:
         serializedVersion: 2
         x: 288
@@ -5030,7 +5030,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: treePotion
+      name: tree_potion
       rect:
         serializedVersion: 2
         x: 360
@@ -5051,7 +5051,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: invisibilityPotion
+      name: invisibility_potion
       rect:
         serializedVersion: 2
         x: 432
@@ -5072,7 +5072,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: speedPotion
+      name: speed_potion
       rect:
         serializedVersion: 2
         x: 504
@@ -5093,7 +5093,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lvUpPotion
+      name: lvup_potion
       rect:
         serializedVersion: 2
         x: 576
@@ -5114,7 +5114,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: healingPotion
+      name: healing_potion
       rect:
         serializedVersion: 2
         x: 648
@@ -5135,7 +5135,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: curePotion
+      name: cure_potion
       rect:
         serializedVersion: 2
         x: 720
@@ -5958,10 +5958,10 @@ TextureImporter:
       spear6: 68579814
       attack_amulet: -988262575
       sword14: -1214171199
-      dragon armour4: 1632998199
       deck1: -1902909750
       axe9: -336033136
       earth5: -537811639
+      troll_leader_armour2: 1832060426
       staff13: 890384729
       helmet15: 749107215
       poison1: 170817761
@@ -5972,17 +5972,18 @@ TextureImporter:
       chainmail2: -652064345
       life_amulet: -685861503
       spear10: -781755519
+      pow_potion: 973815689
       sword1: 314791244
       ring8: -24931442
       cold6: -262044077
       helmet11: -918782302
-      troll leader armour1: -1510649215
       cold1: -1382222017
       earth4: 453361440
       blackbox: -431263290
       mace1: -472836148
       sword12: 1799265152
       axe1: 1179887979
+      leader_armour2: -705132804
       ring1: 1419375411
       sword11: 610421639
       scroll6: 522597832
@@ -5995,10 +5996,10 @@ TextureImporter:
       attack_ring: -1058115752
       shield5: -1104993431
       shield7: 973298538
-      Item_Tile_ver0.2_240: -1793280559
-      sword15: -1074002749
-      spear15: 560512178
       bow5: 1345456475
+      Item_Tile_ver0.2_240: -1793280559
+      spear15: 560512178
+      leader_armour1: 1954420388
       sword6: -1212175967
       staff3: 338399206
       fire4: 145516910
@@ -6009,37 +6010,38 @@ TextureImporter:
       ring3: 61103139
       glove1: -1474562858
       scalemail2: -1150478852
-      dragon armour3: 1072705942
+      sword15: -1074002749
       shield3: -1366875201
       spear3: 1514626677
+      dragon_armour4: 1632998199
       boot4: -1555741028
       bow3: -271435582
-      dragon armour2: -1720869343
       spear14: 1239207136
       sword16: 2062258566
       axe11: 655880382
       amulet4: 128514849
       amulet10: -1996307558
-      troll leader armour2: 1832060426
       helmet2: -238358182
-      curePotion: -1970913571
       Item_Tile_ver0.2_175: 1296818798
       chainmail3: -1395657608
-      treePotion: 1367190120
       fire1: -1890755872
+      cold9: 623708511
       axe5: -1831927201
       mace8: 1833704194
-      cold9: 623708511
+      mana_potion: -1479647958
       robe5: 1865072882
+      troll_leader_armour1: -1510649215
       helmet5: -2102740077
       staff4: 1656680533
+      dragon_armour3: 1072705942
       crystalplatemail1: -1688501045
       shield10: 2131937583
-      leader armour1: 1954420388
       sum4: 1734709136
       helmet8: -546031157
       spear13: 403511288
       scroll1: 1610081910
+      healing_potion: -154037555
+      speed_potion: 1820744492
       spear11: 1218770790
       fire2: 2090505023
       mace4: 1026886959
@@ -6059,11 +6061,11 @@ TextureImporter:
       Item_Tile_ver0.2_233: -57504297
       sword5: -1636157759
       poison6: 516466487
+      invisibility_potion: 2134500226
       shield1: -160842976
       magic2: -1289880595
       avoid_ring: 515937011
       helmet12: 1962066309
-      resPotion: 1386533803
       helmet17: -1373429391
       crystalplatemail2: -724136872
       scroll9: 971404184
@@ -6082,9 +6084,9 @@ TextureImporter:
       staff2: 2085944503
       dark_amulet: 1469036612
       ring11: -489235580
-      magic6: -1172685481
       earth3: -494941757
       spear16: -2132288912
+      magic6: -1172685481
       poison_ring: 1336470246
       helmet4: -542805391
       ringmail1: -264053825
@@ -6103,36 +6105,36 @@ TextureImporter:
       dark_ring: 912369093
       Item_Tile_ver0.2_174: 124973507
       axe10: -1845718895
+      res_potion: 1386533803
       helmet13: 1277121101
       boot6: -937811452
       sword13: -1528029907
       sum6: 376791612
       amulet13: -1729257570
       shield2: -1160671109
-      invisibilityPotion: 2134500226
-      dragon armour5: -737057446
+      sum2: -1981376121
       sword9: 1468014003
       glove4: 2072721696
       sword3: 1349979644
       sword23: 413843228
       scalemail1: -686197836
       shield4: -391077189
-      sum2: -1981376121
       glove2: -1104320346
       axe12: 1450295510
       helmet3: -1549836786
       Item_Tile_ver0.2_173: -1885713068
-      powPotion: 973815689
+      nec4: 588117913
       scroll13: 494644818
       ringmail3: -73740540
-      nec4: 588117913
       boot7: 1622995359
       helmet10: -158219719
       nec6: -38161330
+      dragon_armour1: 954313375
       ring13: 430594775
       cold5: 359657532
       staff12: 1449046045
       ring12: -2147448945
+      dragon_armour2: -1720869343
       sword2: 1496367874
       robe3: 920055577
       boot3: 652703055
@@ -6141,11 +6143,9 @@ TextureImporter:
       cold4: 1576443371
       sword17: -402999783
       robe2: 1159647914
-      healingPotion: -154037555
       spear4: -538480409
       staff1: -852681543
       helmet6: 105294863
-      intPotion: 1620516892
       poison5: 511345521
       life_ring: -1142394518
       avoid_amulet: 241071964
@@ -6159,23 +6159,23 @@ TextureImporter:
       mace10: -1306966586
       mana_amulet: -102456821
       ring15: -1664572012
+      int_potion: 1620516892
       earth_ring: -1325841959
       earth1: -1380108766
       nec2: -1988441655
       magic1: -699433217
       Item_Tile_ver0.2_172: -2063023544
-      manaPotion: -1479647958
-      lvUpPotion: -153383704
       sword8: 982502069
+      lvup_potion: -153383704
+      tree_potion: 1367190120
       earth_amulet: 1989589551
       mace2: -352082396
       scroll8: 1948389450
       deck2: 1112363390
       magic5: 1395831314
       sword19: -819644971
-      dragon armour1: 954313375
-      axe3: 53111609
       scroll12: -637018332
+      axe3: 53111609
       Item_Tile_ver0.2_234: 1254594822
       poison3: 1571798448
       poison2: 1659379201
@@ -6184,11 +6184,10 @@ TextureImporter:
       axe4: 1272277819
       sword4: 1734709136
       spear2: -282453459
-      leader armour2: -705132804
       scroll4: -1286244367
+      mace9: -1957847839
       mace7: -704944430
       amulet5: 1428557915
-      mace9: -1957847839
       spear8: 1446512638
       sword7: 954313375
       nec5: 1559456230
@@ -6204,6 +6203,7 @@ TextureImporter:
       mace11: 1142734400
       amulet16: -263913078
       bow4: 820056828
+      dragon_armour5: -737057446
       amulet3: -395306994
       ring5: 1694948939
       amulet6: 274836366
@@ -6227,11 +6227,11 @@ TextureImporter:
       staff9: -218104651
       sword22: -1373429391
       shield6: -1599614678
-      speedPotion: 1820744492
       spear7: -1232684684
       amulet12: -1171830854
-      spear12: 1858480335
       helmet14: 373795220
+      spear12: 1858480335
+      cure_potion: -1970913571
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

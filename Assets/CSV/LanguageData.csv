@@ -257,48 +257,48 @@ axe10_comment,커다란 양날이 달린 푸른빛의 도끼,A large double-edge
 axe11_comment,커다란 양날이 달린 붉은빛의 도끼,A large double-edged axe with a red glow
 axe7_comment,전투도끼를 강화한 도끼,An enhanced battle axe
 axe9_comment,커다란 양날이 달린 도끼,A large double-edged axe
-leader armour1,가죽 갑옷,Leather Armor
+leader_armour1,가죽 갑옷,Leather Armor
 ringmail1,고리 갑옷,Ringmail Armor
 scalemail1,미늘 갑옷,Scale Armor
 chainmail1,사슬 갑옷,Chainmail Armor
 platemail1,판금 갑옷,Plate Armor
 crystalplatemail1,수정 판금 갑옷,Crystal Plate Armor
-troll leader armour1,트롤 가죽 갑옷,Troll Leather Armor
-dragon armour1,회색 용 갑옷,Gray Dragon Armor
-dragon armour2,붉은 용 갑옷,Red Dragon Armor
-dragon armour3,푸른 용 갑옷,Blue Dragon Armor
-dragon armour4,황금 용 갑옷,Golden Dragon Armor
+troll_leader_armour1,트롤 가죽 갑옷,Troll Leather Armor
+dragon_armour1,회색 용 갑옷,Gray Dragon Armor
+dragon_armour2,붉은 용 갑옷,Red Dragon Armor
+dragon_armour3,푸른 용 갑옷,Blue Dragon Armor
+dragon_armour4,황금 용 갑옷,Golden Dragon Armor
 ringmail3,마력의 고리 갑옷,Enchanted Ringmail Armor
 chainmail2,대장군의 사슬 갑옷,Warlord's Chainmail Armor
 platemail2,황금 판금 갑옷,Golden Plate Armor
-dragon armour5,고대 용 갑옷,Ancient Dragon Armor
-leader armour2,가죽 갑옷,Leather Armor
+dragon_armour5,고대 용 갑옷,Ancient Dragon Armor
+leader_armour2,가죽 갑옷,Leather Armor
 ringmail2,고리 갑옷,Ringmail Armor
 scalemail2,미늘 갑옷,Scale Armor
 chainmail3,사슬 갑옷,Chainmail Armor
 crystalplatemail2,수정  판금 갑옷,Crystal Plate Armor
-troll leader armour2,트롤 가죽 갑옷,Troll Leather Armor
-leader armour1_comment,가죽으로 만든 갑옷,Armor made of leather
+troll_leader_armour2,트롤 가죽 갑옷,Troll Leather Armor
+leader_armour1_comment,가죽으로 만든 갑옷,Armor made of leather
 ringmail1_comment,가죽에 금속 링으로 보강한 갑옷,Leather armor reinforced with metal rings
 scalemail1_comment,가죽에 금속판을 덧댄 갑옷,Leather armor reinforced with metal plates
 chainmail1_comment,금속 고리로 만들어진 갑옷,Armor made of interlocking metal rings
 platemail1_comment,강철로 만들어진 갑옷,Armor made of steel
 crystalplatemail1_comment,수정 판금으로 만들어진 갑옷,Plate armor crafted from crystal
-troll leader armour1_comment,트롤 가죽으로 만든 갑옷,Armor made from troll leather
-dragon armour1_comment,회색 용의 비늘로 만든 갑옷,Armor crafted from the scales of a gray dragon
-dragon armour2_comment,붉은 용의 비늘로 만든 갑옷,Armor crafted from the scales of a red dragon
-dragon armour3_comment,푸른 용의 비늘로 만든 갑옷,Armor crafted from the scales of a blue dragon
-dragon armour4_comment,황금 용의 비늘로 만든 갑옷,Armor crafted from the scales of a golden dragon
+troll_leader_armour1_comment,트롤 가죽으로 만든 갑옷,Armor made from troll leather
+dragon_armour1_comment,회색 용의 비늘로 만든 갑옷,Armor crafted from the scales of a gray dragon
+dragon_armour2_comment,붉은 용의 비늘로 만든 갑옷,Armor crafted from the scales of a red dragon
+dragon_armour3_comment,푸른 용의 비늘로 만든 갑옷,Armor crafted from the scales of a blue dragon
+dragon_armour4_comment,황금 용의 비늘로 만든 갑옷,Armor crafted from the scales of a golden dragon
 ringmail3_comment,마력을 지닌 고리 갑옷,Ringmail armor imbued with magical power
 chainmail2_comment,대장군의 기운을 가진 사슬 갑옷,Chainmail armor infused with the spirit of a warlord
 platemail2_comment,황금 용의 비늘로 만든 판금 갑옷,Plate armor made from golden dragon scales
-dragon armour5_comment,고대 용의 비늘로 만든 갑옷,Armor made from the scales of an ancient dragon
-leader armour2_comment,가죽으로 만든 갑옷,Armor made of leather
+dragon_armour5_comment,고대 용의 비늘로 만든 갑옷,Armor made from the scales of an ancient dragon
+leader_armour2_comment,가죽으로 만든 갑옷,Armor made of leather
 ringmail2_comment,가죽에 금속 링으로 보강한 갑옷,Leather armor reinforced with metal rings
 scalemail2_comment,가죽에 금속판을 덧댄 갑옷,Leather armor reinforced with metal plates
 chainmail3_comment,금속 고리로 만들어진 갑옷,Armor made of interlocking metal rings
 crystalplatemail2_comment,수정 판금으로 만들어진 갑옷,Plate armor crafted from crystal
-troll leader armour2_comment,트롤 가죽으로 만든 갑옷,Armor made from troll leather
+troll_leader_armour2_comment,트롤 가죽으로 만든 갑옷,Armor made from troll leather
 blackbox,검은 상자,Black Box
 deck1,카드 뭉치,Card Pack
 deck2,마법 카드 뭉치,Magic Card Pack
@@ -441,26 +441,26 @@ prefix_option8,바위의,Of Rock
 prefix_option9,암흑 저항의,Of Dark Resistance
 prefix_option10,맹독의,Of Poison
 prefix_option11,회피의,Of Evasion
-curePotion,상태이상 회복 물약,Cure Potion
-healingPotion,체력 회복 물약,HealingPotion
-manaPotion,마력 회복 물약,Mana Potion
-invisibilityPotion,투명화 물약,Invisibility Potion
-powPotion,광폭화 물약,Power Potion
-resPotion,저항력 증가 물약,Resistance Potion
-speedPotion,속도 증가 물약,Speed Potion
-treePotion,나무 변신 물약,Tree Potion
-intPotion,마법 공격력 증가 물약,Intelligence Potion
-lvUpPotion,레벨 업 물약,LV-Up Potion
-curePotion_comment,상태이상을 회복한다,Cures abnormal status effects
-healingPotion_comment,체력을 회복한다,Restores health
-manaPotion_comment,마력을 회복한다,Restores mana
-invisibilityPotion_comment,투명하게 변신한다,Transforms into an invisible state
-powPotion_comment,분노에 휩싸여 순간적으로 강해진다,Temporarily empowered by rage
-resPotion_comment,마법저항력이 높아진다,Increases magic resistance
-speedPotion_comment,속도가 증가한다,Increases speed
-treePotion_comment,나무로 변신한다,Transforms into a tree
-intPotion_comment,마법 공격력이 증가한다,Increases magic attack power
-lvUpPotion_comment,레벨이 오른다,Levels up
+cure_potion,상태이상 회복 물약,Cure Potion
+healing_potion,체력 회복 물약,Healing Potion
+mana_potion,마력 회복 물약,Mana Potion
+invisibility_potion,투명화 물약,Invisibility Potion
+pow_potion,광폭화 물약,Power Potion
+res_potion,저항력 증가 물약,Resistance Potion
+speed_potion,속도 증가 물약,Speed Potion
+tree_potion,나무 변신 물약,Tree Potion
+int_potion,마법 공격력 증가 물약,Intelligence Potion
+lvup_potion,레벨 업 물약,LV-Up Potion
+cure_potion_comment,상태이상을 회복한다,Cures abnormal status effects
+healing_potion_comment,체력을 회복한다,Restores health
+mana_potion_comment,마력을 회복한다,Restores mana
+invisibility_potion_comment,투명하게 변신한다,Transforms into an invisible state
+pow_potion_comment,분노에 휩싸여 순간적으로 강해진다,Temporarily empowered by rage
+res_potion_comment,마법저항력이 높아진다,Increases magic resistance
+speed_potion_comment,속도가 증가한다,Increases speed
+tree_potion_comment,나무로 변신한다,Transforms into a tree
+int_potion_comment,마법 공격력이 증가한다,Increases magic attack power
+lvup_potion_comment,레벨이 오른다,Levels up
 scroll7,랜덤 순간이동 주문서,Scroll of Random Teleportation
 scroll1,무기 강화 주문서,Scroll of Weapon Enhancement
 scroll3,방어구 강화 주문서,Scroll of Armor Enhancement

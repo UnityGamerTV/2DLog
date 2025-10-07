@@ -1,4 +1,4 @@
-_name,_max_hp,_min_attack,_max_attack,_defence,_fire_res,_cold_res,_earth_res,_dark_res,_poison_res,_attackType,_magic1,_magic2
+_name,_max_hp,_min_attack,_max_attack,_defense,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_element_type,_magic1,_magic2
 Adder,15,5,8,,-10,-10,,-10,,POISON,,
 Ancient Rich,180,30,40,,-10,,,,,DARK,earth4,nec5
 Balrug,200,50,60,,,-10,,,,FIRE,fire1,fire4

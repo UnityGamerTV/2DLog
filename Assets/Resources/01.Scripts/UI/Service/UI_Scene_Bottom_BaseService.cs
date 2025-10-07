@@ -15,6 +15,10 @@ public class UI_Scene_Bottom_BaseService : MonoBehaviour
         model.Init();
     }
 
+    public void SetUiSceneEnum(UI_SCENE_ENUM uiSceneEnum) => model._uiSceneEnum = uiSceneEnum;
+
+    public UI_SCENE_ENUM GetUISceneEnum() => model._uiSceneEnum;
+
     public void Release()
     {
         view.Release();

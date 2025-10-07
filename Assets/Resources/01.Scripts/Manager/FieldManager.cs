@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// �ʵ� ������Ʈ ����, ������ ����, ����
+/// 필드 오브젝트 생성, 데이터 주입, 관리
 /// </summary>
 public class FieldManager : Singleton<FieldManager>, IManager
 {
@@ -23,6 +23,10 @@ public class FieldManager : Singleton<FieldManager>, IManager
     public Dictionary<Vector2Int, ItemController> _itemDic { get { return itemDic; } set { itemDic = value; } }
     [SerializeField] private Dictionary<Vector2Int, ItemController> itemDic;
 
+    // 필드에서 획득 할 아이템
+    public ItemController _getItemController { get { return getItemController; } set { getItemController = value; } }
+    [SerializeField] private ItemController getItemController;
+    //
     public FactoryBase _itemFactory { set { itemFactory = value; } }
     private FactoryBase itemFactory;
     public FactoryBase _monsterFactory { set { monsterFactory = value; } }
@@ -62,10 +66,27 @@ public class FieldManager : Singleton<FieldManager>, IManager
 #endif
     }
 
-    public ParticleController CreateParticle(Vector3 worldPos, GameObject map, ParticleType particleType)
+    /// <summary>
+    /// 파티클 생성 메서드 / 생성만 하고 관리는 오브젝트풀에서...
+    /// </summary>
+    /// <param name="worldPos">파티클 생성 위치</param>
+    /// <param name="parent">부모 게임오브젝트</param>
+    /// <param name="particleType">파티클 종류</param>
+    /// <returns></returns>
+    public ParticleController CreateParticle(Vector3 worldPos, GameObject parent, ParticleType particleType)
     {
-        var particleController = particleFactory.CreateParticle(worldPos, map, particleType);
+        var particleController = particleFactory.CreateParticle(worldPos, parent, particleType);
         return (ParticleController)particleController;
+    }
+
+    public ItemController TakeItemAt(Vector2Int indexPos)
+    {
+        ItemController itemController = null;
+        if (!itemDic.TryGetValue(indexPos, out itemController))
+            return null;
+
+        itemDic.Remove(indexPos);
+        return itemController;
     }
 
     public void Release()

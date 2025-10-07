@@ -159,31 +159,29 @@ public class MapTest : MonoBehaviour
 
         mapManager.GenerateMap(mapName, mapNum);
 
-        var UI_Scene_Ability_Inven = uiManager.ShowSceneUI<UI_Scene_Ability_InvenController>(UI_SCENE_ENUM.UI_Scene_Ability_Inven);
-        UI_Scene_Ability_Inven.gameObject.SetActive(false); // 임시 코드
+        //var UI_Scene_Ability_Inven = uiManager.ShowSceneUI<UI_Scene_Ability_InvenController>(UI_SCENE_ENUM.UI_Scene_Ability_Inven);
+        //UI_Scene_Ability_Inven.gameObject.SetActive(false); // 임시 코드
         
-        uiManager.ShowSceneUI<UI_Scene_Bottom_BaseController>(UI_SCENE_ENUM.UI_Scene_Bottom_Base);
-        var UI_Scene_Bottom_Dir = uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
-        UI_Scene_Bottom_Dir.Init();
-
-        var UI_Scene_Equip_Inven = uiManager.ShowSceneUI<UI_Scene_Equip_InvenController>(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
-        UI_Scene_Equip_Inven.gameObject.SetActive(false);
-        var UI_Bottom_Consume_Inven = uiManager.ShowSceneUI<UI_Scene_Consume_InvenController>(UI_SCENE_ENUM.UI_Scene_Consume_Inven);
-        UI_Bottom_Consume_Inven.gameObject.SetActive(false); // 임시 코드
-        var UI_Scene_Hotkey = uiManager.ShowSceneUI<UI_Scene_HotkeyController>(UI_SCENE_ENUM.UI_Scene_Hotkey);
-        UI_Scene_Hotkey.gameObject.SetActive(false);
-        uiManager.ShowSceneUI<UI_Scene_Top_CurrencyController>(UI_SCENE_ENUM.UI_Scene_Top_Currency);
-        uiManager.ShowSceneUI<UI_Scene_Top_VitalController>(UI_SCENE_ENUM.UI_Scene_Top_Vital);
-        var UI_Popup_Item = uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
-        UI_Popup_Item.gameObject.SetActive(false);
-        var UI_Popup_Skill = uiManager.ShowPopupUI<UI_Popup_SkillController>(UI_POPUP_ENUM.UI_Popup_Skill);
-        UI_Popup_Skill.gameObject.SetActive(false); // 임시 코드
-        var UI_Popup_Status = uiManager.ShowPopupUI<UI_Popup_StatusController>(UI_POPUP_ENUM.UI_Popup_Status);
-        UI_Popup_Status.gameObject.SetActive(false); // 임시 코드
-        var UI_Pupup_SkillDetail = uiManager.ShowPopupUI<UI_Popup_SkillDetailController>(UI_POPUP_ENUM.UI_Popup_SkillDetail);
-        UI_Pupup_SkillDetail.gameObject.SetActive(false); // 임시 코드
-        var uI_Popup_AbilityDetail = uiManager.ShowPopupUI<UI_Popup_AbilityDetailController>(UI_POPUP_ENUM.UI_Popup_AbilityDetail);
-        uI_Popup_AbilityDetail.gameObject.SetActive(false); // 임시 코드
+        //uiManager.ShowSceneUI<UI_Scene_Bottom_BaseController>(UI_SCENE_ENUM.UI_Scene_Bottom_Base);
+        //var UI_Scene_Bottom_Dir = uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
+        //var UI_Scene_Equip_Inven = uiManager.ShowSceneUI<UI_Scene_Equip_InvenController>(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
+        //UI_Scene_Equip_Inven.gameObject.SetActive(false);
+        //var UI_Bottom_Consume_Inven = uiManager.ShowSceneUI<UI_Scene_Consume_InvenController>(UI_SCENE_ENUM.UI_Scene_Consume_Inven);
+        //UI_Bottom_Consume_Inven.gameObject.SetActive(false); // 임시 코드
+        //var UI_Scene_Hotkey = uiManager.ShowSceneUI<UI_Scene_HotkeyController>(UI_SCENE_ENUM.UI_Scene_Hotkey);
+        //UI_Scene_Hotkey.gameObject.SetActive(false);
+        //uiManager.ShowSceneUI<UI_Scene_Top_CurrencyController>(UI_SCENE_ENUM.UI_Scene_Top_Currency);
+        //uiManager.ShowSceneUI<UI_Scene_Top_VitalController>(UI_SCENE_ENUM.UI_Scene_Top_Vital);
+        //var UI_Popup_Item = uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
+        //UI_Popup_Item.gameObject.SetActive(false);
+        //var UI_Popup_Skill = uiManager.ShowPopupUI<UI_Popup_SkillController>(UI_POPUP_ENUM.UI_Popup_Skill);
+        //UI_Popup_Skill.gameObject.SetActive(false); // 임시 코드
+        //var UI_Popup_Status = uiManager.ShowPopupUI<UI_Popup_StatusController>(UI_POPUP_ENUM.UI_Popup_Status);
+        //UI_Popup_Status.gameObject.SetActive(false); // 임시 코드
+        //var UI_Pupup_SkillDetail = uiManager.ShowPopupUI<UI_Popup_SkillDetailController>(UI_POPUP_ENUM.UI_Popup_SkillDetail);
+        //UI_Pupup_SkillDetail.gameObject.SetActive(false); // 임시 코드
+        //var uI_Popup_AbilityDetail = uiManager.ShowPopupUI<UI_Popup_AbilityDetailController>(UI_POPUP_ENUM.UI_Popup_AbilityDetail);
+        //uI_Popup_AbilityDetail.gameObject.SetActive(false); // 임시 코드
 
     }
 

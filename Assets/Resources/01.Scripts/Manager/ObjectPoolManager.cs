@@ -18,6 +18,7 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>, IManager
     public void AddObj(GameObject obj)
     {
         obj.SetActive(false);
+        obj.transform.SetParent(root.transform);
         objPool.Add(obj);
     }
 

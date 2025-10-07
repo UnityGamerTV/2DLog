@@ -3,6 +3,7 @@ using UnityEngine;
 
 public partial class PlayerService : MonoBehaviour
 {
+    [Singleton(typeof(FieldManager))] private FieldManager fieldManager;
     [Singleton(typeof(MapManager))] private MapManager mapManager;
     [FindComponents("View"), SerializeField] private PlayerView view;
     [FindComponents("Model"), SerializeField] private PlayerDataComponent model;
@@ -106,8 +107,8 @@ public partial class PlayerService : MonoBehaviour
         if (HasMonsterAt(dir) != null) 
             return;
         // 아이템 체크
-        //if (HasItemAt(dir) != null) 
-            //return;
+        if (HasItemAt(dir) != null) 
+            return;
         // 이동
         HasCollisionAt(dir);
     }
@@ -142,7 +143,19 @@ public partial class PlayerService : MonoBehaviour
         if (itemController == null)
             return null;
 
+        Vector3 newDir = dir;
+
+        if (newDir.x > 0) // 0 보다 크면 오른쪽
+            SetFilpXSprite(false);
+
+        if (newDir.x < 0) // 0 보다 작으면 왼쪽
+            SetFilpXSprite(true);
+
+        SetMoveDir(newDir);
+        SetPlayerState(state._getItemState);
+        DoPlayerState();
         // 아이템이 있을 경우 해야될 상태를 넣을 것 
+        fieldManager._getItemController = itemController;
         return itemController;
     }
 
@@ -173,19 +186,8 @@ public partial class PlayerService : MonoBehaviour
     public Vector3 GetMoveDir() => model._dir;
     public void SetMoveDir(Vector3 dir) => model._dir = dir;
     public void SetFilpXSprite(bool isFilp) => view.SetFilpXSprite(isFilp);
+    public void SetPlayerState(IState state) => curState = state;
+    public void DoPlayerState() => curState.OnStateEnter();
+    public void GetItemComplete() { view.GetItemComplete(); model.GetItemComplete(); }
 
-    public void SetPlayerState(IState state)
-    {
-        tempState = curState;
-        curState = state;
-        preState = tempState;
-    }
-
-    public void DoPlayerState()
-    {
-        if (preState != null)
-            preState.OnStateExit();
-
-        curState.OnStateEnter();
-    }
 }

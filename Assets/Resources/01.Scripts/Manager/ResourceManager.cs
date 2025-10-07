@@ -26,19 +26,33 @@ public class ResourceManager : Singleton<ResourceManager>, IManager
         var prefab = Load<GameObject>(path);
         if (prefab == null)
         {
-            LogUtil.Log($"Failed to load prefab : {path}");
+            LogUtil.Log($"리소스 로드 실패 : {path}");
             return null;
         }
-
-        var poolObj = objectPoolManager.GetObjPool(prefab.name);
-        if (poolObj && !poolObj.activeSelf)
-            return poolObj;
         else
         {
             GameObject go = Object.Instantiate(prefab, parent);
             go.name = prefab.name;
             return go;
         }
+    }
+
+    public T Instantiate<T>(string path, Transform parent = null) where T : Component
+    {
+        var prefab = Load<T>(path);
+        if (prefab == null)
+        {
+            LogUtil.Log($"리소스 로드 실패 : {path}");
+            return null;
+        }
+        var go = Object.Instantiate(prefab, parent);
+        go.name = prefab.name;
+
+        var component = go.GetComponent<T>();
+        if (component == null)
+            LogUtil.Log($"Component of type {typeof(T)} not found in prefab: {path}");
+
+        return component;
     }
 
     public GameObject InstantiateChashingPath(string path, Transform parent = null)
