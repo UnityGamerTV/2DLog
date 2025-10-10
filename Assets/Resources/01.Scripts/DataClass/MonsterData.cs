@@ -4,30 +4,21 @@
 public class MonsterData
 {
     public string _name { get; set; }
-    public int _max_hp { get; set; }
-    public int _min_attack { get; set; }
-    public int _max_attack { get; set; }
-    public int? _defence { get; set; }
-    public int? _fire_res { get; set; }
-    public int? _cold_res { get; set; }
-    public int? _earth_res { get; set; }
-    public int? _dark_res { get; set; }
-    public int? _poison_res { get; set; }
-    public MonsterAttackType? _attackType { get; set; }
+    public int? _current_hp {  get; set; }
+    public int? _max_hp { get; set; }
+    public int? _min_attack { get; set; }
+    public int? _max_attack { get; set; }
+    public int? _defense { get; set; }
+    public int? _fire_resist { get; set; }
+    public int? _cold_resist { get; set; }
+    public int? _earth_resist { get; set; }
+    public int? _dark_resist { get; set; }
+    public int? _poison_resist { get; set; }
+    public ElementType? _element_type { get; set; }
     public MagicType? _magic1 { get; set; }
     public MagicType? _magic2 { get; set; }
     public string _comment { get; set; }
 
-}
-
-public enum MonsterAttackType
-{
-    POISON,
-    DARK,
-    FIRE,
-    COLD,
-    EARTH,
-    NONE,
 }
 
 public enum MagicType

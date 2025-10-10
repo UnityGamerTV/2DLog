@@ -22,8 +22,9 @@ public class PlayerController : FieldObjBase, IController, IListener
         eventManager.AddListener(EVENT_PLAYER.PLAYER_UP_MOVE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_LEFT_MOVE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_RIGHT_MOVE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
-
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE, this);
         HandIdle();
     }
 
@@ -61,6 +62,8 @@ public class PlayerController : FieldObjBase, IController, IListener
     public void SetFilpXSprite(bool isFilp) => service.SetFilpXSprite(isFilp);
 
     #endregion
+    //
+    public void GetItemComplete() => service.GetItemComplete();
 
     void IListener.OnEvent<TEnum>(TEnum eventType, Component sender, object param)
     {
@@ -70,7 +73,9 @@ public class PlayerController : FieldObjBase, IController, IListener
             case EVENT_PLAYER.PLAYER_UP_MOVE: IsValidPosition(Vector3.up); break;
             case EVENT_PLAYER.PLAYER_LEFT_MOVE: IsValidPosition(Vector3.left); break;
             case EVENT_PLAYER.PLAYER_RIGHT_MOVE: IsValidPosition(Vector3.right); break;
+            case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: HandIdle(); break;
+            case EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE: GetItemComplete(); HandIdle(); break;
         }
     }
 

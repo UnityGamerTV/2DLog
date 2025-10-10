@@ -60,7 +60,11 @@ public class ItemFactory : FactoryBase
         // 오브젝트 풀링 확인
         obj = objectPoolManager.GetObjPool("item");
         if (obj == null)
-            obj = resourceManager.Instantiate(ITEM_PATH);
+        {
+            ItemController item = resourceManager.Instantiate<ItemController>(ITEM_PATH);
+            item.Init();
+            return item.gameObject;
+        }
 
         return obj;
     }
@@ -89,7 +93,7 @@ public class ItemFactory : FactoryBase
         ItemDataType itemDataType = CheckItemType(spriteName);
         switch (itemDataType)
         {
-            case ItemDataType.ITEM: SetItemData(itemController, item, spriteName);break;
+            case ItemDataType.ITEM: SetItemData(itemController, item, spriteName); break;
             case ItemDataType.POTION: SetPotionData(itemController, item, spriteName); break;
             case ItemDataType.SCROLL: SetScrollData(itemController, item, spriteName); break;
             case ItemDataType.MAGIC: SetMagicData(itemController, item, spriteName); break;
@@ -100,7 +104,7 @@ public class ItemFactory : FactoryBase
 
     private ItemDataType CheckItemType(string spriteName)
     {
-        if (spriteName.Contains("Potion"))
+        if (spriteName.Contains("potion"))
             return ItemDataType.POTION;
         else if (spriteName.Contains("scroll"))
             return ItemDataType.SCROLL;

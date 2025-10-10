@@ -301,10 +301,10 @@ public partial class MapManager : Singleton<MapManager>, IManager
 
         // Y축 보정: indexY가 이미 맵 좌표 기준이므로 직접 사용
         // ParsingTextMap에서 flippedY로 저장했으므로, indexY를 그대로 사용
-
+        // TODO HasItemAt 아래 코드 보고 수정해야 됨
         if (!isMonster[indexY, indexX]) 
             return null;
-
+        
         return fieldManager._monsterDic[indexPos];
     }
 
@@ -323,7 +323,10 @@ public partial class MapManager : Singleton<MapManager>, IManager
         if (!isItem[indexY, indexX])
             return null;
 
-        return fieldManager._itemDic[indexPos];
+        // 획득 아이템 좌표 초기화
+        isItem[indexY, indexX] = false;
+
+        return fieldManager.TakeItemAt(indexPos);
     }
 
     private bool HasCollisionAt(Vector2Int indexPos)

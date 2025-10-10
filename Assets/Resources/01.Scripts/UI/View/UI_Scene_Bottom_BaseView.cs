@@ -26,7 +26,7 @@ public class UI_Scene_Bottom_BaseView : MonoBehaviour
 
     public void OnClickControllerButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_DIR_BUTTON, this);
     public void OnClickConsumeButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_CONSUME_BUTTON, this);
-    public void OnClickSkillButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_SKILL_BUTTON, this);
+    public void OnClickSkillButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_ABILITY_BUTTON, this);
     public void OnClickEquipButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_EQUIP_BUTTON, this);
     public void OnClickSettingButton() => eventManager.PostNotification(EVENT_BOTTOM_BASE_UI.ON_CLICK_SETTING_BUTTON, this);
 

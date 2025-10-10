@@ -42,8 +42,8 @@ public class CameraManager : Singleton<CameraManager>, IManager
             var tempCam = GameObject.Find("Main Camera");
             if (tempCam == null)
             {
-                GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
-                cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+                var mainCam = resourceManager.Instantiate<CinemachineBrain>(MAIN_CAMERA_PATH);
+                cinemachineBrain = mainCam;
                 mainCamera = mainCam.GetComponent<Camera>();
             }
             else
@@ -54,14 +54,14 @@ public class CameraManager : Singleton<CameraManager>, IManager
             // 테스트용 임시 코드 끝
 
             // 원본코드
-            //GameObject mainCam = resourceManager.Instantiate(MAIN_CAMERA_PATH);
-            //cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
+            //var mainCam = resourceManager.Instantiate<CinemachineBrain>(MAIN_CAMERA_PATH);
+            //cinemachineBrain = mainCam;
             //mainCamera = mainCam.GetComponent<Camera>();
         }
         if (v1 == null)
         {
-            GameObject vcam1 = resourceManager.Instantiate(VCAM1_PATH);
-            v1 = vcam1.GetComponent<CinemachineVirtualCamera>();
+            var vcam1 = resourceManager.Instantiate<CinemachineVirtualCamera>(VCAM1_PATH);
+            v1 = vcam1;
         }
 
         // 카메라 팔로잉

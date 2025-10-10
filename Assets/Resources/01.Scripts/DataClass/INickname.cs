@@ -8,5 +8,5 @@ using UnityEngine;
 /// </summary>
 public interface INickname
 {
-    public string _nickName { get; set; }
+    public string _nickname { get; set; }
 }

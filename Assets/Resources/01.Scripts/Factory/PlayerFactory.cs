@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+Ôªøusing System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFactory : FactoryBase
@@ -15,14 +15,13 @@ public class PlayerFactory : FactoryBase
 
     public FieldObjBase CreateObj(Vector3 worldPos, GameObject map, MapData mapData, int monsterIndex)
     {
-        // ª˝º∫
-        var player = resourceManager.Instantiate(PLAYER_PATH);
-        var controller = player.GetComponent<PlayerController>();
-        controller.Init();
-        player.transform.position = worldPos;
-        player.transform.SetParent(map.transform);
-        // µ•¿Ã≈Õ ¡÷¿‘
+        // ÏÉùÏÑ±
+        var playerController = resourceManager.Instantiate<PlayerController>(PLAYER_PATH);
+        playerController.Init();
+        playerController.gameObject.transform.position = worldPos;
+        playerController.gameObject.transform.SetParent(map.transform);
+        // Îç∞Ïù¥ÌÑ∞ Ï£ºÏûÖ
 
-        return controller;
+        return playerController;
     }
 }

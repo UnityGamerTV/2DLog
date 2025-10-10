@@ -27,6 +27,7 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
 
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
+        eventManager.AddListener(EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE, this);
     }
 
     public override void Release()
@@ -46,8 +47,9 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
     {
         switch(event_Type)
         {
-            case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: service.OnAllButton();break;
-            case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: service.OnAllButton();break;
+            case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: service.OnAllButton(); break;
+            case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: service.OnAllButton(); break;
+            case EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE: service.OnAllButton(); break;
         }
     }
 }

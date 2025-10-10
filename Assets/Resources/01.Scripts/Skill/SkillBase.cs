@@ -1,14 +1,5 @@
 using UnityEngine;
 
-public enum SKILL_RANGE
-{
-    SINGLE,             // 단일 대상
-    THREE_HORIZONTAL,   // 가로 3칸
-    FIVE_CROSS,         // 십자형 5칸
-    NINE_SQUARE,        // 9칸 정사각형
-    EIGHT_DIRECTIONS    // 8방향
-}
-
 // 대미지 생각은 일단 x
 public abstract class SkillBase : MonoBehaviour
 {
@@ -22,8 +13,8 @@ public abstract class SkillBase : MonoBehaviour
     [SerializeField] protected ParticleSystem targetParticle;
     public int _reach { get { return reach; } set { reach = value; } }
     [SerializeField] protected int reach;
-    public SKILL_RANGE _range { get { return _range; } set { _range = value; } }
-    [SerializeField] protected SKILL_RANGE range;
+    public EffectRadius _effect_radius { get { return effectRadius; } set { effectRadius = value; } }
+    [SerializeField] protected EffectRadius effectRadius;
 
     public virtual void Init()
     {

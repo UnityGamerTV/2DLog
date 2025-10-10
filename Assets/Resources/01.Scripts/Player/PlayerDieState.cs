@@ -1,40 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-public class PlayerDieState : StateMachineBehaviour
+public class PlayerDieState : MonoBehaviour, IState
 {
-    [SerializeField] private PlayerController controller;
+    [Singleton(typeof(EventManager))] private EventManager eventManager;
+    [FindComponents("Player")] private PlayerController controller;
 
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private float delayTime = 0.5f;
+    private bool isDie = false;
+
+    public void Init()
     {
-        if (controller == null)
-            controller= animator.GetComponent<PlayerController>();
-
-        //controller.SetPlayerState(PLAYER_STATE.DIE);
+        InjectUtil.InjectComponents(this);
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    public void OnStateEnter()
+    {
+        if (isDie)
+            return;
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+        isDie = true;
+        controller.PlayAnimation(PLAYER_STATE.DIE);
+        OnStateUpdate();
+    }
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
+    public void OnStateUpdate() => Die().Forget();
+    
+    private async UniTaskVoid Die()
+    {
+        await UniTask.Delay(TimeSpan.FromSeconds(delayTime), cancellationToken: controller.GetCancellationTokenOnDestroy());
+        OnStateExit();
+    }
 
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
+    public void OnStateExit()
+    {
+        isDie = false;
+        eventManager.PostNotification(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, controller);
+    }
 }

@@ -20,7 +20,7 @@ public static class LanguageManager
 public partial class DataManager : Singleton<DataManager>, IManager
 {
     Dictionary<string, ItemData> amuletDic = new();
-    Dictionary<string, ItemData> armourDic = new();
+    Dictionary<string, ItemData> armorDic = new();
     Dictionary<string, ItemData> axeDic = new();
     Dictionary<string, ItemData> bootsDic = new();
     Dictionary<string, ItemData> bowDic = new();
@@ -36,6 +36,7 @@ public partial class DataManager : Singleton<DataManager>, IManager
     Dictionary<string, ItemData> etcDic = new();
     Dictionary<string, PotionData> potionDic = new();
     Dictionary<string, MagicData> magicDic = new();
+    Dictionary<string, MeleeData> meleeDic = new();
     Dictionary<string, ScrollData> scrollDic = new();
     Dictionary<string, MonsterData> monsterDic = new();
     Dictionary<string, LanguageData> languageDic = new();
@@ -53,6 +54,7 @@ public partial class DataManager : Singleton<DataManager>, IManager
         LoadRandartOptionTable();
         LoadItemData();
         LoadData<PotionData>("Potion", potionDic);
+        LoadData<MeleeData>("Melee", meleeDic);
         LoadData<MagicData>("Magic", magicDic);
         LoadData<ScrollData>("Scroll", scrollDic);
         LoadMonsterData();
@@ -89,7 +91,7 @@ public partial class DataManager : Singleton<DataManager>, IManager
         List<RandartData> randartlist = JsonConvert.DeserializeObject<List<RandartData>>(jsonContent);
 
         foreach (var randartData in randartlist)
-            randartDic.Add(randartData._no, randartData);
+            randartDic.Add(randartData._id, randartData);
     }
 
     private void LoadRandartOptionTable()
@@ -112,14 +114,14 @@ public partial class DataManager : Singleton<DataManager>, IManager
     {
         string[] itemArray =
         {
-            "Amulet", "Armour", "Axe", "Boots", "Bow", "Glove",
+            "Amulet", "Armor", "Axe", "Boots", "Bow", "Glove",
             "Helmet", "Mace", "Ring", "Robe", "Shield",
             "Spear", "Staff", "Sword", "Etc"
         };
 
         var itemDataList = new List<Dictionary<string, ItemData>>()
         {
-            amuletDic, armourDic, axeDic, bootsDic, bowDic, gloveDic,
+            amuletDic, armorDic, axeDic, bootsDic, bowDic, gloveDic,
             helmetDic, maceDic, ringDic, robeDic, shieldDic,
             spearDic, staffDic, swordDic, etcDic
         };
@@ -149,7 +151,7 @@ public partial class DataManager : Singleton<DataManager>, IManager
 
         foreach (var data in dataList)
         {
-            targetDic.Add(data._nickName, data);
+            targetDic.Add(data._nickname, data);
         }
 
         LogUtil.Log($" {typeof(T).Name} {dataList.Count}개 로드됨");
@@ -222,15 +224,15 @@ public partial class DataManager : Singleton<DataManager>, IManager
         option2._max_mp += option1._max_mp;
         option2._min_attack += option1._min_attack;
         option2._max_attack += option1._max_attack;
-        option2._defence += option1._defence;
+        option2._defense += option1._defense;
         option2._min_magic_attack += option1._min_magic_attack;
         option2._max_magic_attack += option1._max_magic_attack;
-        option2._fire_res += option1._fire_res;
-        option2._cold_res += option1._cold_res;
-        option2._earth_res += option1._earth_res;
-        option2._dark_res += option1._dark_res;
-        option2._poison_res += option1._poison_res;
-        option2._avoid += option1._avoid;
+        option2._fire_resist += option1._fire_resist;
+        option2._cold_resist += option1._cold_resist;
+        option2._earth_resist += option1._earth_resist;
+        option2._dark_resist += option1._dark_resist;
+        option2._poison_resist += option1._poison_resist;
+        option2._evasion += option1._evasion;
 
         return option2;
     }

@@ -3,12 +3,18 @@ using System;
 
 public class MonsterDataComponent : DecoratorDataComponent
 {
+    protected DecoratorDataComponent decoData;
+
+    public DecoratorDataComponent Set(DecoratorDataComponent decoData)
+    {
+        this.decoData = decoData;
+        return this;
+    }
+
     public string _name { get { return monsterName; } set { monsterName = value; } }
     [SerializeField] private string monsterName;
-    public int _current_hp { get { return currentHp; } set { currentHp = value; } }
-    [SerializeField] private int currentHp;
-    public MonsterAttackType? _attackType { get { return attackType; } set { attackType = CheckMonsterAttackType(value); } }
-    [SerializeField] private MonsterAttackType attackType;
+    public ElementType? _element_type { get { return elementType; } set { elementType = CheckElementType(value); } }
+    [SerializeField] private ElementType elementType;
     public MagicType? _magic1 { get { return magic1; } set { magic1 = CheckMagicType(value); } }
     [SerializeField] private MagicType magic1;
     public MagicType? _magic2 { get { return magic2; } set { magic2 = CheckMagicType(value); } }
@@ -16,9 +22,9 @@ public class MonsterDataComponent : DecoratorDataComponent
     public string _comment { get { return comment; } set { comment = value; } }
     [SerializeField] private string comment;
 
-    MonsterAttackType CheckMonsterAttackType(MonsterAttackType? data)
+    ElementType CheckElementType(ElementType? data)
     {
-        return data ?? MonsterAttackType.NONE;
+        return data ?? ElementType.NONE;
     }
 
     MagicType CheckMagicType(MagicType? data)
@@ -39,11 +45,11 @@ public class MonsterDataComponent : DecoratorDataComponent
 
         switch (attackType)
         {
-            case AttackType.FIRE: resValue = fireRes; break;
-            case AttackType.COLD: resValue = coldRes; break;
-            case AttackType.DARK: resValue = darkRes; break;
-            case AttackType.MELEE: resValue = defence; break;
-            case AttackType.POISON: resValue = poisonRes; break;
+            case AttackType.FIRE: resValue = fireResist; break;
+            case AttackType.COLD: resValue = coldResist; break;
+            case AttackType.DARK: resValue = darkResist; break;
+            case AttackType.MELEE: resValue = defense; break;
+            case AttackType.POISON: resValue = poisonResist; break;
         }
         return resValue;
     }
@@ -67,11 +73,41 @@ public class MonsterDataComponent : DecoratorDataComponent
 
     public override void Operation()
     {
-        throw new NotImplementedException();
+        decoData.Operation();
+        decoData._current_hp += currentHp;
+        decoData._current_mp += currentMp;
+        decoData._max_hp += maxHp;
+        decoData._max_mp += maxMp;
+        decoData._min_attack += minAttack;
+        decoData._max_attack += maxAttack;
+        decoData._defense += defense;
+        decoData._min_magic_attack += minMagicAttack;
+        decoData._max_magic_attack += minMagicAttack;
+        decoData._fire_resist += fireResist;
+        decoData._cold_resist += coldResist;
+        decoData._earth_resist += earthResist;
+        decoData._dark_resist += darkResist;
+        decoData._poison_resist += poisonResist;
+        decoData._evasion += evasion;
     }
 
     public override void Revert()
     {
-        throw new NotImplementedException();
+        decoData.Revert();
+        decoData._current_hp -= currentHp;
+        decoData._current_mp -= currentMp;
+        decoData._max_hp -= maxHp;
+        decoData._max_mp -= maxMp;
+        decoData._min_attack -= minAttack;
+        decoData._max_attack -= maxAttack;
+        decoData._defense -= defense;
+        decoData._min_magic_attack -= minMagicAttack;
+        decoData._max_magic_attack -= minMagicAttack;
+        decoData._fire_resist -= fireResist;
+        decoData._cold_resist -= coldResist;
+        decoData._earth_resist -= earthResist;
+        decoData._dark_resist -= darkResist;
+        decoData._poison_resist -= poisonResist;
+        decoData._evasion -= evasion;
     }
 }

@@ -9,10 +9,22 @@ using UnityEditor;
 public class FindComponentsAttribute : Attribute
 {
     public string[] gameObjectNames { get; }
+    public bool findChild;
 
     public FindComponentsAttribute(params string[] gameObjectNames)
     {
         this.gameObjectNames = gameObjectNames;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="findChild">현재 스크립트를 기준으로 바인딩 여부</param>
+    /// <param name="gameObjectNames">바인딩할 게임오브젝트 명</param>
+    public FindComponentsAttribute(bool findChild = false, params string[] gameObjectNames)
+    {
+        this.gameObjectNames = gameObjectNames;
+        this.findChild = findChild;
     }
 }
 
@@ -95,11 +107,13 @@ public static class InjectUtil
     private static void InjectSingleComponent(FieldInfo field, FindComponentsAttribute attribute, MonoBehaviour script)
     {
         Transform tr;
-        // 현재 스크립트가 루트인지 확인
-        if (script.transform.CompareTag("PrefabRoot"))
+
+        if (attribute.findChild) // 현재 스크립트 위치에서부터 하위로 찾음 (Slot 같이 동일한 스크립트 아래 동일한 이름의 컴포넌트용)
             tr = FindChild(attribute.gameObjectNames[0], script.transform);
-        else
-            tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
+        else if (script.transform.CompareTag("PrefabRoot"))// 현재 스크립트 위치 루트이면 여기서 부터 찾음
+            tr = FindChild(attribute.gameObjectNames[0], script.transform);
+        else // 현재 스크립트 위치가 루트가 아니면 루트부터 찾고 루트에서 부터 찾음
+            tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform); 
 
         if (tr == null)
         {
@@ -127,11 +141,12 @@ public static class InjectUtil
         {
             Transform tr;
 
-            // 현재 스크립트가 루트인지 확인
-            if (script.transform.CompareTag("PrefabRoot"))
-                tr = FindChild(attribute.gameObjectNames[0], script.transform);
+            if (attribute.findChild) // 현재 스크립트 위치에서부터 하위로 찾음 (Slot 같이 동일한 스크립트 아래 동일한 이름의 컴포넌트용)
+                tr = FindChild(gameObjectName, script.transform);
+            else if (script.transform.CompareTag("PrefabRoot"))// 현재 스크립트가 루트인지 확인
+                tr = FindChild(gameObjectName, script.transform);
             else
-                tr = FindInSameRoot(attribute.gameObjectNames[0], script.transform);
+                tr = FindInSameRoot(gameObjectName, script.transform);
 
             if (tr == null)
             {

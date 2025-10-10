@@ -18,6 +18,7 @@ public class Manager : MonoBehaviour
     {
         DataManager.Instance.Init();
         ObjectPoolManager.Instance.Init();
+       // YieldReturnManager.Instance.Init();
         ResourceManager.Instance.Init();
         TestManager.Instance.Init();
         FieldManager.Instance.Init();

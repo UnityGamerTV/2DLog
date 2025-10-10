@@ -1,80 +1,102 @@
 using UnityEngine;
 
-public class MagicDataComponent : BaseDataComponent
+public class MagicDataComponent : DecoratorDataComponent
 {
-    public int _no { get { return no; } set { no = value; } }
+    protected DecoratorDataComponent decoData;
+
+    public DecoratorDataComponent Set(DecoratorDataComponent decoData)
+    {
+        this.decoData = decoData;
+        return this;
+    }
+
+    public int _id { get { return no; } set { no = value; } }
     [SerializeField] private int no;
     public string _name { get { return magicName; } set { magicName = value; } }
     [SerializeField] private string magicName;
     public int? _base_damage { get { return baseDamage; } set { baseDamage = CheckNullValue(value); } }
     [SerializeField] private int baseDamage;
-    public int? _reach { get { return reach; } set { reach = CheckNullValue(value); } }
-    [SerializeField] private int reach;
-    public int? _range { get { return range; } set { range = CheckNullValue(value); } }
-    [SerializeField] private int range;
-    public MagicAttackType? _magic_attack_type { get { return magicAttackType; } set { magicAttackType = CheckMagicAttackType(value); } }
-    [SerializeField] private MagicAttackType magicAttackType;
+    public int? _cast_range { get { return castRange; } set { castRange = CheckNullValue(value); } }
+    [SerializeField] private int castRange;
+    public EffectRadius? _effect_radius { get { return effectRadius; } set { effectRadius = CheckEffectRadius(value); } }
+    [SerializeField] private EffectRadius effectRadius;
+    public MagicCastType? _magic_cast_type { get { return magicCastType; } set { magicCastType = CheckMagicCastType(value); } }
+    [SerializeField] private MagicCastType magicCastType;
     public int? _mp_consume { get { return mpConsume; } set { mpConsume = CheckNullValue(value); } }
     [SerializeField] private int mpConsume;
-    public int? _skill_limit { get { return skillLimit; } set { skillLimit = CheckNullValue(value); } }
-    [SerializeField] private int skillLimit;
-    public MagicPropertyType? _magic_property_type { get { return magicPropertyType; } set { magicPropertyType = CheckMagicPropertyType(value); } }
-    [SerializeField] private MagicPropertyType magicPropertyType;
+    public int? _required_skill_level { get { return requiredSkillLevel; } set { requiredSkillLevel = CheckNullValue(value); } }
+    [SerializeField] private int requiredSkillLevel;
+    public ElementType? _element_type { get { return elementType; } set { elementType = CheckElementType(value); } }
+    [SerializeField] private ElementType elementType;
     public int? _turn { get { return turn; } set { turn = CheckNullValue(value); } }
     [SerializeField] private int turn;
-    public MagicEffectType? _magic_effect_type { get { return magicEffectType; } set { magicEffectType = CheckMagicEffectType(value); } }
-    [SerializeField] private MagicEffectType magicEffectType;
-    public int? _max_hp { get { return maxHp; } set { maxHp = CheckNullValue(value); } }
-    [SerializeField] private int maxHp;
-    public int? _max_mp { get { return maxMp; } set { maxMp = CheckNullValue(value); } }
-    [SerializeField] private int maxMp;
-    public int? _min_attack { get { return minAttack; } set { minAttack = CheckNullValue(value); } }
-    [SerializeField] private int minAttack;
-    public int? _max_attack { get { return maxAttack; } set { maxAttack = CheckNullValue(value); } }
-    [SerializeField] private int maxAttack;
-    public int? _defence { get { return defence; } set { defence = CheckNullValue(value); } }
-    [SerializeField] private int defence;
-    public int? _min_magic_attack { get { return minMagicAttack; } set { minMagicAttack= CheckNullValue(value); } }
-    [SerializeField] private int minMagicAttack;
-    public int? _max_magic_attack { get { return maxMagicAttack; } set { maxMagicAttack = CheckNullValue(value); } }
-    [SerializeField] private int maxMagicAttack;
-    public int? _fire_res { get { return fireRes; } set { fireRes = CheckNullValue(value); } }
-    [SerializeField] private int fireRes;
-    public int? _cold_res { get { return coldRes; } set { coldRes = CheckNullValue(value); } }
-    [SerializeField] private int coldRes;
-    public int? _earth_res { get { return earthRes; } set { earthRes = CheckNullValue(value); } }
-    [SerializeField] private int earthRes;
-    public int? _dark_res { get { return darkRes; } set { darkRes = CheckNullValue(value); } }
-    [SerializeField] private int darkRes;
-    public int? _poison_res { get { return poisonRes; } set { poisonRes = CheckNullValue(value); } }
-    [SerializeField] private int poisonRes;
-    public int? _avoid { get { return avoid; } set { avoid = CheckNullValue(value); } }
-    [SerializeField] private int avoid;
-    public string _nickName { get { return nickName; } set { nickName = value; } }
-    [SerializeField] private string nickName;
+    public StatusEffectType? _status_effect_type { get { return statusEffectType; } set { statusEffectType = CheckStatusEffectType(value); } }
+    [SerializeField] private StatusEffectType statusEffectType;
+    public string _nickname { get { return nickname; } set { nickname = value; } }
+    [SerializeField] private string nickname;
     public string _icon { get { return icon; } set { icon = value; } }
     [SerializeField] private string icon;
     public string _comment { get { return comment; } set { comment = value; } }
     [SerializeField] private string comment;
 
-    T CheckNullValue<T>(T? data) where T : struct
+    EffectRadius CheckEffectRadius(EffectRadius? data)
     {
-        return data ?? default;
+        return data ?? EffectRadius.NONE;
     }
 
-    MagicAttackType CheckMagicAttackType(MagicAttackType? data)
+    MagicCastType CheckMagicCastType(MagicCastType? data)
     {
-        return data ?? MagicAttackType.NONE;
+        return data ?? MagicCastType.NONE;
     }
 
-    MagicPropertyType CheckMagicPropertyType(MagicPropertyType? data)
+    ElementType CheckElementType(ElementType? data)
     {
-        return data ?? MagicPropertyType.NONE;
+        return data ?? ElementType.NONE;
     }
 
-    MagicEffectType CheckMagicEffectType(MagicEffectType? data)
+    StatusEffectType CheckStatusEffectType(StatusEffectType? data)
     {
-        return data ?? MagicEffectType.NONE;
+        return data ?? StatusEffectType.NONE;
+    }
+
+    public override void Operation()
+    {
+        decoData.Operation();
+        decoData._current_hp += currentHp;
+        decoData._current_mp += currentMp;
+        decoData._max_hp += maxHp;
+        decoData._max_mp += maxMp;
+        decoData._min_attack += minAttack;
+        decoData._max_attack += maxAttack;
+        decoData._defense += defense;
+        decoData._min_magic_attack += minMagicAttack;
+        decoData._max_magic_attack += minMagicAttack;
+        decoData._fire_resist += fireResist;
+        decoData._cold_resist += coldResist;
+        decoData._earth_resist += earthResist;
+        decoData._dark_resist += darkResist;
+        decoData._poison_resist += poisonResist;
+        decoData._evasion += evasion;
+    }
+
+    public override void Revert()
+    {
+        decoData.Revert();
+        decoData._current_hp -= currentHp;
+        decoData._current_mp -= currentMp;
+        decoData._max_hp -= maxHp;
+        decoData._max_mp -= maxMp;
+        decoData._min_attack -= minAttack;
+        decoData._max_attack -= maxAttack;
+        decoData._defense -= defense;
+        decoData._min_magic_attack -= minMagicAttack;
+        decoData._max_magic_attack -= minMagicAttack;
+        decoData._fire_resist -= fireResist;
+        decoData._cold_resist -= coldResist;
+        decoData._earth_resist -= earthResist;
+        decoData._dark_resist -= darkResist;
+        decoData._poison_resist -= poisonResist;
+        decoData._evasion -= evasion;
     }
 }
 

@@ -1,23 +1,19 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
-using System.Threading;
-using System;
 
-public class PlayerMoveState : IState
+public class PlayerMoveState : MonoBehaviour, IState
 {
     [Singleton(typeof(EventManager))] private EventManager eventManager;
+    [FindComponents("Player")] private PlayerController controller;
 
-    private CancellationTokenSource cancellationTokenSource;
-    private PlayerController controller;
-    private bool isMove;
+    private float delayTime = 0.5f;
+    private bool isMove = false;
 
-    public PlayerMoveState(PlayerController controller)
+    public void Init()
     {
-        this.controller = controller;
-        isMove = false;
-        cancellationTokenSource = new CancellationTokenSource();
         InjectUtil.InjectSingleton(this);
+        InjectUtil.InjectComponents(this);
     }
 
     public void OnStateEnter()
@@ -28,24 +24,24 @@ public class PlayerMoveState : IState
         isMove = true;
         controller.PlayAnimation(PLAYER_STATE.MOVE);
         OnStateUpdate();
-        
-        LogUtil.Log("isMove :" + isMove);
     }
 
-    public void OnStateUpdate() => OnMove();
-    
-    private void OnMove()
+    public void OnStateUpdate() => Move().Forget();
+
+    private async UniTaskVoid Move()
     {
         Vector3 playerPos = controller.gameObject.transform.position; // 나중에 맵 매니저에서 관리할수도 있음
         Vector3 newPos = playerPos + controller.GetMoveDir();
-        controller.gameObject.transform.DOMove(newPos, 0.5f).OnComplete(OnStateExit);
+        await controller.gameObject.transform
+            .DOMove(newPos, delayTime)
+            .ToUniTask(cancellationToken : controller.GetCancellationTokenOnDestroy());
+        OnStateExit();
     }
 
     public void OnStateExit()
     {
         isMove = false;
-        LogUtil.LogError("OnStateExit");
-        //controller.HandIdle();
-        //eventManager.PostNotification(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, controller);
+        eventManager.PostNotification(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
     }
+
 }

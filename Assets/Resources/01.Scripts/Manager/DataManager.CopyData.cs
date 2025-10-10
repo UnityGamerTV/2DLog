@@ -7,51 +7,56 @@ public partial class DataManager : Singleton<DataManager>
 
     public void CopyRandartData(ItemDataComponent target, RandartData newRandartData)
     {
-        target._no = newRandartData._no;
+        target._id = newRandartData._id;
         target._name = newRandartData._name + target._name;
         target._max_hp += newRandartData._max_hp;
         target._max_mp += newRandartData._max_mp;
         target._min_attack += newRandartData._min_attack;
         target._max_attack += newRandartData._max_attack;
-        target._defence += newRandartData._defence;
+        target._defense += newRandartData._defense;
         target._min_magic_attack += newRandartData._min_magic_attack;
         target._max_magic_attack += newRandartData._max_magic_attack;
-        target._fire_res += newRandartData._fire_res;
-        target._cold_res += newRandartData._cold_res;
-        target._earth_res += newRandartData._earth_res;
-        target._dark_res += newRandartData._dark_res;
-        target._poison_res += newRandartData._poison_res;
-        target._avoid += newRandartData._avoid;
+        target._fire_resist += newRandartData._fire_resist;
+        target._cold_resist += newRandartData._cold_resist;
+        target._earth_resist += newRandartData._earth_resist;
+        target._dark_resist += newRandartData._dark_resist;
+        target._poison_resist += newRandartData._poison_resist;
+        target._evasion += newRandartData._evasion;
     }
 
     public void CopyItemData(ItemDataComponent target, ItemData newItemData)
     {
-        target._no = newItemData._no;
+        target._id = newItemData._id;
         target._name = newItemData._name;
         target._max_hp = newItemData._max_hp;
         target._max_mp = newItemData._max_mp;
         target._min_attack = newItemData._min_attack;
         target._max_attack = newItemData._max_attack;
-        target._defence = newItemData._defence;
+        target._defense = newItemData._defense;
         target._min_magic_attack = newItemData._min_magic_attack;
         target._max_magic_attack = newItemData._max_magic_attack;
-        target._fire_res = newItemData._fire_res;
-        target._cold_res = newItemData._cold_res;
-        target._earth_res = newItemData._earth_res;
-        target._dark_res = newItemData._dark_res;
-        target._poison_res = newItemData._poison_res;
-        target._avoid = newItemData._avoid;
-        target._item_property_type = newItemData._item_property_type;
-        target._hand = newItemData._hand;
-        target._enhance_limit = newItemData._enhance_limit;
-        target._skill_limit = newItemData._skill_limit;
-        target._nickName = newItemData._nickName;
+        target._fire_resist = newItemData._fire_resist;
+        target._cold_resist = newItemData._cold_resist;
+        target._earth_resist = newItemData._earth_resist;
+        target._dark_resist = newItemData._dark_resist;
+        target._poison_resist = newItemData._poison_resist;
+        target._evasion = newItemData._evasion;
+        target._dataType= newItemData._data_type;
+        target._inventoryType = newItemData._inventory_type;
+        target._item_type = newItemData._Item_type;
+        target._slot_type = newItemData._slot_type;
+        target._element_type = newItemData._element_type;
+        target._hand_type = newItemData._hand_type;
+        target._current_enhance = newItemData._current_enhance;
+        target._max_enhance = newItemData._max_enhance;
+        target._required_skill_level = newItemData._required_skill_level;
+        target._nickname = newItemData._nickname;
         target._comment = newItemData._comment;
     }
 
     public void CopyPotionData(PotionDataComponent target, PotionData newPotionData)
     {
-        target._no = newPotionData._no;
+        target._id = newPotionData._id;
         target._name = newPotionData._name;
         target._max_hp = newPotionData._max_hp;
         target._current_hp = newPotionData._current_hp;
@@ -59,55 +64,63 @@ public partial class DataManager : Singleton<DataManager>
         target._current_mp = newPotionData._current_mp;
         target._min_attack = newPotionData._min_attack;
         target._max_attack = newPotionData._max_attack;
-        target._defence = newPotionData._defence;
+        target._defense = newPotionData._defense;
         target._min_magic_attack = newPotionData._min_magic_attack;
         target._max_magic_attack = newPotionData._max_magic_attack;
-        target._fire_res = newPotionData._fire_res;
-        target._cold_res = newPotionData._cold_res;
-        target._earth_res = newPotionData._earth_res;
-        target._dark_res = newPotionData._dark_res;
-        target._poison_res = newPotionData._poison_res;
-        target._avoid = newPotionData._avoid;
+        target._fire_resist = newPotionData._fire_resist;
+        target._cold_resist = newPotionData._cold_resist;
+        target._earth_resist = newPotionData._earth_resist;
+        target._dark_resist = newPotionData._dark_resist;
+        target._poison_resist = newPotionData._poison_resist;
+        target._evasion = newPotionData._evasion;
+        target._data_type = newPotionData._data_type;
+        target._inventory_type = newPotionData._inventory_type;
+        target._item_type = newPotionData._item_type;
         target._turn = newPotionData._turn;
-        target._nickName = newPotionData._nickName;
+        target._nickname = newPotionData._nickname;
         target._comment = newPotionData._comment;
     }
 
     public void CopyScrollData(ScrollDataComponent target, ScrollData newScrollData)
     {
-        target._no = newScrollData._no;
+        target._id = newScrollData._id;
         target._name = newScrollData._name;
-        target._avoid = newScrollData._avoid;
-        target._enhance = newScrollData._enhance;
-        target._nickName = newScrollData._nickName;
+        target._evasion = newScrollData._evasion;
+        target._enhance_value = newScrollData._enhance_value;
+        target._data_type = newScrollData._data_type;
+        target._inventory_type = newScrollData._inventory_type;
+        target._item_type = newScrollData._item_type;
+        target._nickName = newScrollData._nickname;
         target._comment = newScrollData._comment;
     }
 
     public void CopyMagicData(MagicDataComponent target, MagicData newMagicData)
     {
-        target._no = newMagicData._no;
+        target._id = newMagicData._id;
         target._name = newMagicData._name;
         target._base_damage = newMagicData._base_damage;
-        target._reach = newMagicData._reach;
-        target._range = newMagicData._range;
-        target._magic_attack_type = newMagicData._magic_attack_type;
+        target._cast_range = newMagicData._cast_range;
+        target._effect_radius = newMagicData._effect_radius;
+        target._magic_cast_type = newMagicData._magic_cast_type;
         target._mp_consume = newMagicData._mp_consume;
-        target._skill_limit = newMagicData._skill_limit;
-        target._magic_property_type = newMagicData._magic_property_type;
+        target._required_skill_level = newMagicData._required_skill_level;
+        target._element_type = newMagicData._element_type;
         target._turn = newMagicData._turn;
-        target._magic_effect_type = newMagicData._magic_effect_type;
+        target._status_effect_type = newMagicData._status_effect_type;
         target._max_hp = newMagicData._max_hp;
         target._max_mp = newMagicData._max_mp;
-        target._defence = newMagicData._defence;
+        target._min_attack = newMagicData._min_attack;
+        target._max_attack = newMagicData._max_attack;
+        target._defense = newMagicData._defense;
         target._min_magic_attack = newMagicData._min_magic_attack;
         target._max_magic_attack = newMagicData._max_magic_attack;
-        target._fire_res = newMagicData._fire_res;
-        target._cold_res = newMagicData._cold_res;
-        target._earth_res = newMagicData._earth_res;
-        target._dark_res = newMagicData._dark_res;
-        target._poison_res = newMagicData._poison_res;
-        target._avoid = newMagicData._avoid;
-        target._nickName = newMagicData._nickName;
+        target._fire_resist = newMagicData._fire_resist;
+        target._cold_resist = newMagicData._cold_resist;
+        target._earth_resist = newMagicData._earth_resist;
+        target._dark_resist = newMagicData._dark_resist;
+        target._poison_resist = newMagicData._poison_resist;
+        target._evasion = newMagicData._evasion;
+        target._nickname = newMagicData._nickname;
         target._icon = newMagicData._icon;
         target._comment = newMagicData._comment;
     }
@@ -115,17 +128,17 @@ public partial class DataManager : Singleton<DataManager>
     public void CopyMonsterData(MonsterDataComponent target, MonsterData newMonsterData)
     {
         target._name = newMonsterData._name;
-        target._current_hp = newMonsterData._max_hp;
+        target._current_hp = newMonsterData._current_hp;
         target._max_hp = newMonsterData._max_hp;
         target._min_attack = newMonsterData._min_attack;
         target._max_attack = newMonsterData._max_attack;
-        target._defence = newMonsterData._defence;
-        target._fire_res = newMonsterData._fire_res;
-        target._cold_res = newMonsterData._cold_res;
-        target._earth_res = newMonsterData._earth_res;
-        target._dark_res = newMonsterData._dark_res;
-        target._poison_res = newMonsterData._poison_res;
-        target._attackType = newMonsterData._attackType;
+        target._defense = newMonsterData._defense;
+        target._fire_resist = newMonsterData._fire_resist;
+        target._cold_resist = newMonsterData._cold_resist;
+        target._earth_resist = newMonsterData._earth_resist;
+        target._dark_resist = newMonsterData._dark_resist;
+        target._poison_resist = newMonsterData._poison_resist;
+        target._element_type = newMonsterData._element_type;
         target._magic1 = newMonsterData._magic1;
         target._magic2 = newMonsterData._magic2;
         target._comment = newMonsterData._comment;
@@ -138,27 +151,27 @@ public partial class DataManager : Singleton<DataManager>
         target._max_mp = newParticleData._max_mp;
         target._min_attack = newParticleData._min_attack;
         target._max_attack = newParticleData._max_attack;
-        target._defence = newParticleData._defence;
+        target._defense = newParticleData._defense;
         target._min_magic_attack = newParticleData._min_magic_attack;
         target._max_magic_attack = newParticleData._max_magic_attack;
-        target._fire_res = newParticleData._fire_res;
-        target._cold_res = newParticleData._cold_res;
-        target._earth_res = newParticleData._earth_res;
-        target._dark_res = newParticleData._dark_res;
-        target._poison_res = newParticleData._poison_res;
-        target._avoid = newParticleData._avoid;
+        target._fire_resist = newParticleData._fire_resist;
+        target._cold_resist = newParticleData._cold_resist;
+        target._earth_resist = newParticleData._earth_resist;
+        target._dark_resist = newParticleData._dark_resist;
+        target._poison_resist = newParticleData._poison_resist;
+        target._evasion = newParticleData._evasion;
         // ParticleDataComponent
         target._name = newParticleData._name;
         target._base_damage = newParticleData._base_damage;
-        target._reach = newParticleData._reach;
-        target._range = newParticleData._range;
-        target._magic_attack_type = newParticleData._magic_attack_type;
+        target._cast_range = newParticleData._cast_range;
+        target._effect_radius = newParticleData._effect_radius;
+        target._magic_cast_type = newParticleData._magic_cast_type;
         target._mp_consume = newParticleData._mp_consume;
-        target._skill_limit = newParticleData._skill_limit;
-        target._magic_property_type = newParticleData._magic_property_type;
+        target._required_skill_level = newParticleData._required_skill_level;
+        target._element_type = newParticleData._element_type;
         target._turn = newParticleData._turn;
-        target._magic_effect_type = newParticleData._magic_effect_type;
-        target._nickName = newParticleData._nickName;
+        target._status_effect_type = newParticleData._status_effect_type;
+        target._nickname = newParticleData._nickname;
         target._icon = newParticleData._icon;
         target._comment = newParticleData._comment;
     }

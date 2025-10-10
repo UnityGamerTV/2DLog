@@ -64,7 +64,11 @@ public class MonsterFactory : FactoryBase
         // 오브젝트 풀링 확인
         obj = objectPoolManager.GetObjPool("Monster");
         if (obj == null)
-            obj = resourceManager.Instantiate(MONSTER_PATH);
+        {
+            var monster = resourceManager.Instantiate<MonsterController>(MONSTER_PATH);
+            monster.Init();
+            return monster.gameObject;
+        }
 
         return obj;
     }
