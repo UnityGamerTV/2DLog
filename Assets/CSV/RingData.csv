@@ -1,28 +1,28 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_skill_limit,_nickName
-1,생명의 반지,20,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,life_ring
-2,마나의 반지,,20,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,mana_ring
-3,공격의 반지,,,10,10,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,attack_ring
-4,방어의 반지,,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,defence_ring
-5,마법 공격의 반지,,,,,,10,10,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,magic_attack_ring
-6,화염 저항 반지,,,,,,,,10,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,fire_ring
-7,냉기 저항 반지,,,,,,,,,10,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,cold_ring
-8,대지 저항 반지,,,,,,,,,,10,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,earth_ring
-9,암흑 저항 반지,,,,,,,,,,,10,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,dark_ring
-10,독 저항 반지,,,,,,,,,,,,10,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,poison_ring
-11,회피율 반지,,,,,,,,,,,,,10,ITEMDATA,EQUIPMENT,RING,RING,,,,,,avoid_ring
-12,불의 기운이 깃든 반지,20,,,,,,,20,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring4
-13,죽음을 간직한 반지,,,,,,,,,,,20,10,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring8
-14,땅의 힘을 모은 반지,,,,,5,,,,,20,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring11
-15,얼음과 불의 반지,,,,,,,,20,20,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring12
-16,여신의 반지,20,20,,,,,,,,,,10,10,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring13
-17,냉기를 머금은 반지,,,,,,,,,20,,10,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring14
-18,그림자 반지,20,,,,,,,,,,,,20,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring15
-19,대마도사의 반지,,20,,,,10,10,,,10,10,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring16
-20,랜다트 아이콘,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring5
-21,랜다트 아이콘,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring9
-22,랜다트 아이콘,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring10
-23,기본 아이콘1,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring1
-24,기본 아이콘2,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring2
-25,기본 아이콘3,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring3
-26,기본 아이콘4,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring6
-27,기본 아이콘5,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring7
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_skill_limit,_nickName
+1,생명의 반지,20,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,life_ring
+2,마나의 반지,,20,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,mana_ring
+3,공격의 반지,,,10,10,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,attack_ring
+4,방어의 반지,,,,,5,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,defence_ring
+5,마법 공격의 반지,,,,,,10,10,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,magic_attack_ring
+6,화염 저항 반지,,,,,,,,10,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,fire_ring
+7,냉기 저항 반지,,,,,,,,,10,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,cold_ring
+8,대지 저항 반지,,,,,,,,,,10,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,earth_ring
+9,암흑 저항 반지,,,,,,,,,,,10,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,dark_ring
+10,독 저항 반지,,,,,,,,,,,,10,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,poison_ring
+11,회피율 반지,,,,,,,,,,,,,10,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,avoid_ring
+12,불의 기운이 깃든 반지,20,,,,,,,20,,,,,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring4
+13,죽음을 간직한 반지,,,,,,,,,,,20,10,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring8
+14,땅의 힘을 모은 반지,,,,,5,,,,,20,,,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring11
+15,얼음과 불의 반지,,,,,,,,20,20,,,,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring12
+16,여신의 반지,20,20,,,,,,,,,,10,10,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring13
+17,냉기를 머금은 반지,,,,,,,,,20,,10,,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring14
+18,그림자 반지,20,,,,,,,,,,,,20,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring15
+19,대마도사의 반지,,20,,,,10,10,,,10,10,,,FIXDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring16
+20,랜다트 아이콘,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring5
+21,랜다트 아이콘,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring9
+22,랜다트 아이콘,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring10
+23,기본 아이콘1,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring1
+24,기본 아이콘2,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring2
+25,기본 아이콘3,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring3
+26,기본 아이콘4,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring6
+27,기본 아이콘5,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,RING,RING,,,,,,ring7

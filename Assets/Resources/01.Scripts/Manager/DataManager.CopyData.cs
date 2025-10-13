@@ -41,10 +41,11 @@ public partial class DataManager : Singleton<DataManager>
         target._dark_resist = newItemData._dark_resist;
         target._poison_resist = newItemData._poison_resist;
         target._evasion = newItemData._evasion;
+        target._itemGrade = newItemData._item_grade;
         target._dataType= newItemData._data_type;
         target._inventoryType = newItemData._inventory_type;
         target._item_type = newItemData._Item_type;
-        target._slot_type = newItemData._slot_type;
+        target._equip_slot = newItemData._equip_slot;
         target._element_type = newItemData._element_type;
         target._hand_type = newItemData._hand_type;
         target._current_enhance = newItemData._current_enhance;
@@ -73,6 +74,7 @@ public partial class DataManager : Singleton<DataManager>
         target._dark_resist = newPotionData._dark_resist;
         target._poison_resist = newPotionData._poison_resist;
         target._evasion = newPotionData._evasion;
+        target._item_grade = newPotionData._item_grade;
         target._data_type = newPotionData._data_type;
         target._inventory_type = newPotionData._inventory_type;
         target._item_type = newPotionData._item_type;
@@ -87,6 +89,7 @@ public partial class DataManager : Singleton<DataManager>
         target._name = newScrollData._name;
         target._evasion = newScrollData._evasion;
         target._enhance_value = newScrollData._enhance_value;
+        target._item_grade = newScrollData._item_grade;
         target._data_type = newScrollData._data_type;
         target._inventory_type = newScrollData._inventory_type;
         target._item_type = newScrollData._item_type;
@@ -120,6 +123,8 @@ public partial class DataManager : Singleton<DataManager>
         target._dark_resist = newMagicData._dark_resist;
         target._poison_resist = newMagicData._poison_resist;
         target._evasion = newMagicData._evasion;
+        target._item_grade = newMagicData._item_grade;
+        target._data_type = newMagicData._data_type;
         target._nickname = newMagicData._nickname;
         target._icon = newMagicData._icon;
         target._comment = newMagicData._comment;

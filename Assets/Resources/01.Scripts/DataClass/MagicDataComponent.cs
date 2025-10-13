@@ -10,8 +10,8 @@ public class MagicDataComponent : DecoratorDataComponent
         return this;
     }
 
-    public int _id { get { return no; } set { no = value; } }
-    [SerializeField] private int no;
+    public int _id { get { return id; } set { id = value; } }
+    [SerializeField] private int id;
     public string _name { get { return magicName; } set { magicName = value; } }
     [SerializeField] private string magicName;
     public int? _base_damage { get { return baseDamage; } set { baseDamage = CheckNullValue(value); } }
@@ -32,12 +32,26 @@ public class MagicDataComponent : DecoratorDataComponent
     [SerializeField] private int turn;
     public StatusEffectType? _status_effect_type { get { return statusEffectType; } set { statusEffectType = CheckStatusEffectType(value); } }
     [SerializeField] private StatusEffectType statusEffectType;
+    public ItemGrade? _item_grade { get { return itemGrade; } set { itemGrade = CheckItemGrade(value); } }
+    [SerializeField] private ItemGrade itemGrade;
+    public DataType? _data_type { get { return dataType; } set { dataType = CheckDataType(value); } }
+    [SerializeField] private DataType dataType;
     public string _nickname { get { return nickname; } set { nickname = value; } }
     [SerializeField] private string nickname;
     public string _icon { get { return icon; } set { icon = value; } }
     [SerializeField] private string icon;
     public string _comment { get { return comment; } set { comment = value; } }
     [SerializeField] private string comment;
+
+    ItemGrade CheckItemGrade(ItemGrade? data)
+    {
+        return data ?? ItemGrade.NONE;
+    }
+
+    DataType CheckDataType(DataType? data)
+    {
+        return data ?? DataType.NONE;
+    }
 
     EffectRadius CheckEffectRadius(EffectRadius? data)
     {

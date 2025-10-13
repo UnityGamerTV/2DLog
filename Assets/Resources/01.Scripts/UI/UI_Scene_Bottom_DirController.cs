@@ -43,9 +43,9 @@ public class UI_Scene_Bottom_DirController : UI_Scene, IListener
         eventManager.RemoveListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
     }
 
-    void IListener.OnEvent<TEnum>(TEnum event_Type, Component sender, object param)
+    void IListener.OnEvent<TEnum>(TEnum eventType, Component sender, object param)
     {
-        switch(event_Type)
+        switch(eventType)
         {
             case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: service.OnAllButton(); break;
             case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: service.OnAllButton(); break;

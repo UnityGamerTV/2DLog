@@ -16,12 +16,14 @@ public class PotionDataComponent : DecoratorDataComponent
     [SerializeField] private string potionName;
     public int? _turn { get { return turn; } set { turn = CheckNullValue(value); } }
     [SerializeField] private int turn;
+    public ItemGrade? _item_grade { get { return itemGrade; } set { itemGrade = CheckItemGrade(value); } }
+    [SerializeField] private ItemGrade itemGrade;
     public DataType? _data_type { get { return dataType; } set { dataType = CheckDataType(value); } }
-    [SerializeField] DataType dataType;
+    [SerializeField] private DataType dataType;
     public InventoryType? _inventory_type { get { return inventoryType; } set { inventoryType = CheckInventoryType(value); } }
-    [SerializeField] InventoryType inventoryType;
+    [SerializeField] private InventoryType inventoryType;
     public ItemType? _item_type { get { return itemType; }  set { itemType = CheckItemType(value); } }
-    [SerializeField] ItemType? itemType;
+    [SerializeField] private ItemType? itemType;
     public string _nickname { get { return nickname; } set { nickname = value; } }
     [SerializeField] string nickname;
     public string _comment { get { return comment; } set { comment = value; } }
@@ -65,6 +67,10 @@ public class PotionDataComponent : DecoratorDataComponent
         decoData._dark_resist -= darkResist;
         decoData._poison_resist -= poisonResist;
         decoData._evasion-= evasion;
+    }
+    ItemGrade CheckItemGrade(ItemGrade? data)
+    {
+        return data ?? ItemGrade.NONE;
     }
 
     DataType CheckDataType(DataType? data)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,33 @@ public class UI_Scene_Equip_InvenView : MonoBehaviour
     [FindComponents("Model"), SerializeField] private UI_Scene_Equip_InvenModel model;
     [FindComponents("Slot1", "Slot2", "Slot3", "Slot4", "Slot5", "Slot6", "Slot7", "Slot8", "Slot9", "Slot10," +
         "Slot11", "Slot12", "Slot13", "Slot14", "Slot15")]
-    [SerializeField] private List<UI_Scene_Equip_Inven_Slot> slots = new ();
+    [SerializeField] private List<UI_Scene_Equip_Inven_Slot> slots;
     [FindComponents("ReadingGlassButton"), SerializeField] private Button ReadingGlassButton;
 
     public void Init()
     {
+        slots = new();
+
         InjectUtil.InjectSingleton(this);
         InjectUtil.InjectComponents(this);
+
+        model.updateAction += UpdateData;
+    }
+
+    public void OnClickReadingGlassButton(bool onDetail)
+    {
+        if (onDetail)
+            for (int i = 0; i < slots.Count; i++)
+                slots[i].OnDetail();
+        else
+            for (int i = 0; i < slots.Count; i++)
+                slots[i].OffDetail();
+    }
+
+    public void UpdateData(List<InvenItemData> data)
+    {
+        for (int i = 0; i < data.Count; i++)
+            slots[i]._invenItemData = data[i];
     }
 
     public void Release()

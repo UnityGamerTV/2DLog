@@ -1,7 +1,7 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
-1,검은 상자,,,,,,,,,,,,,,ETCDATA,CONSUME,ETC,,,,,,,blackbox
-2,카드 뭉치,,,,,,,,,,,,,,ETCDATA,CONSUME,ETC,,,,,,,deck1
-3,마법 카드 뭉치,,,,,,,,,,,,,,ETCDATA,CONSUME,ETC,,,,,,,deck2
-4,전설 카드 뭉치,,,,,,,,,,,,,,ETCDATA,CONSUME,ETC,,,,,,,deck3
-5,골드,,,,,,,,,,,,,,ETCDATA,,,,,,,,,gold1
-6,골드 뭉치,,,,,,,,,,,,,,ETCDATA,,,,,,,,,gold2
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,검은 상자,,,,,,,,,,,,,,FIXDART,ETCDATA,CONSUME,ETC,,,,,,,blackbox
+2,카드 뭉치,,,,,,,,,,,,,,NORMAL,ETCDATA,CONSUME,ETC,,,,,,,deck1
+3,마법 카드 뭉치,,,,,,,,,,,,,,RANDART,ETCDATA,CONSUME,ETC,,,,,,,deck2
+4,전설 카드 뭉치,,,,,,,,,,,,,,FIXDART,ETCDATA,CONSUME,ETC,,,,,,,deck3
+5,골드,,,,,,,,,,,,,,NORMAL,ETCDATA,,,,,,,,,gold1
+6,골드 뭉치,,,,,,,,,,,,,,NORMAL,ETCDATA,,,,,,,,,gold2

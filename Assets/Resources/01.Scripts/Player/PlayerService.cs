@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.XR;
 
 public partial class PlayerService : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public partial class PlayerService : MonoBehaviour
 
         state.Init();
         view.Init();
+        model.Init();
     }
 
     public void PlayAnim0() => view.PlayAnim0();
@@ -42,15 +44,11 @@ public partial class PlayerService : MonoBehaviour
             return;
         }
 
-        foreach (HELMET_TYPE one in Enum.GetValues(typeof(HELMET_TYPE)))
-        {
-            if (helmetSpriteName.Equals(one.ToString()))
-            {
-                model._helmetType = one;
-                return;
-            }
-        }
-        LogUtil.Log("장착할 수 있는 헬멧이 없습니다.");
+        // 해당 Enum 을 기준으로 인벤(딕셔너리)에 저장
+        if (Enum.TryParse<HELMET_TYPE>(helmetSpriteName, out var helmetType))
+            model._helmetType = helmetType;
+        else
+            LogUtil.Log("장착할 수 있는 헬멧이 없습니다.");
     }
 
     public void EquipArmour(string armourSpriteName)
@@ -61,17 +59,12 @@ public partial class PlayerService : MonoBehaviour
             return;
         }
 
-        armourSpriteName = armourSpriteName.Replace(" ", "_");
+        armourSpriteName = armourSpriteName.Replace(" ", "_"); // 이름 보정
 
-        foreach (ARMOUR_TYPE one in Enum.GetValues(typeof(ARMOUR_TYPE)))
-        {
-            if (armourSpriteName.Equals(one.ToString()))
-            {
-                model._armourType = one;
-                return;
-            }
-        }
-        LogUtil.Log("장착할 수 있는 갑옷이 없습니다.");
+        if (Enum.TryParse<ARMOUR_TYPE>(armourSpriteName, out var armortype))
+            model._armourType = armortype;
+        else
+            LogUtil.Log("장착할 수 있는 갑옷이 없습니다.");
     }
 
     public void EquipShield(string shieldSpriteName)
@@ -82,15 +75,10 @@ public partial class PlayerService : MonoBehaviour
             return;
         }
 
-        foreach (SHIELD_TYPE one in Enum.GetValues(typeof(SHIELD_TYPE)))
-        {
-            if (shieldSpriteName.Equals(one.ToString()))
-            {
-                model._shieldType = one;
-                return;
-            }
-        }
-        LogUtil.Log("장착할 수 있는 쉴드가 없습니다.");
+        if (Enum.TryParse<SHIELD_TYPE>(shieldSpriteName, out var shieldType))
+            model._shieldType = shieldType;
+        else
+            LogUtil.Log("장착할 수 있는 쉴드가 없습니다.");
     }
 
     public void PlayAnimation(PLAYER_STATE playerState)

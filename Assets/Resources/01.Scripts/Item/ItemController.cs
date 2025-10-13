@@ -3,24 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 
-public enum ItemDataType
-{
-    ITEM,
-    POTION,
-    SCROLL,
-    MAGIC,
-    NONE
-}
-
 
 public class ItemController : FieldObjBase, IController
 {
 
     public BaseDataComponent _baseDataComponent { get { return baseDataComponent; } set { baseDataComponent = value; } }
     [SerializeField] private BaseDataComponent baseDataComponent;
-
-    public ItemDataType _itemDataType { get { return itemDataType; } set { itemDataType = value; } }
-    [SerializeField] private ItemDataType itemDataType;
 
     public SpriteRenderer _spriteRenderer { get { return spriteRenderer; } set { spriteRenderer = value; } }
     [FindComponents("item"), SerializeField] private SpriteRenderer spriteRenderer;

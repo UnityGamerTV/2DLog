@@ -90,33 +90,32 @@ public class ItemFactory : FactoryBase
     {
         var itemController = item.GetComponent<ItemController>();
         // 데이터 입력
-        ItemDataType itemDataType = CheckItemType(spriteName);
+        var itemDataType = CheckItemType(spriteName);
         switch (itemDataType)
         {
-            case ItemDataType.ITEM: SetItemData(itemController, item, spriteName); break;
-            case ItemDataType.POTION: SetPotionData(itemController, item, spriteName); break;
-            case ItemDataType.SCROLL: SetScrollData(itemController, item, spriteName); break;
-            case ItemDataType.MAGIC: SetMagicData(itemController, item, spriteName); break;
+            case "item": SetItemData(itemController, item, spriteName); break;
+            case "potion": SetPotionData(itemController, item, spriteName); break;
+            case "scroll": SetScrollData(itemController, item, spriteName); break;
+            case "magic": SetMagicData(itemController, item, spriteName); break;
         }
-        itemController._itemDataType = itemDataType;
         return itemController;
     }
 
-    private ItemDataType CheckItemType(string spriteName)
+    private string CheckItemType(string spriteName)
     {
         if (spriteName.Contains("potion"))
-            return ItemDataType.POTION;
+            return "potion";
         else if (spriteName.Contains("scroll"))
-            return ItemDataType.SCROLL;
+            return "scroll";
         else if (spriteName.Contains("fire") ||
                  spriteName.Contains("cold") ||
                  spriteName.Contains("earth") ||
                  spriteName.Contains("poison") ||
                  spriteName.Contains("nec") ||
                  spriteName.Contains("sum"))
-            return ItemDataType.MAGIC;
+            return "magic";
         else
-            return ItemDataType.ITEM;
+            return "item";
     }
 
     private void SetItemData(ItemController itemController, GameObject item, string spriteName)
