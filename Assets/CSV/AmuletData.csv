@@ -1,28 +1,28 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
-1,생명의 목걸이,20,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,life_amulet
-2,마나의 목걸이,,20,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,mana_amulet
-3,공격의 목걸이,,,10,10,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,attack_amulet
-4,방어의 목걸이,,,,,4,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,defence_amulet
-5,마법 공격의 목걸이,,,,,,10,10,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,magic_attack_amulet
-6,화염 저항 목걸이,,,,,,,,10,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,fire_amulet
-7,냉기 저항 목걸이,,,,,,,,,10,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,cold_amulet
-8,대지 저항 목걸이,,,,,,,,,,10,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,earth_amulet
-9,암흑 저항 목걸이,,,,,,,,,,,10,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,dark_amulet
-10,독 저항 목걸이,,,,,,,,,,,,10,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,poison_amulet
-11,회피 목걸이,,,,,,,,,,,,,10,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,avoid_amulet
-12,저주받은 악령의 목걸이,,,,,,,,,10,,20,10,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet10
-13,숲의 활력을 지닌 목걸이,40,,,,4,,,,,,,,10,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet11
-14,붉은 고리 목걸이,,,,,,,,20,,,10,10,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet12
-15,해골 목걸이,,,,,,,,,,20,10,10,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet13
-16,바다를 품은 목걸이,,,,,,10,10,,30,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet14
-17,철의 십자 목걸이,,,20,20,4,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet15
-18,파란 마녀의 목걸이,,40,,,,20,20,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet16
-19,랜다트 아이콘1,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet7
-20,랜다트 아이콘2,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet8
-21,랜다트 아이콘3,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet9
-22,기본 아이콘1,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet1
-23,기본 아이콘2,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet2
-24,기본 아이콘3,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet3
-25,기본 아이콘4,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet4
-26,기본 아이콘5,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet5
-27,기본 아이콘6,,,,,,,,,,,,,,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet6
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,생명의 목걸이,20,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,life_amulet
+2,마나의 목걸이,,20,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,mana_amulet
+3,공격의 목걸이,,,10,10,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,attack_amulet
+4,방어의 목걸이,,,,,4,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,defence_amulet
+5,마법 공격의 목걸이,,,,,,10,10,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,magic_attack_amulet
+6,화염 저항 목걸이,,,,,,,,10,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,fire_amulet
+7,냉기 저항 목걸이,,,,,,,,,10,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,cold_amulet
+8,대지 저항 목걸이,,,,,,,,,,10,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,earth_amulet
+9,암흑 저항 목걸이,,,,,,,,,,,10,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,dark_amulet
+10,독 저항 목걸이,,,,,,,,,,,,10,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,poison_amulet
+11,회피 목걸이,,,,,,,,,,,,,10,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,avoid_amulet
+12,저주받은 악령의 목걸이,,,,,,,,,10,,20,10,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet10
+13,숲의 활력을 지닌 목걸이,40,,,,4,,,,,,,,10,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet11
+14,붉은 고리 목걸이,,,,,,,,20,,,10,10,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet12
+15,해골 목걸이,,,,,,,,,,20,10,10,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet13
+16,바다를 품은 목걸이,,,,,,10,10,,30,,,,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet14
+17,철의 십자 목걸이,,,20,20,4,,,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet15
+18,파란 마녀의 목걸이,,40,,,,20,20,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet16
+19,랜다트 아이콘1,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet7
+20,랜다트 아이콘2,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet8
+21,랜다트 아이콘3,,,,,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet9
+22,기본 아이콘1,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet1
+23,기본 아이콘2,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet2
+24,기본 아이콘3,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet3
+25,기본 아이콘4,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet4
+26,기본 아이콘5,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet5
+27,기본 아이콘6,,,,,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,AMULET,AMULET,,,,,,amulet6

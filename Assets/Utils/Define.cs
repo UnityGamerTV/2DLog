@@ -3,7 +3,7 @@
 
     public int Max100 = 100;
 
-    public enum ItemGrade
+    public enum ItemGradeEX
     {
         FickArti,
         RanArti,

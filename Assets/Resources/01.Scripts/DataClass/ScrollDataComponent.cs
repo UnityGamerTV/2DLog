@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Define;
 public class ScrollDataComponent : DecoratorDataComponent
 {
     protected DecoratorDataComponent decoData;
@@ -15,6 +16,8 @@ public class ScrollDataComponent : DecoratorDataComponent
     [SerializeField] private string scrollName;
     public int? _enhance_value { get { return enhanceValue; } set { enhanceValue = CheckNullValue(value); } }
     [SerializeField] private int enhanceValue;
+    public ItemGrade? _item_grade { get { return itemGrade; } set { itemGrade = CheckItemGrade(value); } }
+    [SerializeField] private ItemGrade itemGrade;
     public DataType? _data_type { get { return dataType; } set { dataType = CheckDataType(value); } }
     [SerializeField] private DataType dataType;
     public InventoryType? _inventory_type { get { return inventoryType; } set { inventoryType = CheckInventoryType(value); } }
@@ -68,6 +71,10 @@ public class ScrollDataComponent : DecoratorDataComponent
         decoData._evasion -= evasion;
     }
 
+    ItemGrade CheckItemGrade(ItemGrade? data)
+    {
+        return data ?? ItemGrade.NONE;
+    }
     DataType CheckDataType(DataType? data)
     {
         return data ?? DataType.NONE;

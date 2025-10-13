@@ -16,7 +16,7 @@ public class SceneMain : MonoBehaviour, IListener
     {
         InjectUtil.InjectSingleton(this);
 
-        mapManager.GenerateMap("Base2", "Map_007");
+        mapManager.GenerateMap("Base2", "Map_001");
 
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_DIR_BUTTON, this);
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_CONSUME_BUTTON, this);
@@ -33,10 +33,10 @@ public class SceneMain : MonoBehaviour, IListener
     }
 
     // 이벤트가 과도하게 커지면 따로 관리
-    public void OnEvent<TEnum>(TEnum event_Type, Component sender, object param = null) where TEnum : Enum
+    public void OnEvent<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
     {
         UI_SCENE_ENUM uiSceneEnum;
-        switch (event_Type)
+        switch (eventType)
         {
             case EVENT_BOTTOM_BASE_UI.ON_CLICK_DIR_BUTTON:
                 uiSceneEnum = bottomBaseController.GetUISceneEnum();

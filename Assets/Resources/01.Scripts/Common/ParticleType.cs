@@ -53,7 +53,8 @@ public enum ParticleType
     MagicEffect_sum4, //sum1
     MagicEffect_sum5,
     MagicEffect_sum6, //sum5
-    BaseEffect_arrow1,
+    //
+    BaseEffect_arrow1 = 100,
     BaseEffect_axe1,
     BaseEffect_mace1,
     BaseEffect_spear1,
@@ -64,5 +65,6 @@ public enum ParticleType
     SkillEffect_mace2,
     SkillEffect_spear2,
     SkillEffect_sword2,
-    ItemEffect_item1,
+    //
+    ItemEffect_item1 = 200,
 }

@@ -28,6 +28,8 @@ public class BaseAbilityData : INickname
     public int? _dark_resist { get; set; }
     public int? _poison_resist { get; set; }
     public int? _evasion { get; set; }
+    public ItemGrade? _item_grade { get; set; }
+    public DataType? _data_type { get; set; }
     public string _nickname { get; set; }
     public string _icon { get; set; }
     public string _comment { get; set; }

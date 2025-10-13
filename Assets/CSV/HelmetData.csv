@@ -1,19 +1,19 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
-1,철 투구,,,,,3,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet1
-2,기사 투구,,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet2
-3,기사단장 투구,20,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet4
-4,황금 투구,20,,,,5,,,,,,,10,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet5
-5,돌가면,,,,,5,,,,,20,20,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet6
-6,금고아,,,10,10,5,,,,,,,,10,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet7
-7,투사의 투구,20,,10,10,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet11
-8,코볼트 왕관,20,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet13
-9,마술사 모자,20,20,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet8
-10,요리사 모자,,,,,5,,,10,10,10,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet9
-11,광대 모자,20,,,,5,,,,,,,10,10,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet12
-12,마법사 모자,,,,,5,10,10,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet14
-13,사냥꾼 모자,,,,,5,,,,,,,10,10,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet16
-14,탐험가 모자,20,,,,5,,,,,10,10,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet17
-15,대마도사 모자,,20,,,5,20,20,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet18
-16,투구,,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet3
-17,투구,,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet10
-18,모자,,,,,5,,,,,,,,,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet15
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,철 투구,,,,,3,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet1
+2,기사 투구,,,,,5,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet2
+3,기사단장 투구,20,,,,5,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet4
+4,황금 투구,20,,,,5,,,,,,,10,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet5
+5,돌가면,,,,,5,,,,,20,20,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet6
+6,금고아,,,10,10,5,,,,,,,,10,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet7
+7,투사의 투구,20,,10,10,5,,,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,3,helmet11
+8,코볼트 왕관,20,,,,5,,,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet13
+9,마술사 모자,20,20,,,5,,,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet8
+10,요리사 모자,,,,,5,,,10,10,10,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet9
+11,광대 모자,20,,,,5,,,,,,,10,10,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet12
+12,마법사 모자,,,,,5,10,10,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet14
+13,사냥꾼 모자,,,,,5,,,,,,,10,10,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet16
+14,탐험가 모자,20,,,,5,,,,,10,10,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet17
+15,대마도사 모자,,20,,,5,20,20,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet18
+16,투구,,,,,5,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet3
+17,투구,,,,,5,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,1,helmet10
+18,모자,,,,,5,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,HELMET,HELMET,,,,2,0,helmet15

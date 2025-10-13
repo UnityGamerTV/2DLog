@@ -18,10 +18,11 @@ public class ItemData : INickname
     public int? _dark_resist { get; set; }
     public int? _poison_resist { get; set; }
     public int? _evasion { get; set; }
+    public ItemGrade? _item_grade { get; set; }
     public DataType? _data_type { get; set; }
     public InventoryType? _inventory_type { get; set; }
     public ItemType? _Item_type { get; set; }
-    public SlotType? _slot_type { get; set; }
+    public EquipSlot? _equip_slot { get; set; }
     public ElementType? _element_type { get; set; }
     public int? _hand_type { get; set; }
     public int? _current_enhance { get; set;}
@@ -29,6 +30,14 @@ public class ItemData : INickname
     public int? _required_skill_level { get; set; }
     public string _nickname { get; set; }
     public string _comment { get; set; }    
+}
+
+public enum ItemGrade
+{ 
+    NORMAL,
+    RANDART,
+    FIXDART,
+    NONE,
 }
 
 public enum DataType
@@ -72,7 +81,7 @@ public enum ItemType
     NONE,
 }
 
-public enum SlotType
+public enum EquipSlot
 {
     AMULET,
     ARMOR,
@@ -80,6 +89,8 @@ public enum SlotType
     WEAPON,
     SHIELD,
     RING,
+    BOOTS,
+    GLOVE,
     NONE,
 }
 

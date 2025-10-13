@@ -1,16 +1,16 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
-1,나뭇가지,,,5,10,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,1,spear2
-2,곤봉,,,10,15,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,1,spear1
-3,강화된 곤봉,,,15,20,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear3
-4,창,,,20,25,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear4
-5,파르티잔,,,25,30,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear7
-6,할버드,,,30,35,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear11
-7,글레이브,,,35,40,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear14
-8,폴암,,,35,45,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear15
-9,기사의 창,20,,30,35,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear12
-10,붉은 악마의 삼지창,,,35,45,,,,20,,,10,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,DARK,2,,5,3,spear9
-11,여의봉,20,,35,45,,,,,,10,,,10,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear13
-12,삼지창,,,35,45,,,,,20,,10,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,COLD,2,,3,3,spear10
-13,파란창,,,20,25,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear5
-14,녹색창,,,20,25,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear6
-15,파르티잔,,,25,30,,,,,,,,,,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear8
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,나뭇가지,,,5,10,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,1,spear2
+2,곤봉,,,10,15,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,1,spear1
+3,강화된 곤봉,,,15,20,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear3
+4,창,,,20,25,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear4
+5,파르티잔,,,25,30,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear7
+6,할버드,,,30,35,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear11
+7,글레이브,,,35,40,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear14
+8,폴암,,,35,45,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear15
+9,기사의 창,20,,30,35,,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear12
+10,붉은 악마의 삼지창,,,35,45,,,,20,,,10,,,FIXDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,DARK,2,,5,3,spear9
+11,여의봉,20,,35,45,,,,,,10,,,10,FIXDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,2,,3,3,spear13
+12,삼지창,,,35,45,,,,,20,,10,,,FIXDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,COLD,2,,3,3,spear10
+13,파란창,,,20,25,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear5
+14,녹색창,,,20,25,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,2,spear6
+15,파르티잔,,,25,30,,,,,,,,,,RANDART,ITEMDATA,EQUIPMENT,SPEAR,WEAPON,,1,,3,3,spear8

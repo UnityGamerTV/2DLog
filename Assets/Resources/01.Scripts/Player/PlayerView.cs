@@ -51,6 +51,8 @@ public class PlayerView : MonoBehaviour
         model.shieldEquipAction += GetShieldData;
     }
 
+    //private void GetResource<T>(T enumType)
+
     private void GetResource<T>() where T : Enum
     {
         foreach (T one in Enum.GetValues(typeof(T)))

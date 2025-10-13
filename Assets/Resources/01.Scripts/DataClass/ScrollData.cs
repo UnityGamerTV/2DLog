@@ -7,6 +7,7 @@ public class ScrollData : INickname
     public string _name { get; set; }
     public int? _evasion { get; set; }
     public int? _enhance_value { get; set; }
+    public ItemGrade _item_grade { get; set; }
     public DataType _data_type { get; set; }
     public InventoryType _inventory_type { get; set; }
     public ItemType _item_type { get; set; }

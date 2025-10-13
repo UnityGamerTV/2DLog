@@ -8,19 +8,22 @@ public partial class PlayerDataComponent : DecoratorDataComponent
 {
     // 소모품 인벤
     public Dictionary<ConsumeType, InvenItemData> _consumeInven { get { return consumeInven; } set { consumeInven = value; } }
-    [SerializeField] private Dictionary<ConsumeType, InvenItemData> consumeInven = new();
+    [SerializeField] private Dictionary<ConsumeType, InvenItemData> consumeInven = new();// 초기화를 같은 파일에서 안할경우 헷갈릴수 있음
 
-    // 장비 인벤
-    public Dictionary<EquipmentType, InvenItemData> _equipmentInven 
-    { 
-        get { return equipmentInven; } 
-        set 
+    // 리스트로 장비 인벤 한다면?
+    public List<InvenItemData> _equipmentInven
+    {
+        get { return equipmentInven; }
+        set
         {
-            equipmentInven = value;   
-            eventManager.PostNotification(EVENT_PLAYER.PLAYER_EQUIP_INVENTORY_UPDATED, this);
-        } 
+            equipmentInven = value;
+            eventManager.PostNotification(EVENT_PLAYER.PLAYER_EQUIP_INVENTORY_UPDATED, this, equipmentInven);
+        }
     }
-    [SerializeField] private Dictionary<EquipmentType, InvenItemData> equipmentInven = new();
+    [SerializeField] private List<InvenItemData> equipmentInven = new();
+    //
+    //public List<ItemDataComponent> _equipmentInven { get { return equipmentInven; } set { value = equipmentInven; } }
+    //[SerializeField] private List<ItemDataComponent> equipmentInven = new();
 
     // 어빌리티 인벤
     public List<AbilityType> _abilityTypes 
@@ -41,13 +44,21 @@ public partial class PlayerDataComponent : DecoratorDataComponent
     [SerializeField] private int diamond;
 
 
+
     public void GetItemComplete()
     {
         var baseData = fieldManager._getItemController._baseDataComponent as ItemDataComponent;
         if (baseData == null)
             return;
 
+        var itemCount = 1;
+        var invenSlotCount = 15;
+
+        if (equipmentInven.Count >= invenSlotCount)
+            return;
+
         ItemData itemData = new ItemData();
+
         itemData._id = baseData._id;
         itemData._name = baseData._name;
         itemData._max_hp = baseData._max_hp;
@@ -72,18 +83,20 @@ public partial class PlayerDataComponent : DecoratorDataComponent
         itemData._comment = baseData._comment;
 
         InvenItemData invenItemData = new InvenItemData();
-        invenItemData._itemDataType = fieldManager._getItemController._itemDataType;
-        invenItemData._baseDataComponent = itemData;
-        invenItemData._itemCount = 1; // 획득 시 수량 1 고정
+        invenItemData._itemData = itemData;
+        invenItemData._itemCount = itemCount; // 획득 시 수량 1 고정
 
-        // 해당 Enum 을 기준으로 인벤(딕셔너리)에 저장
-        foreach (var one in Enum.GetValues(typeof(EquipmentType)))
-        {
-            if (one.ToString().Equals(itemData._nickname))
-            {
-                equipmentInven.Add((EquipmentType)one, invenItemData);
-                break;
-            }
-        }
+        equipmentInven.Add(invenItemData);
     }
+}
+
+/// <summary>
+/// 인벤토리 데이터 공용 전달 매개변수
+/// </summary>
+/// <typeparam name="TKey"></typeparam>
+/// <typeparam name="TValue"></typeparam>
+public struct InventoryData<TKey, TValue>
+{
+    public TKey key;
+    public TValue value;
 }

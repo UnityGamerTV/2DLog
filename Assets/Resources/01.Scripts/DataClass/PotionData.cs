@@ -19,9 +19,10 @@ public class PotionData : INickname
     public int? _dark_resist { get; set; }
     public int? _poison_resist { get; set; }
     public int? _evasion { get; set; }
-    public DataType _data_type { get; set; }
-    public InventoryType _inventory_type { get; set; }
-    public ItemType _item_type { get; set; }
+    public ItemGrade? _item_grade { get; set; }
+    public DataType? _data_type { get; set; }
+    public InventoryType? _inventory_type { get; set; }
+    public ItemType? _item_type { get; set; }
     public int? _turn { get; set; }
     public string _nickname { get; set; }
     public string _comment { get; set; }

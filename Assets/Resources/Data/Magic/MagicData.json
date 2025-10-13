@@ -24,6 +24,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "FIXDART",
     "_data_type": "MAGICDATA",
     "_nickname": "fire6",
     "_icon": "magic2"
@@ -53,6 +54,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "FIXDART",
     "_data_type": "MAGICDATA",
     "_nickname": "cold3",
     "_icon": "magic3"
@@ -82,6 +84,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "FIXDART",
     "_data_type": "MAGICDATA",
     "_nickname": "sum6",
     "_icon": "magic6"
@@ -111,6 +114,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "RANDART",
     "_data_type": "MAGICDATA",
     "_nickname": "fire1",
     "_icon": "magic2"
@@ -140,6 +144,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "RANDART",
     "_data_type": "MAGICDATA",
     "_nickname": "cold5",
     "_icon": "magic3"
@@ -169,6 +174,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "FIXDART",
     "_data_type": "MAGICDATA",
     "_nickname": "poison4",
     "_icon": "magic1"
@@ -198,6 +204,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "FIXDART",
     "_data_type": "MAGICDATA",
     "_nickname": "earth4",
     "_icon": "magic4"
@@ -227,6 +234,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "RANDART",
     "_data_type": "MAGICDATA",
     "_nickname": "nec5",
     "_icon": "magic5"
@@ -256,6 +264,7 @@
     "_dark_resist": "10",
     "_poison_resist": "10",
     "_evasion": "",
+    "_item_grade": "RANDART",
     "_data_type": "MAGICDATA",
     "_nickname": "nec6",
     "_icon": "magic5"
@@ -285,6 +294,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "RANDART",
     "_data_type": "MAGICDATA",
     "_nickname": "sum5",
     "_icon": "magic6"
@@ -314,6 +324,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "fire5",
     "_icon": "magic2"
@@ -343,6 +354,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "fire7",
     "_icon": "magic2"
@@ -372,6 +384,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "fire3",
     "_icon": "magic2"
@@ -401,6 +414,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "fire4",
     "_icon": "magic2"
@@ -430,6 +444,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "fire2",
     "_icon": "magic2"
@@ -459,6 +474,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "cold1",
     "_icon": "magic3"
@@ -488,6 +504,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "cold2",
     "_icon": "magic3"
@@ -517,6 +534,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "cold6",
     "_icon": "magic3"
@@ -546,6 +564,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "cold7",
     "_icon": "magic3"
@@ -575,6 +594,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "cold8",
     "_icon": "magic3"
@@ -604,6 +624,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "poison1",
     "_icon": "magic1"
@@ -633,6 +654,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "poison2",
     "_icon": "magic1"
@@ -662,6 +684,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "poison3",
     "_icon": "magic1"
@@ -691,6 +714,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "poison5",
     "_icon": "magic1"
@@ -720,6 +744,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "poison6",
     "_icon": "magic1"
@@ -749,6 +774,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "earth5",
     "_icon": "magic4"
@@ -778,6 +804,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "earth1",
     "_icon": "magic4"
@@ -807,6 +834,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "earth2",
     "_icon": "magic4"
@@ -836,6 +864,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "earth3",
     "_icon": "magic4"
@@ -865,6 +894,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "nec1",
     "_icon": "magic5"
@@ -894,6 +924,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "nec2",
     "_icon": "magic5"
@@ -923,6 +954,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "nec3",
     "_icon": "magic5"
@@ -952,6 +984,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "nec4",
     "_icon": "magic5"
@@ -981,6 +1014,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "sum1",
     "_icon": "magic6"
@@ -1010,6 +1044,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "sum2",
     "_icon": "magic6"
@@ -1039,6 +1074,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "sum3",
     "_icon": "magic6"
@@ -1068,6 +1104,7 @@
     "_dark_resist": "",
     "_poison_resist": "",
     "_evasion": "",
+    "_item_grade": "NORMAL",
     "_data_type": "MAGICDATA",
     "_nickname": "sum4",
     "_icon": "magic6"

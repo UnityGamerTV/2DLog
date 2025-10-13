@@ -90,13 +90,13 @@ public class ParticleFactory : ParticleFactoryBase
 
         ParticleDataComponent myParticleData = null;
 
-        if (particleNumber <= 45) // ParticleType - MagicEffect = 45까지
+        if (particleNumber < 100) // ParticleType - MagicEffect = 45까지
         {
             ParticleData particleData = dataManager.AddMagicParticleData(particleName);
             myParticleData = particle.AddComponent<ParticleDataComponent>();
             dataManager.CopyParticleData(myParticleData, particleData);
         }
-        else if (particleNumber >= 46 && particleNumber <= 56) // ParticleType - MeleeEffect
+        else if (particleNumber >= 100 && particleNumber < 200) // ParticleType - MeleeEffect
         {
             ParticleData particleData = dataManager.AddMeleeParticleData(particleName);
             myParticleData = particle.AddComponent<ParticleDataComponent>();
@@ -106,7 +106,7 @@ public class ParticleFactory : ParticleFactoryBase
         { }
 
         var particleController = particle.GetComponent<ParticleController>();
-        if (particleController != null) 
+        if (particleController != null)
             particleController._particleDataComponent = myParticleData;
 
         return particleController;

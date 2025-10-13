@@ -1,11 +1,11 @@
-_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
-1,소형 방패,,,,,2,,,,,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield3
-2,강화된 소형 방패,,,,,4,,,,,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield1
-3,대형 방패,,,,,8,,,,,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield6
-4,엘프의 소형 방패,,,,,4,,,,,,,10,10,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield2
-5,중형 방패,,,,,6,,,,,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield4
-6,내성의 방패,,,,,6,,,10,10,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield5
-7,무지의 방패,,,,,12,,,,,,,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield7
-8,해골 방패,,,,,8,,,,,,20,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield8
-9,기사의 방패,20,,,,8,,,,,,,10,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield9
-10,왕가의 방패,20,,,,8,,,,,10,10,,,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield10
+_id,_name,_max_hp,_max_mp,_min_attack,_max_attack,_defense,_min_magic_attack,_max_magic_attack,_fire_resist,_cold_resist,_earth_resist,_dark_resist,_poison_resist,_evasion,_item_grade,_data_type,_inventory_type,_item_type,_equip_slot,_element_type,_hand_type,_current_enhance,_max_enhance,_required_skill_level,_nickname
+1,소형 방패,,,,,2,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield3
+2,강화된 소형 방패,,,,,4,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield1
+3,대형 방패,,,,,8,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield6
+4,엘프의 소형 방패,,,,,4,,,,,,,10,10,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield2
+5,중형 방패,,,,,6,,,,,,,,,NORMAL,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield4
+6,내성의 방패,,,,,6,,,10,10,,,,,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,1,shield5
+7,무지의 방패,,,,,12,,,,,,,,,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield7
+8,해골 방패,,,,,8,,,,,,20,,,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield8
+9,기사의 방패,20,,,,8,,,,,,,10,,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield9
+10,왕가의 방패,20,,,,8,,,,,10,10,,,FIXDART,ITEMDATA,EQUIPMENT,SHIELD,SHIELD,,1,,2,2,shield10

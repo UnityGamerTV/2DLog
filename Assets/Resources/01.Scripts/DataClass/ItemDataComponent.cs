@@ -17,14 +17,16 @@ public class ItemDataComponent : DecoratorDataComponent
     [SerializeField] private int id;
     public string _name { get { return itemName; } set { itemName = value; } }
     [SerializeField] private string itemName;
+    public ItemGrade? _itemGrade { get { return itemGrade; } set { itemGrade = CheckItemGrade(value); } }
+    [SerializeField] private ItemGrade itemGrade;
     public DataType? _dataType { get { return dataType; } set { dataType = CheckDataType(value); } }
     [SerializeField] private DataType dataType;
     public InventoryType? _inventoryType { get { return inventoryType; } set { inventoryType = CheckInventoryType(value); } }
     [SerializeField] private InventoryType inventoryType;
     public ItemType? _item_type { get { return itemType; } set { itemType = CheckItemType(value); } }
     [SerializeField] private ItemType itemType;
-    public SlotType? _slot_type { get { return slotType; } set { slotType = CheckSlotType(value); } }
-    [SerializeField] private SlotType slotType;
+    public EquipSlot? _equip_slot { get { return equipSlot; } set { equipSlot = CheckEquipSlot(value); } }
+    [SerializeField] private EquipSlot equipSlot;
     public ElementType? _element_type { get { return elementType; } set { elementType = CheckElementType(value); } }
     [SerializeField] private ElementType elementType;
     public int? _hand_type { get { return handType; } set { handType = CheckNullValue(value); } }
@@ -80,6 +82,12 @@ public class ItemDataComponent : DecoratorDataComponent
         decoData._poison_resist -= poisonResist;
         decoData._evasion -= evasion;
     }
+
+    ItemGrade CheckItemGrade(ItemGrade? data)
+    {
+        return data ?? ItemGrade.NONE;
+    }
+
     DataType CheckDataType(DataType? data)
     {
         return data ?? DataType.NONE;
@@ -95,9 +103,9 @@ public class ItemDataComponent : DecoratorDataComponent
         return data ?? ItemType.NONE;
     }
 
-    SlotType CheckSlotType(SlotType? data)
+    EquipSlot CheckEquipSlot(EquipSlot? data)
     {
-        return data ?? SlotType.NONE;
+        return data ?? EquipSlot.NONE;
     }
 
     ElementType CheckElementType(ElementType? data)
