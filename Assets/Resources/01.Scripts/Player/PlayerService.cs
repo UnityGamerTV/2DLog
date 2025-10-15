@@ -144,6 +144,7 @@ public partial class PlayerService : MonoBehaviour
         DoPlayerState();
         // 아이템이 있을 경우 해야될 상태를 넣을 것 
         fieldManager._getItemController = itemController;
+        model.GetItem();
         return itemController;
     }
 
@@ -176,6 +177,7 @@ public partial class PlayerService : MonoBehaviour
     public void SetFilpXSprite(bool isFilp) => view.SetFilpXSprite(isFilp);
     public void SetPlayerState(IState state) => curState = state;
     public void DoPlayerState() => curState.OnStateEnter();
-    public void GetItemComplete() { view.GetItemComplete(); model.GetItemComplete(); }
+    public void GetItemComplete() { view.GetItemComplete(); }
 
+    public void ResposeEquipInven() => model.ResposeEquipInven();
 }

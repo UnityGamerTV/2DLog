@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UI_Scene_Equip_InvenController : UI_Scene, IListener
 {
@@ -20,19 +17,31 @@ public class UI_Scene_Equip_InvenController : UI_Scene, IListener
 
         button.onClick.AddListener(OnClickReadingGlassButton);
 
-        eventManager.AddListener(EVENT_PLAYER.PLAYER_EQUIP_INVENTORY_UPDATED, this);
-
         service.Init();
+
+        eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this); // 장비 인벤 데이터 요청 이벤트
+        eventManager.AddListener(EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA, this);
+    }
+
+    public override void Open()
+    {
+        base.Open();
+        eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this); // 장비 인벤 데이터 요청 이벤트
     }
 
     public void OnClickReadingGlassButton() => service.OnClickReadingGlassButton();
 
-    public void OnEvent<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
+    public void OnEvent<TEnum>(TEnum eventType, Component sender, object param) where TEnum : Enum
     {
         switch (eventType)
         {
-            case EVENT_PLAYER.PLAYER_EQUIP_INVENTORY_UPDATED: service.UpdateData(param); break;
+            case EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA: service.UpdateData(param); break;
         }
+    }
+
+    public override void Close()
+    {
+        base.Close();
     }
 
     public override void Release()

@@ -17,14 +17,15 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
     [FindComponents(true, "BlackImage"), SerializeField] private Image blackImage;
     [FindComponents(true, "EnhanceText"), SerializeField] private Text enhanceText;
 
-    [SerializeField] public InvenItemData _invenItemData { get { return invenItemData; } set { invenItemData = value; SetData(invenItemData); } }
-    private InvenItemData invenItemData;
+    public ItemDataComponent _itemDataComponent { get { return itemDataComponent; } set { itemDataComponent = value; SetData(itemDataComponent); } }
+    [SerializeField] private ItemDataComponent itemDataComponent;
 
     private readonly string emptySlotPath = "Sprite/Inven/Inven_EmptySlot";
     private readonly string normalSlotPath = "Sprite/Inven/Inven_NormalSlot";
     private readonly string randartSlotPath = "Sprite/Inven/Inven_RandartSlot";
     private readonly string fixdartSlotPath = "Sprite/Inven/Inven_FixdartSlot";
-    private string itemPath = "Sprite/Item/Item/";
+    private string itemPath = "Sprite/Item/Item";
+    private Sprite[] itemSprites;
     private Sprite emptySlotSprite;
     private Sprite normalSlotSprite;
     private Sprite randartSlotSprite;
@@ -33,7 +34,7 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
 
     public void Init()
     {
-        InjectUtil.InjectComponents(this);
+        InjectUtil.InjectSingleton(this);
         InjectUtil.InjectComponents(this);
 
         button.onClick.AddListener(OnButtonClick);
@@ -42,10 +43,19 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
         normalSlotSprite = resourceManager.Load<Sprite>(normalSlotPath);
         randartSlotSprite = resourceManager.Load<Sprite>(randartSlotPath);
         fixdartSlotSprite = resourceManager.Load<Sprite>(fixdartSlotPath);
+        itemSprites = resourceManager.LoadAll<Sprite>($"{itemPath}");
+
+        slotBG.sprite = emptySlotSprite;
+        itemImage.gameObject.SetActive(false);
+        enhanceText.gameObject.SetActive(false);
+        blackImage.gameObject.SetActive(false);
     }
 
     public void OnDetail()
     {
+        if (_itemDataComponent == null)
+            return;
+
         enhanceText.gameObject.SetActive(true);
         blackImage.gameObject.SetActive(true);
     }
@@ -56,19 +66,20 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
         blackImage.gameObject.SetActive(false);
     }
 
-    public void SetData(InvenItemData data) 
+    public void SetData(ItemDataComponent component) 
     {
-        var enhance = data._itemData._current_enhance.ToString();
-        var name = data._itemData._nickname;
-        var grade = data._itemData._item_grade;
+        var enhance = component.data._current_enhance.ToString();
+        var name = component.data._nickname;
+        var grade = component.data._item_grade;
 
         if (Enum.TryParse<EquipmentType>(name, out var equipmentType))
         {
             enhanceText.text = $"+{enhance}";
-            itemSprite = resourceManager.Load<Sprite>($"{itemPath}{name}");
+            itemSprite = Array.Find(itemSprites, s => s.name.Equals(name));
             itemImage.sprite = itemSprite;
+            itemImage.gameObject.SetActive(true);
 
-            switch(grade)
+            switch (grade)
             {
                 case ItemGrade.NORMAL: slotBG.sprite = normalSlotSprite; break;
                 case ItemGrade.RANDART: slotBG.sprite = randartSlotSprite; break; 
@@ -83,10 +94,8 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
         }
     }
 
-    private void CreateComponentFromData(InvenItemData data)
+    public void RemoveData()
     {
-        var itemData = gameObject.AddComponent<ItemDataComponent>();
-
 
     }
 
@@ -105,9 +114,9 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
 
     public void OnButtonClick()
     {
-        // 아이템 디테일 열기
         var popup = uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
-        //popup.SetItemData(itemData);
+
+        popup.SetItemData(_itemDataComponent);
     }
 
     public void Release()

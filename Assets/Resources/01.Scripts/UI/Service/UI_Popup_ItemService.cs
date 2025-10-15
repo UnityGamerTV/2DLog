@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class UI_Popup_ItemService : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [FindComponents("View"), SerializeField] private UI_Popup_ItemView view;
+    [FindComponents("Model"), SerializeField] private UI_Popup_ItemModel model;
+
+    [Singleton(typeof(UIManager))] private UIManager uiManager;
+
+    public void Init()
     {
-        
+        InjectUtil.InjectComponents(this);
+        InjectUtil.InjectSingleton(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetItemData(ItemDataComponent itemDataComponent) => model.SetItemData(itemDataComponent);
+
+    public void Release()
     {
-        
+
     }
 }
