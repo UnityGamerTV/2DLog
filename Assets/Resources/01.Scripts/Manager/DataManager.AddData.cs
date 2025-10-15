@@ -66,7 +66,7 @@ public partial class DataManager : Singleton<DataManager>
                     _item_grade = itemData._item_grade,
                     _data_type = itemData._data_type,
                     _inventory_type = itemData._inventory_type,
-                    _Item_type = itemData._Item_type,
+                    _item_type = itemData._item_type,
                     _equip_slot = itemData._equip_slot,
                     _element_type = itemData._element_type,
                     _hand_type = itemData._hand_type,

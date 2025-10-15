@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class UI_Popup : UI_Base
 {
-    public override void Init()
-    {
-        
-    }
-
-    public override void Release()
-    {
-        
-    }
+    public override void Init() { }
+    public override void Open() { }
+    public override void Close() { }
+    public override void Release() { }
 }

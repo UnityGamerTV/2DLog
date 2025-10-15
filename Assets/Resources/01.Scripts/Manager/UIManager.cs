@@ -1,16 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Resources;
 using UnityEngine;
-using UnityEngine.Diagnostics;
 
 public class UIManager : Singleton<UIManager>, IManager
 {
     [Singleton(typeof(CameraManager))] private CameraManager cameraManager;
     [Singleton(typeof(ResourceManager))] private ResourceManager resourceManager;
 
-    [SerializeField] private int order = 10;
+    [SerializeField] private int order = 300;
     [SerializeField] private GameObject root;
     [SerializeField] private Dictionary<UI_SCENE_ENUM, string> sceneDic; // scenePath dic
     [SerializeField] private Dictionary<UI_POPUP_ENUM, string> popupDic; // popupPaht dic
@@ -18,10 +16,12 @@ public class UIManager : Singleton<UIManager>, IManager
     private Stack<UI_Popup> popupStack;
     //private Stack<UI_Scene> sceneStack;
     private Dictionary<UI_SCENE_ENUM, UI_Scene> sceneObjDic;
-    //private Dictionary<UI_POPUP_ENUM, UI_Popup> popupObjDic;
+    private Dictionary<UI_POPUP_ENUM, UI_Popup> popupObjDic;
 
     private readonly string SCENE_UI_PATH = "Prefabs/UI/Scene/";
     private readonly string POPUP_UI_PATH = "Prefabs/UI/Popup/";
+
+    private Dictionary<UI_POPUP_ENUM, UI_Popup> currentPopup;
 
     public void Init()
     {
@@ -33,7 +33,8 @@ public class UIManager : Singleton<UIManager>, IManager
         popupStack = new();
         //sceneStack = new();
         sceneObjDic = new();
-
+        popupObjDic = new();
+        currentPopup = new();
         SetDic();
     }
 
@@ -80,7 +81,10 @@ public class UIManager : Singleton<UIManager>, IManager
         // 관리중인지 체크 후 반환
         var checkSceneUI = CheckSceneObjDic(ui_enum);
         if (checkSceneUI)
+        {
+            checkSceneUI.Open();
             return (T)checkSceneUI;
+        }
 
         // 없으면 생성 후 반환
         GameObject go = resourceManager.Instantiate($"{GetUIScenePath(ui_enum)}");
@@ -113,52 +117,79 @@ public class UIManager : Singleton<UIManager>, IManager
     /// <returns></returns>
     public T ShowPopupUI<T>(UI_POPUP_ENUM ui_enum) where T : UI_Popup
     {
-        // 이건 나중에 오브젝트 풀로 수정
-        GameObject go = resourceManager.Instantiate($"{GetUIPopupPath(ui_enum)}");
-        T popup = Util.GetOrAddComponent<T>(go);
-        order++;
-        popupStack.Push(popup);
-        go.transform.SetParent(root.transform);
-        popup.Init();
-        return popup;
-    }
+        // 동일한 팝업이 열려있는지 확인 (아마도 동일한 팝업은 열지 않을 것이라고 생각함)
+        var samPopup = IsSamePopup(ui_enum);
+        if (samPopup)
+            return (T)samPopup;
 
-    public void ClosePopupUI(UI_Popup popup)
-    {
-        if (popupStack.Count == 0)
-            return;
-        if (popupStack.Peek() != popup)
+        // 관리중인지 체크 후 반환
+        var popup = CheckPopupObjDic(ui_enum);
+        if (popup)
         {
-            LogUtil.Log("Close Popup Failde!");
+            popup.Open();
+            currentPopup.Add(ui_enum, popup);
+            return (T)popup;
         }
-        ClosePopupUI();
+
+        // 없으면 생성 후 반환
+        GameObject go = resourceManager.Instantiate($"{GetUIPopupPath(ui_enum)}");
+        T newPopup = Util.GetOrAddComponent<T>(go);
+        order++;
+        popupObjDic.Add(ui_enum, newPopup);
+        go.transform.SetParent(root.transform);
+        newPopup.Init();
+        currentPopup.Add(ui_enum, newPopup);
+        return newPopup;
     }
 
-    public void ClosePopupUI()
+    private UI_Popup CheckPopupObjDic(UI_POPUP_ENUM ui_enum)
     {
-        if (popupStack.Count == 0)
-            return;
+        UI_Popup objDic = null;
 
-        UI_Popup popup = popupStack.Pop();
-        popup.Release();
-        Destroy(popup.gameObject); // 이건 오브젝트 풀로 나중에 수정
-        popup = null;
-        order--;
+        if (!popupObjDic.TryGetValue(ui_enum, out objDic))
+            return null;
+
+        objDic.gameObject.SetActive(true);
+        SetCanvase(objDic.gameObject);
+        return objDic;
+    }
+
+    public void ClosePopupUI(UI_POPUP_ENUM ui_enum)
+    {
+        var popup = CheckPopupObjDic(ui_enum);
+        if (popup != null)
+        {
+            popup.Close();
+            currentPopup.Remove(ui_enum);
+            popup.gameObject.SetActive(false);
+        }
     }
 
     public void CloseSceneUI(UI_SCENE_ENUM uiSceneEnum)
     {
         var checkSceneUI = CheckSceneObjDic(uiSceneEnum);
         if (checkSceneUI != null)
+        {
+            checkSceneUI.Close();
             checkSceneUI.gameObject.SetActive(false);
+        }
     }
 
     public void CloseAllPopupUI()
     {
-        while (popupStack.Count > 0)
-            ClosePopupUI();
+        //while (popupStack.Count > 0)
+            //ClosePopupUI();
     }
 
+    public UI_Popup IsSamePopup(UI_POPUP_ENUM ui_enum)
+    {
+        UI_Popup objDic = null;
+
+        if (!currentPopup.TryGetValue(ui_enum, out objDic))
+            return null;
+
+        return objDic;
+    }   
 
     public void Release()
     {

@@ -122,9 +122,9 @@ public class ItemFactory : FactoryBase
     {
         ItemData itemData = dataManager.AddItemData(spriteName);
         var myItemData = item.AddComponent<ItemDataComponent>();
-        dataManager.CopyItemData(myItemData, itemData);
+        myItemData.Init(itemData);
+        myItemData._count = 1;
         itemController._baseDataComponent = myItemData;
-
         // 랜다트 데이터 확인
         RandartData randartData = (CheckRandart(spriteName));
         if (randartData != null)
@@ -176,11 +176,22 @@ public class ItemFactory : FactoryBase
         return null;
     }
 
+    // 아래 코드 제네릭 버전 임시(테스트 안함)
+    //private void SetData<TData, TDataComponent>(ItemController itemController, GameObject item, string spriteName, Func<string, TData> addDataFunc) 
+    //    where TDataComponent : BaseDataComponent<TData> where TData : BaseData
+    //{
+    //    TData data = addDataFunc(spriteName);
+    //    var myDataComponent = item.AddComponent<TDataComponent>();
+    //    myDataComponent.Init(data);
+    //    itemController._baseDataComponent = myDataComponent;
+    //}
+
     private void SetPotionData(ItemController itemController, GameObject item, string spriteName)
     {
         PotionData potionData = dataManager.AddPotionData(spriteName);
         var myPotionData = item.AddComponent<PotionDataComponent>();
-        dataManager.CopyPotionData(myPotionData, potionData);
+        myPotionData.Init(potionData);
+        myPotionData._count += 1;
         itemController._baseDataComponent = myPotionData;
     }
 
@@ -188,7 +199,8 @@ public class ItemFactory : FactoryBase
     {
         ScrollData scrollData = dataManager.AddScrollData(spriteName);
         var myScrollData = item.AddComponent<ScrollDataComponent>();
-        dataManager.CopyScrollData(myScrollData, scrollData);
+        myScrollData.Init(scrollData);
+        myScrollData._count += 1;
         itemController._baseDataComponent = myScrollData;
     }
 
@@ -196,7 +208,8 @@ public class ItemFactory : FactoryBase
     {
         MagicData magicData = dataManager.AddMagicData(spriteName);
         var myMagicData = item.AddComponent<MagicDataComponent>();
-        dataManager.CopyMagicData(myMagicData, magicData);
+        myMagicData.Init(magicData);
+        myMagicData._count += 1;
         itemController._baseDataComponent = myMagicData;
     }
 }

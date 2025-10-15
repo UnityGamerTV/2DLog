@@ -25,6 +25,7 @@ public class PlayerController : FieldObjBase, IController, IListener
         eventManager.AddListener(EVENT_PLAYER.PLAYER_ATTACK_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE, this);
+        eventManager.AddListener(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this);
         HandIdle();
     }
 
@@ -65,6 +66,8 @@ public class PlayerController : FieldObjBase, IController, IListener
     //
     public void GetItemComplete() => service.GetItemComplete();
 
+    public void ResposeEquipInven() => service.ResposeEquipInven();
+
     void IListener.OnEvent<TEnum>(TEnum eventType, Component sender, object param)
     {
         switch (eventType)
@@ -76,6 +79,7 @@ public class PlayerController : FieldObjBase, IController, IListener
             case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE: GetItemComplete(); HandIdle(); break;
+            case EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA: ResposeEquipInven(); break;
         }
     }
 
