@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
+public class UI_Popup_Status_Slot : MonoBehaviour
 {
-    [Singleton(typeof(EventManager))] private EventManager eventManager;
-    [Singleton(typeof(UIManager))] private UIManager uiManager;
     [Singleton(typeof(ResourceManager))] private ResourceManager resourceManager;
+    [Singleton(typeof(UIManager))] private UIManager uiManager;
 
-    [FindComponents("Model"), SerializeField] private UI_Scene_Equip_InvenModel model;
-    [FindComponents(true, "SlotButton"), SerializeField] private Button button;
-    [FindComponents(true, "SlotButton"), SerializeField] private Image slotBG;
+    [FindComponents(true, "SlotBG"), SerializeField] private Image slotBG;
+    [FindComponents(true, "SlotBG"), SerializeField] private Button button;
     [FindComponents(true, "ItemImage"), SerializeField] private Image itemImage;
     [FindComponents(true, "BlackImage"), SerializeField] private Image blackImage;
+    [FindComponents(true, "PositionText"), SerializeField] private Text positonText;
     [FindComponents(true, "EnhanceText"), SerializeField] private Text enhanceText;
 
-    public ItemDataComponent _itemDataComponent { get { return itemDataComponent; } set { itemDataComponent = value; SetData(itemDataComponent); } }
+    public ItemDataComponent _itemDataComponent { get { return itemDataComponent; } set { itemDataComponent = value; } } //SetData(itemDataComponent); } }
     [SerializeField] private ItemDataComponent itemDataComponent;
 
     private readonly string emptySlotPath = "Sprite/Inven/Inven_EmptySlot";
@@ -47,27 +44,20 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
 
         button.interactable = false;
         slotBG.sprite = emptySlotSprite;
+        positonText.gameObject.SetActive(true);
         itemImage.gameObject.SetActive(false);
         enhanceText.gameObject.SetActive(false);
         blackImage.gameObject.SetActive(false);
     }
 
-    public void OnDetail(bool isDetail)
-    {
-        if (_itemDataComponent == null)
-            return;
-
-        enhanceText.gameObject.SetActive(isDetail);
-        blackImage.gameObject.SetActive(isDetail);
-    }
-
-    public void SetData(ItemDataComponent component) 
+    public void SetData(ItemDataComponent component)
     {
         if (component == null)
         {
             enhanceText.text = string.Empty;
             itemImage.sprite = null;
             slotBG.sprite = emptySlotSprite;
+            positonText.gameObject.SetActive(true);
             enhanceText.gameObject.SetActive(false);
             itemImage.gameObject.SetActive(false);
             blackImage.gameObject.SetActive(false);
@@ -85,15 +75,17 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
             itemSprite = Array.Find(itemSprites, s => s.name.Equals(name));
             itemImage.sprite = itemSprite;
             itemImage.gameObject.SetActive(true);
+            positonText.gameObject.SetActive(false);
             button.interactable = true;
             switch (grade)
             {
                 case ItemGrade.NORMAL: slotBG.sprite = normalSlotSprite; break;
-                case ItemGrade.RANDART: slotBG.sprite = randartSlotSprite; break; 
+                case ItemGrade.RANDART: slotBG.sprite = randartSlotSprite; break;
                 case ItemGrade.FIXDART: slotBG.sprite = fixdartSlotSprite; break;
             }
         }
     }
+
     public void OnButtonClick()
     {
         var popup = uiManager.ShowPopupUI<UI_Popup_ItemController>(UI_POPUP_ENUM.UI_Popup_Item);
@@ -101,8 +93,8 @@ public class UI_Scene_Equip_Inven_Slot : MonoBehaviour
         popup.SetItemData(_itemDataComponent);
     }
 
-    public void Release()
+    private void Release()
     {
-
+        button.onClick.RemoveListener(OnButtonClick);
     }
 }

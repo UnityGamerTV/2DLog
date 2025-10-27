@@ -10,7 +10,8 @@ public abstract class BaseDataComponent : MonoBehaviour
 
 public class BaseDataComponent<T> : BaseDataComponent where T : BaseData
 {
-    public T data { get; private set; }
+    public T _data { get => data; set => data = value; }
+    [SerializeField] private T data;
 
     public virtual void Init(T data) => this.data = data;
 }

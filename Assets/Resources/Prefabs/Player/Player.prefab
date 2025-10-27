@@ -478,6 +478,7 @@ MonoBehaviour:
   armourType: 0
   shieldType: 0
   playerState: 0
+  getItemParticle: {fileID: 0}
 --- !u!1 &4820278775661630303
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,24 +529,33 @@ MonoBehaviour:
   maxMp: 0
   minAttack: 0
   maxAttack: 0
-  defence: 0
+  defense: 0
   minMagicAttack: 0
   maxMagicAttack: 0
-  fireRes: 0
-  coldRes: 0
-  earthRes: 0
-  darkRes: 0
-  poisonRes: 0
-  avoid: 0
-  eventManager: {fileID: 0}
+  fireResist: 0
+  coldResist: 0
+  earthResist: 0
+  darkResist: 0
+  poisonResist: 0
+  evasion: 0
   helmetType: 0
   armourType: 0
   shieldType: 0
   playerState: 0
   dir: {x: 0, y: 0, z: 0}
   level: 0
+  helmet: {fileID: 0}
+  armor: {fileID: 0}
+  amulet: {fileID: 0}
+  weapon: {fileID: 0}
+  shield: {fileID: 0}
+  ring1: {fileID: 0}
+  ring2: {fileID: 0}
+  unEquipItem: {fileID: 0}
+  equipmentInven: []
   abilityTypes: 
   gold: 0
+  diamond: 0
   arrowSkillLevel: 0
   axeSkillLevel: 0
   maceSkillLevel: 0
