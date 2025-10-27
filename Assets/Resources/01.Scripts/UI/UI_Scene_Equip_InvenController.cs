@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class UI_Scene_Equip_InvenController : UI_Scene, IListener
@@ -19,8 +20,9 @@ public class UI_Scene_Equip_InvenController : UI_Scene, IListener
 
         service.Init();
 
-        eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this); // 장비 인벤 데이터 요청 이벤트
+        eventManager.AddListener(EVENT_ITEM_POPUP_UI.REQUEST_READING_GLASS_DATA, this);
         eventManager.AddListener(EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA, this);
+        eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this); // 장비 인벤 데이터 요청 이벤트
     }
 
     public override void Open()
@@ -35,7 +37,8 @@ public class UI_Scene_Equip_InvenController : UI_Scene, IListener
     {
         switch (eventType)
         {
-            case EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA: service.UpdateData(param); break;
+            case EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA: service.UpdateData((List<ItemDataComponent>)param); break;
+            case EVENT_ITEM_POPUP_UI.REQUEST_READING_GLASS_DATA: service.ResponseGlassData(); break;
         }
     }
 
@@ -48,8 +51,10 @@ public class UI_Scene_Equip_InvenController : UI_Scene, IListener
     {
         base.Release();
 
-        button.onClick.RemoveListener(OnClickReadingGlassButton);
-
         service.Release();
+
+        button.onClick.RemoveListener(OnClickReadingGlassButton);
+        eventManager.RemoveListener(EVENT_ITEM_POPUP_UI.REQUEST_READING_GLASS_DATA, this);
+        eventManager.RemoveListener(EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA, this);
     }
 }

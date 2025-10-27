@@ -7,26 +7,26 @@ public class UI_Scene_Equip_InvenService : MonoBehaviour
     [FindComponents("Model"), SerializeField] private UI_Scene_Equip_InvenModel model;
     [FindComponents("View"), SerializeField] private UI_Scene_Equip_InvenView view;
 
-    private bool onDetail;
-
     public void Init()
     {
         InjectUtil.InjectComponents(this);
 
         model.Init();
         view.Init();
-        onDetail = false;
     }
 
     public void OnClickReadingGlassButton() 
     {
-        onDetail = !onDetail;
-        view.OnClickReadingGlassButton(onDetail); 
+        model._onDetail = !model._onDetail;
+        view.UpdataOnDetail(model._onDetail); 
     }
 
-    public void UpdateData(object data) => model.UpdateData(data);
-        
-
+    public void UpdateData(List<ItemDataComponent> data) 
+    { 
+        model.UpdateData(data); 
+        view.UpdataOnDetail(model._onDetail); 
+    } 
+    public void ResponseGlassData() => model.ResponseGlassData();
     public void Release()
     {
         model.Release();

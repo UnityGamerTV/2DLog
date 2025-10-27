@@ -26,6 +26,10 @@ public class PlayerController : FieldObjBase, IController, IListener
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE, this);
         eventManager.AddListener(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this);
+        eventManager.AddListener(EVENT_ITEM_POPUP_UI.ON_CLICK_DISMISS, this);
+        eventManager.AddListener(EVENT_ITEM_POPUP_UI.ON_CLICK_APPLY, this);
+        //Status
+        eventManager.AddListener(EVENT_STATUS_POPUP_UI.REQUEST_EQUIP_DATA, this);
         HandIdle();
     }
 
@@ -55,18 +59,19 @@ public class PlayerController : FieldObjBase, IController, IListener
 
     // 이동 관련 모음
     #region PlayerMove
-
     public Vector3 GetMoveDir() => service.GetMoveDir();
     public void SetMoveDir(Vector3 dir) => service.SetMoveDir(dir);
     public void SetPlayerState(IState state) => service.SetPlayerState(state);
     public void DoPlayerState() => service.DoPlayerState();
     public void SetFilpXSprite(bool isFilp) => service.SetFilpXSprite(isFilp);
-
     #endregion
-    //
-    public void GetItemComplete() => service.GetItemComplete();
 
-    public void ResposeEquipInven() => service.ResposeEquipInven();
+    public void GetItemComplete() => service.GetItemComplete(); // 획득 이펙트 (획득은 그냥 Move쪽에 임시로 연결되어 있음)
+    public void ResponseEquipInven() => service.ResponseEquipInven();
+    public void EquipItem(ItemDataComponent component) => service.EquipItem(component);
+    public void RemoveItem(ItemDataComponent component, bool isDestroy = true) => service.RemoveItem(component , isDestroy);
+    //
+    public void ResponseEquipData() => service.ResponseEquipData();
 
     void IListener.OnEvent<TEnum>(TEnum eventType, Component sender, object param)
     {
@@ -79,7 +84,12 @@ public class PlayerController : FieldObjBase, IController, IListener
             case EVENT_PLAYER.PLAYER_ATTACK_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE: GetItemComplete(); HandIdle(); break;
-            case EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA: ResposeEquipInven(); break;
+            case EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA: ResponseEquipInven(); break;
+            case EVENT_ITEM_POPUP_UI.ON_CLICK_DISMISS: RemoveItem((ItemDataComponent)param); break;
+            case EVENT_ITEM_POPUP_UI.ON_CLICK_APPLY: EquipItem((ItemDataComponent)param); RemoveItem((ItemDataComponent)param, false); break;
+            case EVENT_STATUS_POPUP_UI.REQUEST_EQUIP_DATA: ResponseEquipData(); break;
+            //
+            //case EVENT_STATUS_POPUP_UI.PLAYER_HELMET_UPDATE
         }
     }
 

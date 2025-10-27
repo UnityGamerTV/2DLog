@@ -118,6 +118,8 @@ public enum EquipSlot
     WEAPON,
     SHIELD,
     RING,
+    RING1,
+    RING2,
     BOOTS,
     GLOVE,
 }

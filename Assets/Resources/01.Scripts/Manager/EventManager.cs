@@ -34,16 +34,6 @@ public class EventManager : Singleton<EventManager>, IManager
         list.Add(listener);
     }
 
-    public void PostNotification<TEnum, TData>(TEnum eventType, Component sender, TData param) where TEnum : Enum
-    {
-        var table = GetTable<TEnum>();
-        if (!table.TryGetValue(eventType, out var list))
-            return;
-
-        foreach (var l in list)
-            l?.OnEvent(eventType, sender, param);
-    }
-
     public void PostNotification<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
     {
         var table = GetTable<TEnum>();
@@ -53,6 +43,16 @@ public class EventManager : Singleton<EventManager>, IManager
         foreach (var l in list)
             l?.OnEvent(eventType, sender, param);
     }
+
+    //public void PostNotification<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
+    //{
+    //    var table = GetTable<TEnum>();
+    //    if (!table.TryGetValue(eventType, out var list))
+    //        return;
+
+    //    foreach (var l in list)
+    //        l?.OnEvent(eventType, sender, param);
+    //}
 
     public void RemoveListener<TEnum>(TEnum eventType, IListener listener) where TEnum : Enum
     {

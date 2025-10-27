@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ItemDataComponent : BaseDataComponent<ItemData>
 {
-    [SerializeField] private ItemData inspectorData;
     public int _count { get => count; set => count = value; }
     [SerializeField] private int count;
     public int _currentEnhance { get => currentEnhance; set => currentEnhance = value; }
@@ -10,7 +9,6 @@ public class ItemDataComponent : BaseDataComponent<ItemData>
     public override void Init(ItemData data)
     {
         base.Init(data);
-        inspectorData = data;
     }
 }
 

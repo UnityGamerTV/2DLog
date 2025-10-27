@@ -92,78 +92,104 @@ public partial class PlayerService : MonoBehaviour
     public void IsValidPosition(Vector3 dir)
     {
         // 몬스터 체크
-        if (HasMonsterAt(dir) != null) 
+        if (HasMonsterAt(dir)) 
             return;
-        // 아이템 체크
-        if (HasItemAt(dir) != null) 
+        // 장착 아이템 체크
+        if (HasEquipItemAt(dir)) 
+            return;
+        if (HasConsumeItemAt(dir))
             return;
         // 이동
         HasCollisionAt(dir);
     }
 
-    private MonsterController HasMonsterAt(Vector3 dir)
+    private bool HasMonsterAt(Vector3 dir)
     {
         // 몬스터 체크
         var monsterController = mapManager.HasMonsterAt(transform.position + dir);
         if (monsterController == null)
-            return null;
+            return false;
 
-        Vector3 newDir = dir;
-
-        if (newDir.x > 0) // 0 보다 크면 오른쪽
-            SetFilpXSprite(false);
-
-        if (newDir.x < 0) // 0 보다 작으면 왼쪽
-            SetFilpXSprite(true);
-
-        SetMoveDir(newDir);
+        SetDirectionAndFlip(dir);
         SetPlayerState(state._attackState);
         DoPlayerState();
 
         // 몬스터가 있을 경우 해야될 상태를 넣을 것 // 기본 공격 // 스킬 // 마법 
-        return monsterController;
+        return true;
     }
 
-    private ItemController HasItemAt(Vector3 dir)
+    private bool HasEquipItemAt(Vector3 dir)
     {
         // 아이템 체크
         var itemController = mapManager.HasItemAt(transform.position + dir);
         if (itemController == null)
+            return false;
+        // 인벤 체크
+        var inventoryType = GetInventoryType(itemController);
+        if (inventoryType != InventoryType.EQUIPMENT)
+            return false;
+        // 장착 인벤토리 체크
+        if (model.IsEquipInvenFull())
+            return false;
+
+        HandleItemGet(dir, itemController);
+        return true;
+    }
+
+    private bool HasConsumeItemAt(Vector3 dir)
+    {
+        // 아이템 체크
+        var itemController = mapManager.HasItemAt(transform.position + dir);
+        if (itemController == null)
+            return false;
+        // 인벤 체크
+        var inventoryType = GetInventoryType(itemController);
+        if (inventoryType != InventoryType.CONSUME)
+            return false;
+
+        // 장착 인벤토리 체크
+        if (model.IsConsumeInvenFull())
+            return false;
+        HandleItemGet(dir, itemController);
+        return true;
+    }
+
+    private InventoryType? GetInventoryType(ItemController itemController)
+    {
+        if (itemController == null || itemController._baseDataComponent == null)
             return null;
 
-        Vector3 newDir = dir;
+        if (itemController._baseDataComponent is ItemDataComponent itemDataComponent)
+            return itemDataComponent._data._inventory_type;
 
-        if (newDir.x > 0) // 0 보다 크면 오른쪽
-            SetFilpXSprite(false);
+        return null;
+    }
 
-        if (newDir.x < 0) // 0 보다 작으면 왼쪽
-            SetFilpXSprite(true);
-
-        SetMoveDir(newDir);
+    private void HandleItemGet(Vector3 dir, ItemController itemController)
+    {
+        SetDirectionAndFlip(dir);
         SetPlayerState(state._getItemState);
         DoPlayerState();
-        // 아이템이 있을 경우 해야될 상태를 넣을 것 
         fieldManager._getItemController = itemController;
         model.GetItem();
-        return itemController;
     }
 
     private void HasCollisionAt(Vector3 dir)
     {
-        Vector3 newDir = dir;
         // 이동 체크
-        if (!mapManager.HasCollisionAt(gameObject.transform.position + newDir))
-            newDir = Vector3.zero;
+        if (!mapManager.HasCollisionAt(gameObject.transform.position + dir))
+            dir = Vector3.zero;
 
-        if (newDir.x > 0) // 0 보다 크면 오른쪽
-            SetFilpXSprite(false);
-
-        if (newDir.x < 0) // 0 보다 작으면 왼쪽
-            SetFilpXSprite(true);
-
-        SetMoveDir(newDir);
+        SetDirectionAndFlip(dir);
         SetPlayerState(state._moveState);
         DoPlayerState();
+    }
+
+    private void SetDirectionAndFlip(Vector3 dir)
+    {
+        if (dir.x > 0) SetFilpXSprite(false);
+        if (dir.x < 0) SetFilpXSprite(true);
+        SetMoveDir(dir);
     }
 
     public void HandIdle()
@@ -178,6 +204,8 @@ public partial class PlayerService : MonoBehaviour
     public void SetPlayerState(IState state) => curState = state;
     public void DoPlayerState() => curState.OnStateEnter();
     public void GetItemComplete() { view.GetItemComplete(); }
-
-    public void ResposeEquipInven() => model.ResposeEquipInven();
+    public void ResponseEquipInven() => model.ResponseEquipInven();
+    public void EquipItem(ItemDataComponent component) => model.EquipItem(component);
+    public void RemoveItem(ItemDataComponent component, bool isDestroy = true) => model.RemoveItem(component, isDestroy);
+    public void ResponseEquipData() => model.ResponseEquipData();
 }

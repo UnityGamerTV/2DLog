@@ -29,6 +29,7 @@ public partial class PlayerDataComponent : DecoratorDataComponent
     public void Init()
     {
         InjectUtil.InjectSingleton(this);
+        InjectUtil.InjectComponents(this);
     }
 
     public override void Operation() { }
