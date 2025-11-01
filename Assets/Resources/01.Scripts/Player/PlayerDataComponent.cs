@@ -12,7 +12,7 @@ public partial class PlayerDataComponent : DecoratorDataComponent
     public Action armourEquipAction;
     public Action shieldEquipAction;
 
-    // ºä
+    // 
     public HELMET_TYPE _helmetType { get { return helmetType; } set { helmetType = value; helmetEquipAction.Invoke(); } }
     [SerializeField] private HELMET_TYPE helmetType;
     public ARMOUR_TYPE _armourType { get { return armourType; } set { armourType = value; armourEquipAction.Invoke(); } }
