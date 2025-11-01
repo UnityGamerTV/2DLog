@@ -81,6 +81,7 @@ public partial class PlayerDataComponent : DecoratorDataComponent
 
         var newData = CopyItemData(baseData);
         _equipmentInven.Add(newData);
+        eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA, this, _equipmentInven);
     }
 
     private void AddConsumeItem(ItemDataComponent baseData)
@@ -88,21 +89,28 @@ public partial class PlayerDataComponent : DecoratorDataComponent
         // 1. Enum 변환
         if (!Enum.TryParse<ConsumeType>(baseData._data._nickname, out var consumeType))
             return;
+
         // 2. 이미 있는 종류면 수량만 증가
         if (_consumeInven.TryGetValue(consumeType, out var invenItemData))
+        {
             invenItemData._itemCount += baseData._count;
+            eventManager.PostNotification(EVENT_CONSUME_INVEN_UI.RESPONDED_CONSUME_INVENTORY_DATA, this, _consumeInven);
+            return;
+        }
+
         // 3. 새로운 종류 추가 전 슬롯 제한 체크
         if (IsConsumeInvenFull())
             return;
+
         // 4. 실제로 추가할 때만 컴포넌트 생성
         var newData = CopyItemData(baseData);
-        _consumeInven.Add(consumeType, new InvenItemData 
-        { 
-            _itemData = newData._data, 
+        _consumeInven.Add(consumeType, new InvenItemData
+        {
+            _itemData = newData._data,
             _itemCount = newData._count,
             _itemDataComponent = newData
         });
-        
+        eventManager.PostNotification(EVENT_CONSUME_INVEN_UI.RESPONDED_CONSUME_INVENTORY_DATA, this, _consumeInven);
     }
 
     private ItemDataComponent CopyItemData(ItemDataComponent baseData)
@@ -140,6 +148,8 @@ public partial class PlayerDataComponent : DecoratorDataComponent
 
     public void ResponseEquipInven() => eventManager.PostNotification(EVENT_EQUIP_INVEN_UI.RESPONDED_EQUIP_INVENTORY_DATA, this, _equipmentInven);
 
+    public void ResponseConsumeInven() => eventManager.PostNotification(EVENT_CONSUME_INVEN_UI.RESPONDED_CONSUME_INVENTORY_DATA, this, _consumeInven);
+
     public void RemoveItem(ItemDataComponent component, bool isDestroy = true)
     {
         _equipmentInven.Remove(component);
@@ -159,7 +169,7 @@ public partial class PlayerDataComponent : DecoratorDataComponent
             if (invenItemData._itemDataComponent != null)
                 Destroy(invenItemData._itemDataComponent);
         }
-        //eventManager.PostNotification(EVENT_CONSUME_INVEN_UI.RESPONDED_CONSUME_INVENTORY_DATA, this, _consumeInven);
+        eventManager.PostNotification(EVENT_CONSUME_INVEN_UI.RESPONDED_CONSUME_INVENTORY_DATA, this, _consumeInven);
     }
 }
 

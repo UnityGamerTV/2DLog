@@ -16,7 +16,7 @@ public class SceneMain : MonoBehaviour, IListener
     {
         InjectUtil.InjectSingleton(this);
 
-        mapManager.GenerateMap("Base2", "Map_001");
+        mapManager.GenerateMap("Base2", "Map_007");
 
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_DIR_BUTTON, this);
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_CONSUME_BUTTON, this);
@@ -24,15 +24,15 @@ public class SceneMain : MonoBehaviour, IListener
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_EQUIP_BUTTON, this);
         eventManager.AddListener(EVENT_BOTTOM_BASE_UI.ON_CLICK_SETTING_BUTTON, this);
 
-        // ±âº» ¾À UI »ý¼º
+        // ï¿½âº» ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
         bottomBaseController = uiManager.ShowSceneUI<UI_Scene_Bottom_BaseController>(UI_SCENE_ENUM.UI_Scene_Bottom_Base);
         uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
-        bottomBaseController.SetUISceneEnum(UI_SCENE_ENUM.UI_Scene_Bottom_Dir); // Bottom UI º¯°æ ½Ã »ç¿ë
+        bottomBaseController.SetUISceneEnum(UI_SCENE_ENUM.UI_Scene_Bottom_Dir); // Bottom UI ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         uiManager.ShowSceneUI<UI_Scene_Top_CurrencyController>(UI_SCENE_ENUM.UI_Scene_Top_Currency);
         uiManager.ShowSceneUI<UI_Scene_Top_VitalController>(UI_SCENE_ENUM.UI_Scene_Top_Vital);
     }
 
-    // ÀÌº¥Æ®°¡ °úµµÇÏ°Ô Ä¿Áö¸é µû·Î °ü¸®
+    // ï¿½Ìºï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     public void OnEvent<TEnum>(TEnum eventType, Component sender, object param = null) where TEnum : Enum
     {
         UI_SCENE_ENUM uiSceneEnum;
@@ -42,7 +42,7 @@ public class SceneMain : MonoBehaviour, IListener
                 uiSceneEnum = bottomBaseController.GetUISceneEnum();
                 uiManager.CloseSceneUI(uiSceneEnum);
                 uiManager.ShowSceneUI<UI_Scene_Bottom_DirController>(UI_SCENE_ENUM.UI_Scene_Bottom_Dir);
-                bottomBaseController.SetUISceneEnum(UI_SCENE_ENUM.UI_Scene_Bottom_Dir); // Bottom UI º¯°æ ½Ã »ç¿ë
+                bottomBaseController.SetUISceneEnum(UI_SCENE_ENUM.UI_Scene_Bottom_Dir); // Bottom UI ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
                 break;
             case EVENT_BOTTOM_BASE_UI.ON_CLICK_CONSUME_BUTTON:
                 uiSceneEnum = bottomBaseController.GetUISceneEnum();
@@ -62,7 +62,7 @@ public class SceneMain : MonoBehaviour, IListener
                 uiManager.ShowSceneUI<UI_Scene_Equip_InvenController>(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
                 bottomBaseController.SetUISceneEnum(UI_SCENE_ENUM.UI_Scene_Equip_Inven);
                 break;
-            case EVENT_BOTTOM_BASE_UI.ON_CLICK_SETTING_BUTTON: // ¿É¼ÇUI ´Â ¾ÆÁ÷ Á¦ÀÛÇÏÁö ¾ÊÀ½
+            case EVENT_BOTTOM_BASE_UI.ON_CLICK_SETTING_BUTTON: // ï¿½É¼ï¿½UI ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 break;
 
         }

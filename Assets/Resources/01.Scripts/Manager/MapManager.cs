@@ -308,6 +308,31 @@ public partial class MapManager : Singleton<MapManager>, IManager
         return fieldManager._monsterDic[indexPos];
     }
 
+    /// <summary>
+    /// 아이템이 있는지만 확인 (isItem을 false로 바꾸지 않음)
+    /// </summary>
+    private ItemController PeekItemAt(Vector2Int indexPos)
+    {
+        int indexX = indexPos.x;
+        int indexY = indexPos.y;
+
+        int xCount = isCollision.GetLength(1);
+        int yCount = isCollision.GetLength(0);
+
+        // 범위 체크
+        if (indexX < 0 || indexX >= xCount || indexY < 0 || indexY >= yCount)
+            LogUtil.LogError("범위를 벗어나는 좌표입니다.");
+
+        if (!isItem[indexY, indexX])
+            return null;
+
+        // isItem을 false로 바꾸지 않고 아이템만 반환
+        if (fieldManager._itemDic.TryGetValue(indexPos, out var itemController))
+            return itemController;
+
+        return null;
+    }
+
     private ItemController HasItemAt(Vector2Int indexPos)
     {
         int indexX = indexPos.x;
@@ -352,6 +377,16 @@ public partial class MapManager : Singleton<MapManager>, IManager
         Vector3Int cellPos = WorldToCell(worldPos);
         Vector2Int indexPos = CellToIndex(cellPos.x, cellPos.y);
         return HasMonsterAt(indexPos);
+    }
+
+    /// <summary>
+    /// 아이템이 있는지만 확인 (획득하지 않음)
+    /// </summary>
+    public ItemController PeekItemAt(Vector3 worldPos)
+    {
+        Vector3Int cellPos = WorldToCell(worldPos);
+        Vector2Int indexPos = CellToIndex(cellPos.x, cellPos.y);
+        return PeekItemAt(indexPos);
     }
 
     public ItemController HasItemAt(Vector3 worldPos)

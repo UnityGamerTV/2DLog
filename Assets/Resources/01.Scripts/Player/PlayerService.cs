@@ -120,37 +120,45 @@ public partial class PlayerService : MonoBehaviour
 
     private bool HasEquipItemAt(Vector3 dir)
     {
-        // 아이템 체크
-        var itemController = mapManager.HasItemAt(transform.position + dir);
+        // 1. 아이템 확인만 (획득하지 않음)
+        var itemController = mapManager.PeekItemAt(transform.position + dir);
         if (itemController == null)
             return false;
-        // 인벤 체크
+
+        // 2. 인벤토리 타입 체크 (명시적 비교 + null 안전)
         var inventoryType = GetInventoryType(itemController);
-        if (inventoryType != InventoryType.EQUIPMENT)
+        if (inventoryType == null || inventoryType != InventoryType.EQUIPMENT)
             return false;
-        // 장착 인벤토리 체크
+
+        // 3. 장착 인벤토리 용량 체크
         if (model.IsEquipInvenFull())
             return false;
 
-        HandleItemGet(dir, itemController);
+        // 4. 모든 체크 통과 → 실제 획득
+        var actualItem = mapManager.HasItemAt(transform.position + dir);
+        HandleItemGet(dir, actualItem);
         return true;
     }
 
     private bool HasConsumeItemAt(Vector3 dir)
     {
-        // 아이템 체크
-        var itemController = mapManager.HasItemAt(transform.position + dir);
+        // 1. 아이템 확인만 (획득하지 않음)
+        var itemController = mapManager.PeekItemAt(transform.position + dir);
         if (itemController == null)
             return false;
-        // 인벤 체크
+
+        // 2. 인벤토리 타입 체크 (명시적 비교 + null 안전)
         var inventoryType = GetInventoryType(itemController);
-        if (inventoryType != InventoryType.CONSUME)
+        if (inventoryType == null || inventoryType != InventoryType.CONSUME)
             return false;
 
-        // 장착 인벤토리 체크
+        // 3. 소모품 인벤토리 용량 체크
         if (model.IsConsumeInvenFull())
             return false;
-        HandleItemGet(dir, itemController);
+
+        // 4. 모든 체크 통과 → 실제 획득
+        var actualItem = mapManager.HasItemAt(transform.position + dir);
+        HandleItemGet(dir, actualItem);
         return true;
     }
 
@@ -205,6 +213,7 @@ public partial class PlayerService : MonoBehaviour
     public void DoPlayerState() => curState.OnStateEnter();
     public void GetItemComplete() { view.GetItemComplete(); }
     public void ResponseEquipInven() => model.ResponseEquipInven();
+    public void ResponseConsumeInven() => model.ResponseConsumeInven();
     public void EquipItem(ItemDataComponent component) => model.EquipItem(component);
     public void RemoveItem(ItemDataComponent component, bool isDestroy = true) => model.RemoveItem(component, isDestroy);
     public void ResponseEquipData() => model.ResponseEquipData();

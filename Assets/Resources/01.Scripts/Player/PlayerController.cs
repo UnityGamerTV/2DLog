@@ -26,6 +26,7 @@ public class PlayerController : FieldObjBase, IController, IListener
         eventManager.AddListener(EVENT_PLAYER.PLAYER_MOVE_COMPLETE, this);
         eventManager.AddListener(EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE, this);
         eventManager.AddListener(EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA, this);
+        eventManager.AddListener(EVENT_CONSUME_INVEN_UI.REQUEST_CONSUME_INVENTORY_DATA, this);
         eventManager.AddListener(EVENT_ITEM_POPUP_UI.ON_CLICK_DISMISS, this);
         eventManager.AddListener(EVENT_ITEM_POPUP_UI.ON_CLICK_APPLY, this);
         //Status
@@ -68,6 +69,7 @@ public class PlayerController : FieldObjBase, IController, IListener
 
     public void GetItemComplete() => service.GetItemComplete(); // 획득 이펙트 (획득은 그냥 Move쪽에 임시로 연결되어 있음)
     public void ResponseEquipInven() => service.ResponseEquipInven();
+    public void ResponseConsumeInven() => service.ResponseConsumeInven();
     public void EquipItem(ItemDataComponent component) => service.EquipItem(component);
     public void RemoveItem(ItemDataComponent component, bool isDestroy = true) => service.RemoveItem(component , isDestroy);
     //
@@ -85,6 +87,7 @@ public class PlayerController : FieldObjBase, IController, IListener
             case EVENT_PLAYER.PLAYER_MOVE_COMPLETE: HandIdle(); break;
             case EVENT_PLAYER.PLAYER_GET_ITEM_COMPLETE: GetItemComplete(); HandIdle(); break;
             case EVENT_EQUIP_INVEN_UI.REQUEST_EQUIP_INVENTORY_DATA: ResponseEquipInven(); break;
+            case EVENT_CONSUME_INVEN_UI.REQUEST_CONSUME_INVENTORY_DATA: ResponseConsumeInven(); break;
             case EVENT_ITEM_POPUP_UI.ON_CLICK_DISMISS: RemoveItem((ItemDataComponent)param); break;
             case EVENT_ITEM_POPUP_UI.ON_CLICK_APPLY: EquipItem((ItemDataComponent)param); RemoveItem((ItemDataComponent)param, false); break;
             case EVENT_STATUS_POPUP_UI.REQUEST_EQUIP_DATA: ResponseEquipData(); break;
